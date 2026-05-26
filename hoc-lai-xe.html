@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trung Tâm Đào Tạo Lái Xe — Fiaboo Dev</title>
+  <meta name="description" content="Đăng ký học lái xe các hạng A1, A2, B1, B2, C, D, E, FC. Đội ngũ giáo viên giàu kinh nghiệm, sân tập chuẩn, tỷ lệ đậu cao. Cam kết 100% có bằng.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::after,*::before{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',system-ui,sans-serif;
+      background:#f8f6f2;color:#1e1b16;
+      font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased
+    }
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+    :root{
+      --green:#1a5c3a;  --green-dark:#0f3d25;  --green-light:#e6f0ea;
+      --gold:#c9954e;   --gold-light:#f5eadb;  --gold-bg:#fcf7ee;
+      --text:#1e1b16;   --text2:#6b6560;       --text3:#9c9690;
+      --bg:#f8f6f2;     --surface:#ffffff;     --border:#e5e0d8;
+      --radius-xl:20px; --radius:14px;          --radius-sm:10px;
+      --shadow:0 4px 24px rgba(30,27,22,.08);
+      --shadow-lg:0 12px 48px rgba(30,27,22,.12);
+      --transition:all .35s cubic-bezier(.4,0,.2,1)
+    }
+
+    /* ─── Header ─── */
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(255,255,255,.94);backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--border);height:68px
+    }
+    header .inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-icon{
+      width:36px;height:36px;border-radius:10px;
+      background:linear-gradient(135deg,var(--green),var(--gold));
+      display:flex;align-items:center;justify-content:center;
+      font-size:16px;color:#fff
+    }
+    .logo-text{font-weight:800;font-size:18px;color:var(--text);letter-spacing:-.03em}
+    .logo-text span{color:var(--green)}
+    .logo-sub{font-size:10px;color:var(--text3);letter-spacing:.05em;display:block;margin-top:-2px;text-transform:uppercase}
+    nav{display:flex;gap:4px;align-items:center}
+    nav a{
+      text-decoration:none;color:var(--text2);font-size:13px;font-weight:500;
+      padding:8px 14px;border-radius:var(--radius-sm);transition:var(--transition)
+    }
+    nav a:hover{color:var(--green);background:var(--green-light)}
+    .hamburger{display:none;background:none;border:none;font-size:22px;cursor:pointer;padding:8px;color:var(--text)}
+    @media(max-width:768px){
+      nav{display:none;position:fixed;top:68px;left:0;right:0;background:#fff;flex-direction:column;padding:16px;border-bottom:1px solid var(--border);gap:2px}
+      nav.open{display:flex}
+      .hamburger{display:block}
+    }
+
+    /* ─── Hero ─── */
+    .hero{
+      min-height:100vh;display:flex;align-items:center;
+      background:linear-gradient(135deg,#1a5c3a 0%,#0f3d25 50%,#0a2b1a 100%);
+      position:relative;overflow:hidden;padding-top:68px
+    }
+    .hero::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse at 70% 40%,rgba(201,149,78,.15) 0%,transparent 60%),
+                 radial-gradient(ellipse at 30% 70%,rgba(201,149,78,.08) 0%,transparent 50%);
+    }
+    .hero .container{position:relative;z-index:1;padding:80px 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .hero-content h1{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;line-height:1.1;
+      color:#fff;letter-spacing:-.03em;margin-bottom:16px
+    }
+    .hero-content h1 span{color:var(--gold)}
+    .hero-content p{
+      font-size:16px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:28px;max-width:480px
+    }
+    .hero-stats{display:flex;gap:32px;margin-bottom:32px}
+    .hero-stats div{text-align:center}
+    .hero-stats .num{font-size:24px;font-weight:800;color:var(--gold);display:block}
+    .hero-stats .lbl{font-size:12px;color:rgba(255,255,255,.5)}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:14px 28px;border-radius:var(--radius-sm);
+      font-weight:600;font-size:14px;text-decoration:none;
+      transition:var(--transition);border:none;cursor:pointer
+    }
+    .btn-primary{
+      background:var(--gold);color:#1e1b16;
+      box-shadow:0 4px 16px rgba(201,149,78,.3)
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,149,78,.4)}
+    .btn-outline{
+      background:transparent;color:#fff;
+      border:1.5px solid rgba(255,255,255,.2)
+    }
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+    .hero-form{
+      background:rgba(255,255,255,.06);backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);
+      padding:36px
+    }
+    .hero-form h3{color:#fff;font-size:20px;font-weight:700;margin-bottom:20px}
+    .hero-form h3 span{color:var(--gold)}
+    .form-group{margin-bottom:14px}
+    .form-group label{display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,.6);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em}
+    .form-group input,.form-group select{
+      width:100%;padding:12px 14px;border-radius:var(--radius-sm);
+      border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.08);
+      color:#fff;font-size:14px;font-family:'Inter',sans-serif;
+      transition:var(--transition);outline:none
+    }
+    .form-group input::placeholder{color:rgba(255,255,255,.3)}
+    .form-group input:focus,.form-group select:focus{border-color:var(--gold);background:rgba(255,255,255,.12)}
+    .form-group select option{color:#1e1b16;background:#fff}
+    .hero-form .btn-primary{width:100%;justify-content:center;padding:14px;font-size:15px;margin-top:4px}
+    @media(max-width:768px){
+      .hero .container{grid-template-columns:1fr;gap:40px;padding:60px 20px}
+      .hero-stats{gap:20px;flex-wrap:wrap}
+      .hero-stats div{min-width:70px}
+    }
+
+    /* ─── Sections shared ─── */
+    section{padding:80px 0}
+    .sec-label{
+      display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;
+      letter-spacing:.08em;padding:6px 14px;border-radius:999px;
+      background:var(--gold-light);color:var(--gold);margin-bottom:12px
+    }
+    .sec-title{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:800;
+      letter-spacing:-.02em;color:var(--text);margin-bottom:12px
+    }
+    .sec-desc{font-size:15px;color:var(--text2);max-width:560px;line-height:1.7}
+
+    /* ─── License Classes ─── */
+    #classes{background:var(--surface)}
+    #classes .chead{text-align:center;margin-bottom:48px}
+    #classes .chead .sec-desc{margin:0 auto}
+    .class-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .class-card{
+      background:var(--bg);border:1px solid var(--border);
+      border-radius:var(--radius);padding:24px;text-align:center;
+      transition:var(--transition);cursor:default
+    }
+    .class-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--gold)}
+    .class-card .icon{font-size:28px;margin-bottom:8px}
+    .class-card h3{font-size:18px;font-weight:800;color:var(--green);margin-bottom:2px}
+    .class-card .sub{font-size:12px;color:var(--text3);margin-bottom:8px}
+    .class-card .desc{font-size:13px;color:var(--text2);line-height:1.5;margin-bottom:10px}
+    .class-card .price{font-size:17px;font-weight:800;color:var(--gold)}
+    .class-card .price span{font-size:11px;font-weight:500;color:var(--text3)}
+    .class-card .tag{
+      display:inline-block;font-size:10px;padding:3px 10px;border-radius:999px;
+      background:var(--green-light);color:var(--green);font-weight:600;margin-bottom:8px
+    }
+    @media(max-width:900px){.class-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:500px){.class-grid{grid-template-columns:1fr}}
+
+    /* ─── Process ─── */
+    #process{background:var(--bg)}
+    #process .phead{text-align:center;margin-bottom:56px}
+    #process .phead .sec-desc{margin:0 auto}
+    .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .proc-step{text-align:center}
+    .proc-num{
+      width:56px;height:56px;border-radius:50%;margin:0 auto 16px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:20px;font-weight:800;color:#fff;
+      background:linear-gradient(135deg,var(--green),var(--green-dark));
+      box-shadow:0 4px 14px rgba(26,92,58,.25)
+    }
+    .proc-step h3{font-size:16px;font-weight:700;margin-bottom:6px;color:var(--text)}
+    .proc-step p{font-size:13px;color:var(--text2);line-height:1.6}
+    @media(max-width:768px){.proc-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:400px){.proc-grid{grid-template-columns:1fr}}
+
+    /* ─── Why Us ─── */
+    #why{background:var(--surface)}
+    #why .whead{text-align:center;margin-bottom:48px}
+    #why .whead .sec-desc{margin:0 auto}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .why-card{
+      background:var(--bg);border:1px solid var(--border);
+      border-radius:var(--radius);padding:28px;transition:var(--transition)
+    }
+    .why-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+    .why-card .ico{font-size:32px;margin-bottom:12px}
+    .why-card h3{font-size:16px;font-weight:700;margin-bottom:6px;color:var(--text)}
+    .why-card p{font-size:13px;color:var(--text2);line-height:1.6}
+    @media(max-width:768px){.why-grid{grid-template-columns:1fr}}
+
+    /* ─── CTA ─── */
+    #cta{
+      background:linear-gradient(135deg,var(--green-dark),var(--green));
+      text-align:center;padding:80px 24px
+    }
+    #cta h2{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:800;
+      color:#fff;letter-spacing:-.02em;margin-bottom:12px
+    }
+    #cta p{color:rgba(255,255,255,.6);font-size:15px;max-width:500px;margin:0 auto 28px;line-height:1.7}
+    #cta .btn-primary{font-size:16px;padding:16px 40px}
+
+    /* ─── Footer ─── */
+    footer{background:#0f3d25;color:rgba(255,255,255,.5);padding:48px 0 24px;font-size:13px}
+    footer .grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    footer h4{color:#fff;font-weight:700;font-size:14px;margin-bottom:12px}
+    footer a{color:rgba(255,255,255,.5);text-decoration:none;display:block;margin-bottom:4px}
+    footer a:hover{color:var(--gold)}
+    footer .logo-text{color:#fff;margin-bottom:6px}
+    footer .logo-text span{color:var(--gold)}
+    footer .bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;margin-top:40px;text-align:center;font-size:12px}
+    .footer-desc{line-height:1.7;margin-bottom:12px}
+    @media(max-width:768px){footer .grid{grid-template-columns:1fr;gap:24px}}
+  </style>
+</head>
+<body>
+
+<!-- ═══ Header ═══ -->
+<header>
+  <div class="container inner">
+    <a href="#" class="logo">
+      <span class="logo-icon">🚗</span>
+      <div>
+        <div class="logo-text">Fiaboo<span> Dev</span></div>
+        <div class="logo-sub">Trung tâm đào tạo lái xe</div>
+      </div>
+    </a>
+    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open');this.classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#classes">Học phí</a>
+      <a href="#process">Quy trình</a>
+      <a href="#why">Vì sao chọn</a>
+      <a href="https://wa.me/84963281291" style="color:var(--green);font-weight:600">📞 Liên hệ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ Hero ═══ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Học lái xe —<br><span>lấy bằng nhanh</span></h1>
+      <p>Trung tâm đào tạo lái xe uy tín tại TP.HCM. Đội ngũ giáo viên giàu kinh nghiệm, sân tập chuẩn, tỷ lệ đậu thực hành 96%. Cam kết học phí trọn gói — không phát sinh.</p>
+      <div class="hero-stats">
+        <div><span class="num">10+</span><span class="lbl">Năm kinh nghiệm</span></div>
+        <div><span class="num">5.000+</span><span class="lbl">Học viên</span></div>
+        <div><span class="num">96%</span><span class="lbl">Tỷ lệ đậu</span></div>
+      </div>
+      <div class="hero-btns">
+        <a href="#classes" class="btn btn-primary">📋 Xem bảng học phí</a>
+        <a href="tel:+849****1291" class="btn btn-outline">📞 Gọi tư vấn</a>
+      </div>
+    </div>
+    <div class="hero-form">
+      <h3>📝 Đăng ký <span>tư vấn miễn phí</span></h3>
+      <form action="#" method="post" onsubmit="alert('Cảm ơn bạn đã đăng ký! Fiaboo Dev sẽ liên hệ tư vấn trong 30 phút.');return false">
+        <div class="form-group">
+          <label>Họ và tên</label>
+          <input type="text" placeholder="Nguyễn Văn A" required>
+        </div>
+        <div class="form-group">
+          <label>Số điện thoại</label>
+          <input type="tel" placeholder="0963 281 291" required>
+        </div>
+        <div class="form-group">
+          <label>Hạng bằng muốn học</label>
+          <select required>
+            <option value="">— Chọn hạng —</option>
+            <option value="A1">A1 — Xe máy dưới 175cc</option>
+            <option value="A2">A2 — Xe máy trên 175cc</option>
+            <option value="B1">B1 — Ô tô số tự động</option>
+            <option value="B2">B2 — Ô tô số sàn</option>
+            <option value="C">C — Ô tô tải</option>
+            <option value="D">D — Xe khách đến 30 chỗ</option>
+            <option value="E">E — Xe khách trên 30 chỗ</option>
+            <option value="FC">FC — Xe kéo rơ-moóc</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">🚀 Đăng ký ngay</button>
+      </form>
+      <p style="font-size:12px;color:rgba(255,255,255,.35);margin-top:10px;text-align:center">Hoặc gọi <a href="tel:+849****1291" style="color:var(--gold);text-decoration:none;font-weight:600">0963 281 291</a> để được tư vấn trực tiếp</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ License Classes ═══ -->
+<section id="classes">
+  <div class="container">
+    <div class="chead">
+      <span class="sec-label">Bảng học phí</span>
+      <h2 class="sec-title">Tất cả hạng bằng lái</h2>
+      <p class="sec-desc">Học phí trọn gói — bao gồm hồ sơ, học lý thuyết, thực hành, thi, và bằng. Cam kết không phát sinh.</p>
+    </div>
+    <div class="class-grid">
+      <div class="class-card">
+        <div class="icon">🏍️</div>
+        <span class="tag">PHỔ BIẾN</span>
+        <h3>A1</h3>
+        <div class="sub">Xe máy dưới 175cc</div>
+        <div class="desc">Lý thuyết 150 câu + thực hành vòng số 8. Phù hợp mọi lứa tuổi.</div>
+        <div class="price">1.200.000 <span>đ</span></div>
+      </div>
+      <div class="class-card">
+        <div class="icon">🏍️🔥</div>
+        <h3>A2</h3>
+        <div class="sub">Xe máy trên 175cc</div>
+        <div class="desc">Cho phân khối lớn. Có A1 mới được thi A2. Lý thuyết + thực hành nâng cao.</div>
+        <div class="price">2.000.000 <span>đ</span></div>
+      </div>
+      <div class="class-card">
+        <div class="icon">🚗</div>
+        <span class="tag">CHỊ EM</span>
+        <h3>B1</h3>
+        <div class="sub">Ô tô số tự động</div>
+        <div class="desc">Số tự động — dễ học, dễ thi. Phù hợp cho nữ giới, người lớn tuổi. Chạy xe gia đình.</div>
+        <div class="price">6.500.000 <span>đ</span></div>
+      </div>
+      <div class="class-card">
+        <div class="icon">🚗⭐</div>
+        <span class="tag">PHỔ BIẾN</span>
+        <h3>B2</h3>
+        <div class="sub">Ô tô số sàn</div>
+        <div class="desc">Bằng phổ thông nhất. Lái được cả số sàn và số tự động. Cơ hội việc làm rộng.</div>
+        <div class="price">7.500.000 <span>đ</span></div>
+      </div>
+      <div class="class-card">
+        <div class="icon">🚚</div>
+        <h3>C</h3>
+        <div class="sub">Ô tô tải</div>
+        <div class="desc">Lái xe tải hạng nặng. Yêu cầu có B2. Học nâng cao kỹ thuật lái xe tải.</div>
+        <div class="price">10.000.000 <span>đ</span></div>
+      </div>
+      <div class="class-card">
+        <div class="icon">🚌</div>
+        <h3>D</h3>
+        <div class="sub">Xe khách đến 30 chỗ</div>
+        <div class="desc">Lái xe khách nhỏ, xe buýt. Yêu cầu có C. Đào tạo lái xe an toàn.</div>
+        <div class="price">14.000.000 <span>đ</span></div>
+      </div>
+      <div class="class-card">
+        <div class="icon">🚌🔥</div>
+        <h3>E</h3>
+        <div class="sub">Xe khách trên 30 chỗ</div>
+        <div class="desc">Lái xe khách lớn, xe giường nằm. Yêu cầu có D. Đào tạo chuyên sâu.</div>
+        <div class="price">16.000.000 <span>đ</span></div>
+      </div>
+      <div class="class-card">
+        <div class="icon">🚛</div>
+        <h3>FC</h3>
+        <div class="sub">Xe kéo rơ-moóc</div>
+        <div class="desc">Kéo rơ-moóc, sơ-mi rơ-moóc. Yêu cầu có C. Dành cho tài xế chuyên nghiệp.</div>
+        <div class="price">18.000.000 <span>đ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Process ═══ -->
+<section id="process">
+  <div class="container">
+    <div class="phead">
+      <span class="sec-label">Quy trình</span>
+      <h2 class="sec-title">4 bước lấy bằng</h2>
+      <p class="sec-desc">Đơn giản, nhanh gọn — từ đăng ký đến nhận bằng chỉ trong 3-6 tháng.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step">
+        <div class="proc-num">1</div>
+        <h3>Đăng ký</h3>
+        <p>Điền form online hoặc gọi hotline. Nhân viên tư vấn hạng phù hợp và hẹn ngày nhập học.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">2</div>
+        <h3>Học lý thuyết</h3>
+        <p>Học 150-600 câu hỏi theo bộ đề mới nhất. App học online + lớp học cuối tuần linh hoạt.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">3</div>
+        <h3>Thực hành</h3>
+        <p>Luyện tập trên sân trường chuẩn + đường trường. Xe tập hiện đại, cảm biến, camera.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">4</div>
+        <h3>Thi &amp; nhận bằng</h3>
+        <p>Thi tại trung tâm sát hạch. Hỗ trợ ôn thi cấp tốc. Nhận bằng sau 7-10 ngày.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Why Us ═══ -->
+<section id="why">
+  <div class="container">
+    <div class="whead">
+      <span class="sec-label">Vì sao chọn</span>
+      <h2 class="sec-title">Fiaboo Dev là lựa chọn đúng đắn</h2>
+      <p class="sec-desc">Hơn 10 năm đào tạo, 5.000+ học viên đã lấy bằng — chúng tôi hiểu bạn cần gì.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="ico">🎓</div>
+        <h3>Giáo viên giàu kinh nghiệm</h3>
+        <p>Đội ngũ giáo viên có 10-20 năm kinh nghiệm, nhiệt tình, kiên nhẫn — đặc biệt với học viên mới.</p>
+      </div>
+      <div class="why-card">
+        <div class="ico">🚘</div>
+        <h3>Xe tập hiện đại</h3>
+        <p>Xe tập Camry, Innova, Kia — cảm biến trước sau, camera lùi, máy lạnh. Thoải mái học tập.</p>
+      </div>
+      <div class="why-card">
+        <div class="ico">💰</div>
+        <h3>Học phí trọn gói</h3>
+        <p>Cam kết không phát sinh. Bao gồm: hồ sơ, tài liệu, học phí, thi, in bằng. Đóng 1 lần duy nhất.</p>
+      </div>
+      <div class="why-card">
+        <div class="ico">📱</div>
+        <h3>Học online linh hoạt</h3>
+        <p>App học lý thuyết trên điện thoại. Thi thử không giới hạn. Học mọi lúc mọi nơi.</p>
+      </div>
+      <div class="why-card">
+        <div class="ico">🎯</div>
+        <h3>Tỷ lệ đậu cao</h3>
+        <p>96% học viên đậu ngay lần thi đầu. Cam kết thi lại miễn phí nếu không đậu.</p>
+      </div>
+      <div class="why-card">
+        <div class="ico">🤝</div>
+        <h3>Hỗ trợ trọn đời</h3>
+        <p>Giải đáp thắc mắc, gia hạn bằng, nâng hạng — hỗ trợ học viên cũ tận tình.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta">
+  <div class="container">
+    <h2>Sẵn sàng lấy bằng lái?<br>Đăng ký ngay hôm nay!</h2>
+    <p>Nhập học ngay trong tuần. Hỗ trợ ca tối & cuối tuần cho người đi làm. Giảm 10% khi đăng ký nhóm 2 người.</p>
+    <a href="https://wa.me/84963281291" class="btn btn-primary">💬 Đăng ký qua WhatsApp</a>
+  </div>
+</section>
+
+<!-- ═══ Footer ═══ -->
+<footer>
+  <div class="container">
+    <div class="grid">
+      <div>
+        <div class="logo-text" style="font-size:16px">Fiaboo<span> Dev</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:10px">TRUNG TÂM ĐÀO TẠO LÁI XE</div>
+        <p class="footer-desc">Trung tâm đào tạo lái xe uy tín tại TP.HCM. Hơn 10 năm kinh nghiệm, 5.000+ học viên đã lấy bằng. Cam kết học phí trọn gói, không phát sinh.</p>
+        <p style="margin-bottom:4px">📞 <a href="tel:+849****1291">0963 281 291</a></p>
+        <p>💬 <a href="https://wa.me/84963281291">WhatsApp</a> &nbsp;·&nbsp; ✉️ <a href="mailto:dinhvuong090997@gmail.com">dinhvuong090997@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Hạng bằng</h4>
+        <a href="#classes">A1 — Xe máy</a>
+        <a href="#classes">A2 — Xe máy lớn</a>
+        <a href="#classes">B1 — Ô tô số tự động</a>
+        <a href="#classes">B2 — Ô tô số sàn</a>
+        <a href="#classes">C, D, E, FC</a>
+      </div>
+      <div>
+        <h4>Liên kết</h4>
+        <a href="#classes">Bảng học phí</a>
+        <a href="#process">Quy trình</a>
+        <a href="#why">Vì sao chọn</a>
+        <a href="https://wa.me/84963281291">WhatsApp</a>
+        <a href="https://dinhvuong090997-cyber.github.io/local-service-website-pack/">Trang chủ</a>
+      </div>
+    </div>
+    <div class="bottom">&copy; 2026 Fiaboo Dev. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
