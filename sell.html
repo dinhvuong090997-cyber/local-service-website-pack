@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LocalSite — One-page websites for local businesses</title>
+  <meta name="description" content="Get a beautiful mobile-friendly one-page website for your local business. Delivered in 24h. Starting at $10.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #1c2333;
+      --border: #30363d; --text: #e6edf3; --text2: #8b949e; --muted: #484f58;
+      --blue: #58a6ff; --green: #3fb950; --red: #f85149; --amber: #d29922;
+      --purple: #bc8cff; --cyan: #39d2c0; --radius: 16px; --sm: 10px;
+    }
+    *,*::after,*::before{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;overflow-x:hidden}
+
+    /* Animated bg */
+    .bg-glow{position:fixed;pointer-events:none;z-index:0}
+    .bg-glow-1{width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(88,166,255,.06),transparent);top:-200px;right:-200px;animation:drift1 12s ease-in-out infinite alternate}
+    .bg-glow-2{width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(188,140,255,.04),transparent);bottom:-150px;left:-150px;animation:drift2 15s ease-in-out infinite alternate}
+    @keyframes drift1{0%{transform:translate(0,0)}100%{transform:translate(-60px,80px)}}
+    @keyframes drift2{0%{transform:translate(0,0)}100%{transform:translate(70px,-50px)}}
+    
+    .container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+    /* Header */
+    .header{position:fixed;top:0;left:0;right:0;background:rgba(13,17,23,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:100}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:17px;color:var(--text)}
+    .brand-mark{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--blue),var(--purple));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff}
+    .nav{display:flex;gap:20px;align-items:center}
+    .nav a{text-decoration:none;color:var(--text2);font-size:14px;font-weight:500;transition:color .2s}
+    .nav a:hover{color:var(--blue)}
+    .nav .btn-nav{padding:8px 20px;border-radius:999px;background:var(--blue);color:#fff!important;font-weight:600;font-size:13px;transition:all .2s}
+    .nav .btn-nav:hover{background:#4a90e2;box-shadow:0 4px 16px rgba(88,166,255,.25)}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:.3s}
+
+    /* Hero */
+    .hero{padding:160px 0 80px;text-align:center;position:relative;overflow:hidden}
+    .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 16px;border-radius:999px;background:rgba(88,166,255,.1);color:var(--blue);font-size:13px;font-weight:600;border:1px solid rgba(88,166,255,.15);margin-bottom:24px}
+    .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;max-width:700px;margin:0 auto 16px}
+    .hero h1 span{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero p{font-size:17px;color:var(--text2);max-width:500px;margin:0 auto 32px;line-height:1.7}
+    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:var(--sm);font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:inherit;position:relative;overflow:hidden}
+    .btn-primary{background:linear-gradient(135deg,var(--blue),#4a90e2);color:#fff;box-shadow:0 4px 20px rgba(88,166,255,.25)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(88,166,255,.35)}
+    .btn-outline{border:1.5px solid var(--border);color:var(--text);background:transparent}
+    .btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);background:rgba(88,166,255,.05)}
+
+    /* Mockup show */
+    .mockup-row{display:flex;justify-content:center;gap:12px;margin-top:48px;flex-wrap:wrap;animation:fadeUp .6s ease .4s both}
+    .mockup-device{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;width:240px;text-align:center;transition:all .3s;position:relative}
+    .mockup-device:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+    .mockup-device .screen{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:8px;height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-size:13px;margin-bottom:10px}
+    .mockup-device .screen .demo-brand{font-weight:700;font-size:16px}
+    .mockup-device .screen .demo-brand span{color:#818cf8}
+    .mockup-device .label-device{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--text2);font-weight:600}
+    .mockup-device .label-device span{color:var(--text);font-weight:700;text-transform:none;letter-spacing:0}
+
+    /* Trust bar */
+    .trust-bar{display:flex;justify-content:center;gap:32px;padding:24px 0 0;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text2)}
+    .trust-item .icon{color:var(--green);font-weight:700}
+
+    /* Sections */
+    section{padding:80px 0;position:relative}
+    .section-title{text-align:center;margin-bottom:48px}
+    .section-title h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+    .section-title p{color:var(--text2);font-size:15px;max-width:460px;margin:0 auto}
+
+    /* Features */
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .feature-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .25s}
+    .feature-card:hover{border-color:var(--blue);background:var(--surface2);transform:translateY(-2px)}
+    .feature-icon{font-size:24px;margin-bottom:10px;display:block}
+    .feature-card h3{font-size:15px;font-weight:600;margin-bottom:4px}
+    .feature-card p{font-size:14px;color:var(--text2);line-height:1.6}
+
+    /* Portfolio big card */
+    .portfolio-show{max-width:640px;margin:0 auto}
+    .portfolio-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .3s}
+    .portfolio-card:hover{box-shadow:0 16px 40px rgba(0,0,0,.4);transform:translateY(-3px)}
+    .portfolio-preview{background:linear-gradient(135deg,#1e1b4b,#312e81);padding:36px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;color:#fff;position:relative;border-bottom:1px solid var(--border)}
+    .portfolio-preview .demo-title{font-size:24px;font-weight:800;letter-spacing:-.01em}
+    .portfolio-preview .demo-title span{color:#818cf8}
+    .portfolio-preview .demo-tag{font-size:14px;color:rgba(255,255,255,.5);margin:4px 0 16px}
+    .portfolio-preview .btn-demo{display:inline-flex;align-items:center;gap:6px;padding:10px 24px;border-radius:8px;background:#fff;color:#1e1b4b;font-weight:600;font-size:14px;text-decoration:none;transition:all .2s}
+    .portfolio-preview .btn-demo:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(255,255,255,.15)}
+    .portfolio-info{padding:20px 24px}
+    .portfolio-info h3{font-size:16px;font-weight:600}
+    .portfolio-info p{font-size:14px;color:var(--text2);margin-top:2px}
+    .portfolio-tags{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .portfolio-tags span{padding:3px 10px;border-radius:999px;background:rgba(88,166,255,.1);color:var(--blue);font-size:11px;font-weight:600;border:1px solid rgba(88,166,255,.15)}
+
+    /* Pricing */
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;max-width:800px;margin:0 auto}
+    .pricing-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all .25s;position:relative}
+    .pricing-card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+    .pricing-card.featured{border-color:var(--blue);background:var(--surface2);box-shadow:0 0 0 1px var(--blue)}
+    .pricing-card.featured::after{content:'Best seller';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;font-size:11px;font-weight:700;padding:3px 14px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em}
+    .pricing-card h3{font-size:17px;font-weight:600}
+    .pricing-card .desc{font-size:13px;color:var(--text2);margin:2px 0 16px}
+    .pricing-card .amount{font-size:36px;font-weight:800;letter-spacing:-.02em}
+    .pricing-card .amount .cur{font-size:16px;font-weight:600;color:var(--text2)}
+    .pricing-card .amount .period{font-size:14px;font-weight:400;color:var(--muted)}
+    .pricing-card ul{list-style:none;margin:20px 0}
+    .pricing-card li{padding:4px 0;font-size:14px;display:flex;gap:8px;align-items:center;color:var(--text2)}
+    .pricing-card li::before{content:'✓';color:var(--green);font-weight:700}
+    .pricing-card .btn{width:100%;justify-content:center}
+
+    /* Testimonials */
+    .testimonial{max-width:500px;margin:0 auto;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+    .testimonial .text{font-size:15px;line-height:1.7;color:var(--text2);margin-bottom:12px;font-style:italic}
+    .testimonial .author{font-weight:600;font-size:14px}
+    .testimonial .author span{color:var(--text2);font-weight:400}
+
+    /* Chat */
+    .chat-btn{position:fixed;bottom:24px;right:24px;z-index:200;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(88,166,255,.3);transition:all .2s}
+    .chat-btn:hover{transform:scale(1.05)}
+    .chat-box{position:fixed;bottom:90px;right:24px;width:360px;max-width:calc(100vw-48px);background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.4);z-index:200;display:none;overflow:hidden;flex-direction:column}
+    .chat-box.open{display:flex}
+    .chat-header{padding:14px 18px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;font-weight:600;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+    .chat-header button{background:none;border:none;color:#fff;font-size:18px;cursor:pointer;opacity:.7}
+    .chat-msgs{padding:14px;max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;flex:1;background:var(--bg)}
+    .chat-msg{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.5;max-width:88%}
+    .chat-msg.bot{background:var(--surface2);color:var(--text);align-self:flex-start;border-bottom-left-radius:4px;border:1px solid var(--border)}
+    .chat-msg.user{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+    .chat-input{display:flex;border-top:1px solid var(--border);padding:10px 12px;gap:8px;background:var(--surface)}
+    .chat-input input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:14px;font-family:inherit;outline:none;color:var(--text)}
+    .chat-input input:focus{border-color:var(--blue)}
+    .chat-input input::placeholder{color:var(--muted)}
+    .chat-input button{padding:10px 18px;border-radius:8px;background:var(--blue);color:#fff;border:none;font-weight:600;font-size:13px;cursor:pointer}
+
+    /* Footer */
+    footer{padding:24px 0;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--border)}
+
+    /* Animations */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .hero>*{animation:fadeUp .6s ease both}
+    .hero h1{animation-delay:0s}
+    .hero p{animation-delay:.1s}
+    .hero-actions{animation-delay:.2s}
+
+    /* Mobile */
+    @media(max-width:720px){
+      section{padding:48px 0}
+      .hero{padding:120px 0 48px}
+      .mockup-device{width:100%;max-width:280px}
+      .nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(13,17,23,.98);flex-direction:column;align-items:center;justify-content:center;gap:24px;z-index:100}
+      .nav.open{display:flex}
+      .hamburger{display:block;z-index:101}
+      .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+      .hamburger.open span:nth-child(2){opacity:0}
+      .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+      .chat-box{right:12px;bottom:80px;width:calc(100vw-24px)}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#"><span class="brand-mark">L</span>LocalSite</a>
+      <nav class="nav" id="nav">
+        <a href="#features">Features</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#order" class="btn-nav">Order now →</a>
+      </nav>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">⚡ Delivered in 24h · From $10</div>
+      <h1>A professional website for<br>your local business <span>from $10</span></h1>
+      <p>One-page, beautiful, works on every device. Services, pricing, call buttons, chat — everything your customers need to find and contact you.</p>
+      <div class="hero-actions">
+        <a href="#order" class="btn btn-primary">🌐 Order your site →</a>
+        <a href="#portfolio" class="btn btn-outline">See examples ↓</a>
+      </div>
+      
+      <div class="trust-bar">
+        <div class="trust-item"><span class="icon">✓</span> Delivered in 24h</div>
+        <div class="trust-item"><span class="icon">✓</span> No deposit required</div>
+        <div class="trust-item"><span class="icon">✓</span> Preview before payment</div>
+        <div class="trust-item"><span class="icon">✓</span> Source files + free hosting</div>
+      </div>
+
+      <div class="mockup-row">
+        <div class="mockup-device">
+          <div class="screen">
+            <div class="demo-brand">FixFast <span>Repair</span></div>
+            <div style="font-size:11px;opacity:.6;margin-top:4px">📱💻 Phone & laptop repair</div>
+          </div>
+          <div class="label-device">📱 <span>Mobile view</span></div>
+        </div>
+        <div class="mockup-device">
+          <div class="screen">
+            <div class="demo-brand">The <span>Barber</span></div>
+            <div style="font-size:11px;opacity:.6;margin-top:4px">💇‍♂️ Barber & Salon</div>
+          </div>
+          <div class="label-device">💻 <span>Desktop view</span></div>
+        </div>
+        <div class="mockup-device">
+          <div class="screen">
+            <div class="demo-brand">Cafe <span>Morn</span></div>
+            <div style="font-size:11px;opacity:.6;margin-top:4px">☕ Coffee & Food</div>
+          </div>
+          <div class="label-device">📟 <span>Tablet view</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Every site includes</h2>
+        <p>Everything a local business needs to look professional online.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card"><span class="feature-icon">📱</span><h3>Works on every device</h3><p>Phone, tablet, desktop — all look perfect. No pinching or zooming needed.</p></div>
+        <div class="feature-card"><span class="feature-icon">🎨</span><h3>Custom branded</h3><p>Pick your colors and fonts. The site will match your business identity.</p></div>
+        <div class="feature-card"><span class="feature-icon">⚡</span><h3>Lightning fast</h3><p>Pure HTML/CSS. No heavy frameworks — loads instantly, no waiting.</p></div>
+        <div class="feature-card"><span class="feature-icon">📞</span><h3>Call & chat buttons</h3><p>Phone, WhatsApp, Messenger — one tap and customers reach you.</p></div>
+        <div class="feature-card"><span class="feature-icon">🔍</span><h3>SEO ready</h3><p>Clean meta tags and semantic HTML so Google can find and rank you.</p></div>
+        <div class="feature-card"><span class="feature-icon">📄</span><h3>Source files + free hosting</h3><p>You get the raw files. I'll guide you on free hosting — $0/month.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <div class="section-title">
+        <h2>Sample work</h2>
+        <p>This is a website I built. When you order, I customize it for your business.</p>
+      </div>
+      <div class="portfolio-show">
+        <div class="portfolio-card">
+          <div class="portfolio-preview">
+            <div class="demo-title">FixFast <span>Repair</span></div>
+            <div class="demo-tag">🔧 Phone & laptop repair — Same-day service</div>
+            <a href="#" class="btn-demo" onclick="event.preventDefault();window.open('file:///home/fiaboo/Projects/local-service-website-pack/index.html')">🔍 View demo →</a>
+          </div>
+          <div class="portfolio-info">
+            <h3>FixFast Repair — Device repair shop</h3>
+            <p>One-page site with: services, pricing tiers, step-by-step process, contact buttons, business hours. Everything a repair shop needs.</p>
+            <div class="portfolio-tags">
+              <span>Mobile-first</span>
+              <span>3-tier pricing</span>
+              <span>Call/chat buttons</span>
+              <span>Google Maps</span>
+              <span>24h delivery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <div class="section-title">
+        <h2>Bảng giá</h2>
+        <p>Một giá, tất cả included. Không upsell, không phí hàng tháng.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <div class="desc">Try it out — enough for a small business</div>
+          <div class="amount">$10</div>
+          <ul>
+            <li>One-page website</li>
+            <li>Mobile responsive</li>
+            <li>Services section</li>
+            <li>Call & chat buttons</li>
+            <li>Source files (HTML/CSS)</li>
+            <li>24h delivery</li>
+          </ul>
+          <a href="#order" class="btn btn-outline">Order now</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Standard</h3>
+          <div class="desc">Most popular — great value</div>
+          <div class="amount">$25</div>
+          <ul>
+            <li>Everything in Starter</li>
+            <li>Custom colors & branding</li>
+            <li>Pricing table</li>
+            <li>Business hours + map</li>
+            <li>Free hosting guidance</li>
+            <li>1 revision round</li>
+          </ul>
+          <a href="#order" class="btn btn-primary">Order now</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Premium</h3>
+          <div class="desc">Stand out from competitors</div>
+          <div class="amount">$50</div>
+          <ul>
+            <li>Everything in Standard</li>
+            <li>Animations & effects</li>
+            <li>Google Maps integration</li>
+            <li>Contact form</li>
+            <li>2 revision rounds</li>
+            <li>Hosting setup included</li>
+          </ul>
+          <a href="#order" class="btn btn-outline">Order now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonial">
+    <div class="container">
+      <div class="section-title">
+        <h2>What clients say</h2>
+      </div>
+      <div class="testimonial">
+        <div class="text">"Got my website in less than 24 hours. The design is clean and my customers love it. Best $25 I've spent on my business."</div>
+        <div class="author">— John D. <span>· Phone repair shop owner</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="container" style="text-align:center">
+      <div class="section-title">
+        <h2>Order your website now</h2>
+        <p>Send me your business name + list of services + preferred colors. I'll send you a preview within 24 hours.</p>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="https://wa.me/84963281291" class="btn btn-primary" target="_blank" style="font-size:16px;padding:14px 36px">💬 Chat on WhatsApp</a>
+        <a href="mailto:hello@example.com" class="btn btn-outline" style="font-size:16px;padding:14px 36px">📧 Send an email</a>
+      </div>
+      <div style="display:flex;justify-content:center;gap:24px;margin-top:20px;flex-wrap:wrap;font-size:14px;color:var(--text2)">
+        <span>✅ Pay after approval</span>
+        <span>✅ Delivered in 24h</span>
+        <span>✅ 7-day support</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">LocalSite © 2026 · One-page websites for local businesses · $10 – $50</div>
+  </footer>
+
+  <button class="chat-btn" id="chatBtn" onclick="toggleChat()">💬</button>
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header"><span>💬 Chat with me</span><button onclick="toggleChat()">✕</button></div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="chat-msg bot">👋 Hi! Want a website for your local business? Just ask me anything — price, timing, examples, I'm here to help!</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type your message..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button onclick="sendChat()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); nav.classList.toggle('open'); });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('open'); nav.classList.remove('open'); }));
+
+    // Footer year
+    document.querySelector('footer .container').textContent = `LocalSite © ${new Date().getFullYear()} · One-page websites for local businesses · $10 – $50`;
+
+    // Chat
+    function toggleChat() { document.getElementById('chatBox').classList.toggle('open'); }
+    function sendChat() {
+      const input = document.getElementById('chatInput');
+      const msg = input.value.trim();
+      if (!msg) return;
+      input.value = '';
+      const msgs = document.getElementById('chatMsgs');
+      msgs.innerHTML += `<div class="chat-msg user">${esc(msg)}</div>`;
+      msgs.scrollTop = msgs.scrollHeight;
+      setTimeout(() => {
+        msgs.innerHTML += `<div class="chat-msg bot">${reply(msg)}</div>`;
+        msgs.scrollTop = msgs.scrollHeight;
+      }, 500 + Math.random() * 500);
+    }
+    function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    function reply(msg) {
+      const m = msg.toLowerCase();
+      if (m.includes('price')||m.includes('cost')||m.includes('how much')||m.includes('$')) return '💰 Prices start at <b>$10</b> (Starter), <b>$25</b> (Standard), or <b>$50</b> (Premium). Most clients go with Standard — custom colors + free hosting guidance included!';
+      if (m.includes('time')||m.includes('how long')||m.includes('delivery')||m.includes('when')) return '⏱️ Usually delivered <b>within 24 hours</b> after I receive your business details. Sometimes same-day for simple sites!';
+      if (m.includes('host')||m.includes('domain')||m.includes('go live')||m.includes('publish')) return '🌐 I guide you on free hosting (Netlify, GitHub Pages) or help set up a custom domain. No monthly fees, no hidden costs.';
+      if (m.includes('example')||m.includes('demo')||m.includes('sample')||m.includes('portfolio')||m.includes('see')) return '📂 Check out the <b>Sample Work</b> section above! FixFast Repair demo shows what a typical site looks like.';
+      if (m.includes('repair')||m.includes('fix')||m.includes('phone')||m.includes('laptop')||m.includes('shop')) return '🔧 Perfect for repair shops! The FixFast demo above is actually a repair shop template. Services, pricing, contact — all included.';
+      if (m.includes('restaurant')||m.includes('cafe')||m.includes('food')||m.includes('barber')||m.includes('salon')||m.includes('spa')||m.includes('tutor')||m.includes('clean')||m.includes('service')) return '✅ Yes! I\'ve built for <b>barbers, salons, restaurants, tutors, cleaners, repair shops</b> — one-page works for any local service business.';
+      if (m.includes('pay')||m.includes('payment')||m.includes('deposit')) return '💳 Bank transfer or PayPal. I send a preview first — you pay after you approve. No deposit needed.';
+      if (m.includes('hello')||m.includes('hi')||m.includes('hey')||m.includes('good')) return '👋 Hey there! Want a website for your business? Tell me what kind of business you have and I\'ll let you know the best option!';
+      if (m.includes('thank')) return '🙌 You\'re welcome! Ready to start? Send me your business name + services + preferred colors and I\'ll have a preview for you tomorrow.';
+      return '👍 Got it! For a quick quote, just tell me your <b>business name</b> and what <b>services</b> you offer. Or check the pricing section above!';
+    }
+  </script>
+</body>
+</html>
