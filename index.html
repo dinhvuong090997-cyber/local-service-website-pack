@@ -3,8 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LocalSite — Website 1 Trang Cho Doanh Nghiệp Địa Phương</title>
-  <meta name="description" content="Website một trang chuyên nghiệp cho tiệm, quán, phòng khám của bạn. Giá từ $10. Giao trong 24h.">
+  <title>LocalSite — Web 1 Trang Cho Doanh Nghiệp Địa Phương | $10-$50</title>
+  <meta name="description" content="LocalSite — thiết kế website một trang chuyên nghiệp cho spa, salon, nha khoa, phòng khám, quán ăn, tạp hóa. Giá từ $10. Giao trong 24h. Liên hệ WhatsApp 0963 281 291.">
+  <meta name="keywords" content="thiết kế website, website 1 trang, web cho spa, web cho nha khoa, web cho quán ăn, local business website, làm web giá rẻ">
+  <meta name="author" content="LocalSite - Fiaboo Dev">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dinhvuong090997-cyber.github.io/local-service-website-pack/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LocalSite — Web 1 Trang Cho Doanh Nghiệp Địa Phương">
+  <meta property="og:description" content="Thiết kế website một trang chuyên nghiệp cho spa, salon, nha khoa, phòng khám, quán ăn. Giá từ $10.">
+  <meta property="og:url" content="https://dinhvuong090997-cyber.github.io/local-service-website-pack/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LocalSite">
+
+  <!-- Structured Data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "LocalSite by Fiaboo Dev",
+    "description": "Dịch vụ thiết kế website một trang cho doanh nghiệp địa phương.",
+    "url": "https://dinhvuong090997-cyber.github.io/local-service-website-pack/",
+    "telephone": "+84963281291",
+    "email": "dinhvuong090997@gmail.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+84-963-281-291",
+      "contactType": "sales",
+      "availableLanguage": ["Vietnamese", "English"]
+    },
+    "areaServed": "VN",
+    "priceRange": "$10-$50",
+    "sameAs": [
+      "https://wa.me/84963281291",
+      "https://github.com/dinhvuong090997-cyber"
+    ],
+    "makesOffer": [
+      {"@type": "Offer", "name": "Luxe Website", "price": "25", "priceCurrency": "USD", "description": "Cho spa, salon, barber, studio"},
+      {"@type": "Offer", "name": "Bình Dân Website", "price": "10", "priceCurrency": "USD", "description": "Cho quán ăn, tạp hóa, dịch vụ nhỏ"},
+      {"@type": "Offer", "name": "ProSite Website", "price": "35", "priceCurrency": "USD", "description": "Cho nha khoa, phòng khám, luật sư"}
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,7 +57,7 @@
     header{text-align:center;padding:60px 0 30px}
     header h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.03em;color:#f0f4ff;margin-bottom:8px}
     header p{color:rgba(255,255,255,.45);font-size:15px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 0 60px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 0 40px}
     .card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;text-decoration:none;color:inherit;transition:all .25s;display:flex;flex-direction:column}
     .card:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);transform:translateY(-2px)}
     .card .tag{display:inline-block;font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;margin-bottom:12px;width:fit-content}
@@ -24,6 +66,9 @@
     .card .price{font-size:20px;font-weight:800;color:#7aa2f7}
     .card .price span{font-size:13px;font-weight:500;color:rgba(255,255,255,.3)}
     .gh{display:inline-block;margin-top:8px;font-size:12px;color:rgba(255,255,255,.2)}
+    .contact-bar{text-align:center;padding:0 0 60px;font-size:13px;color:rgba(255,255,255,.25);line-height:2}
+    .contact-bar a{color:#7aa2f7;text-decoration:none}
+    .contact-bar a:hover{text-decoration:underline}
     @media(max-width:600px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
@@ -56,8 +101,15 @@
       <div class="gh">xem mẫu →</div>
     </a>
   </div>
-  <div style="text-align:center;padding:0 0 60px;font-size:13px;color:rgba(255,255,255,.25)">
-    📞 <a href="https://wa.me/84963281291" style="color:#7aa2f7;text-decoration:none">WhatsApp: 0963 281 291</a>
+
+  <div class="contact-bar">
+    📞 <a href="tel:+84963281291">0963 281 291</a>
+    &nbsp;·&nbsp;
+    💬 <a href="https://wa.me/84963281291">WhatsApp</a>
+    &nbsp;·&nbsp;
+    ✉️ <a href="mailto:dinhvuong090997@gmail.com">dinhvuong090997@gmail.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/dinhvuong090997-cyber">GitHub</a>
   </div>
 </div>
 </body>

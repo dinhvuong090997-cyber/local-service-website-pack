@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dinhvuong090997-cyber.github.io/local-service-website-pack/sitemap.xml
