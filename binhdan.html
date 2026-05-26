@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Tên Quán] &mdash; Ngon &amp; Rẻ</title>
+  <meta name="description" content="Mở cửa hàng ngày. Ngon, sạch, giá hợp lý. Gọi ngay để biết thêm chi tiết!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::after,*::before{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter','Noto Sans',system-ui,-apple-system,sans-serif;
+      background:#fffaf5;color:#2d2a24;font-size:16px;line-height:1.5;
+      -webkit-font-smoothing:antialiased
+    }
+    .container{max-width:800px;margin:0 auto;padding:0 20px}
+
+    /* ─── Header ─── */
+    header{
+      background:#fff;border-bottom:2px solid #ff6b35;position:sticky;top:0;z-index:100
+    }
+    header .inner{display:flex;align-items:center;justify-content:space-between;height:52px}
+    .logo{font-weight:800;font-size:18px;color:#2d2a24;text-decoration:none}
+    .logo span{color:#ff6b35}
+    .header-phone{
+      display:inline-flex;align-items:center;gap:6px;
+      background:#ff6b35;color:#fff;padding:8px 18px;border-radius:999px;
+      font-weight:700;font-size:14px;text-decoration:none
+    }
+
+    /* ─── Hero ─── */
+    .hero{
+      padding:60px 0 40px;text-align:center;background:linear-gradient(180deg,#fffaf5,#fff)
+    }
+    .hero h1{
+      font-size:clamp(1.8rem,6vw,2.8rem);font-weight:900;line-height:1.1;
+      color:#2d2a24;margin-bottom:8px
+    }
+    .hero h1 span{color:#ff6b35}
+    .hero .sub{
+      font-size:16px;color:#8a7f75;margin-bottom:20px
+    }
+    .hero-big-phone{
+      display:block;font-size:clamp(1.6rem,5vw,2.4rem);font-weight:800;
+      color:#ff6b35;text-decoration:none;margin-bottom:14px
+    }
+    .hero-badge{
+      display:inline-flex;gap:20px;flex-wrap:wrap;justify-content:center;
+      font-size:13px;font-weight:600;color:#6b5f55
+    }
+    .hero-badge span{background:#fff;padding:4px 14px;border-radius:999px;border:1.5px solid #ffd6c2}
+
+    /* ─── Big Info Cards ─── */
+    .info-cards{padding:20px 0 36px}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .info-card{
+      background:#fff;border-radius:16px;padding:24px 20px;
+      text-align:center;border:1.5px solid #f0e8e0;box-shadow:0 2px 8px rgba(0,0,0,.04)
+    }
+    .info-card .icon{font-size:24px;margin-bottom:6px}
+    .info-card .label{font-size:11px;font-weight:600;color:#a89a8e;text-transform:uppercase;letter-spacing:.05em}
+    .info-card .value{font-size:20px;font-weight:800;color:#2d2a24;margin-top:2px}
+    .info-card .value.small{font-size:15px;font-weight:500}
+    .info-card.full{grid-column:1/-1}
+
+    /* ─── Menu ─── */
+    .menu{padding:40px 0;background:#fff}
+    .menu h2{
+      font-size:clamp(1.4rem,4vw,2rem);font-weight:800;text-align:center;
+      margin-bottom:24px;color:#2d2a24
+    }
+    .menu h2 span{color:#ff6b35}
+    .menu-items{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .menu-item{
+      background:#fffaf5;border-radius:12px;padding:14px 16px;
+      display:flex;justify-content:space-between;align-items:center;
+      border:1px solid #f0e8e0
+    }
+    .menu-item .name{font-weight:600;font-size:15px;color:#2d2a24}
+    .menu-item .price{font-weight:800;font-size:17px;color:#ff6b35}
+    .menu-item .desc{font-size:12px;color:#a89a8e;margin-top:2px}
+
+    /* ─── Gallery ─── */
+    .gallery{padding:40px 0;background:#fffaf5;text-align:center}
+    .gallery h2{font-weight:800;font-size:clamp(1.2rem,3.5vw,1.6rem);margin-bottom:16px}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery-item{
+      aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,#ffe8dc,#ffd6c2);
+      display:flex;align-items:center;justify-content:center;
+      font-size:28px;color:#ff6b35;font-weight:700
+    }
+
+    /* ─── Contact ─── */
+    .contact{
+      padding:50px 0;text-align:center;background:linear-gradient(135deg,#ff6b35,#ff8f5e);color:#fff
+    }
+    .contact h2{font-size:clamp(1.4rem,4vw,2rem);font-weight:800;margin-bottom:6px}
+    .contact p{font-size:15px;opacity:.9;margin-bottom:20px}
+    .contact-big{
+      display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;
+      color:#fff;text-decoration:none;margin-bottom:8px
+    }
+    .contact .btn{
+      display:inline-block;background:#fff;color:#ff6b35;font-weight:800;
+      padding:14px 40px;border-radius:999px;font-size:17px;text-decoration:none
+    }
+
+    /* ─── Footer ─── */
+    footer{background:#2d2a24;color:#b8aaa0;text-align:center;padding:24px 0;font-size:13px;line-height:1.8}
+    footer a{color:#ff6b35;text-decoration:none;font-weight:600}
+    footer .copy{opacity:.5;margin-top:6px}
+
+    @media(max-width:480px){
+      .info-grid{grid-template-columns:1fr}
+      .menu-items{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .header-phone{font-size:12px;padding:6px 14px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="inner">
+      <a href="#" class="logo">🍜 <span>Quán</span> Ngon</a>
+      <a href="tel:0900000000" class="header-phone">📞 0900 000 000</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Ngon &bull; Sạch &bull; <span>Rẻ</span></h1>
+    <p class="sub">Mở cửa 7h&ndash;22h &middot; 123 Đường Nguyễn Văn A, Quận 1</p>
+    <a href="tel:0900000000" class="hero-big-phone">📞 0900 000 000</a>
+    <div class="hero-badge">
+      <span>🕐 7h&ndash;22h</span>
+      <span>📍 123 Nguyễn Văn A</span>
+      <span>🚗 Có chỗ đậu xe</span>
+    </div>
+  </div>
+</section>
+
+<!-- Info -->
+<section class="info-cards">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="icon">🕐</div>
+        <div class="label">Giờ mở cửa</div>
+        <div class="value">7:00 &ndash; 22:00</div>
+        <div class="value small">Tất cả các ngày</div>
+      </div>
+      <div class="info-card">
+        <div class="icon">📍</div>
+        <div class="label">Địa chỉ</div>
+        <div class="value">123 Nguyễn Văn A</div>
+        <div class="value small">Quận 1, TP.HCM</div>
+      </div>
+      <div class="info-card">
+        <div class="icon">📞</div>
+        <div class="label">Hotline</div>
+        <a href="tel:0900000000" class="value" style="color:#ff6b35;text-decoration:none">0900 000 000</a>
+        <div class="value small">Gọi là nhận hàng liền</div>
+      </div>
+      <div class="info-card">
+        <div class="icon">🚗</div>
+        <div class="label">Tiện ích</div>
+        <div class="value" style="font-size:15px">Có chỗ đậu xe &bull; WiFi miễn phí</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu -->
+<section class="menu">
+  <div class="container">
+    <h2>🍜 Thực đơn <span>của tụi mình</span></h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div><div class="name">Phở bò tái</div><div class="desc">Nước dùng hầm 12 tiếng</div></div>
+        <div class="price">55k</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="name">Bún bò Huế</div><div class="desc">Công thức gia truyền</div></div>
+        <div class="price">60k</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="name">Cơm tấm sườn</div><div class="desc">Sườn nướng than hoa</div></div>
+        <div class="price">45k</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="name">Hủ tiếu nam vang</div><div class="desc">Tôm, thịt, tim, gan</div></div>
+        <div class="price">50k</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="name">Bánh mì thịt</div><div class="desc">Bánh mì giòn, thịt nguội</div></div>
+        <div class="price">25k</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="name">Trà đá</div><div class="desc">Mát lạnh, free refill</div></div>
+        <div class="price">5k</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="container">
+    <h2>📸 Hình ảnh quán</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">🍜</div>
+      <div class="gallery-item">🥘</div>
+      <div class="gallery-item">🫖</div>
+      <div class="gallery-item">🥗</div>
+      <div class="gallery-item">🍚</div>
+      <div class="gallery-item">🧋</div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact">
+  <div class="container">
+    <h2>Đặt món ngay</h2>
+    <p>Gọi điện hoặc nhắn tin, chúng mình giao tận nơi</p>
+    <a href="tel:0900000000" class="contact-big">0900 000 000</a>
+    <a href="https://www.google.com/maps" class="btn">📍 Chỉ đường đến quán</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    🍜 <strong>Quán Ngon</strong> &mdash; 123 Nguyễn Văn A, Quận 1<br>
+    <a href="tel:0900000000">📞 0900 000 000</a> &middot;
+    Mở cửa 7h&ndash;22h tất cả các ngày<br>
+    <div class="copy">&copy; 2026 Quán Ngon. Cảm ơn bạn đã ghé thăm! ❤️</div>
+  </div>
+</footer>
+
+</body>
+</html>

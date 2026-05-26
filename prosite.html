@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Tên Phòng Khám] &mdash; Nha Khoa | Phòng Khám</title>
+  <meta name="description" content="Đội ngũ bác sĩ giàu kinh nghiệm. Trang thiết bị hiện đại. Đặt lịch hẹn ngay hôm nay.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *,*::after,*::before{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',system-ui,-apple-system,sans-serif;
+      background:#f8faff;color:#1a2332;font-size:16px;line-height:1.6;
+      -webkit-font-smoothing:antialiased
+    }
+    .container{max-width:1080px;margin:0 auto;padding:0 28px}
+
+    /* ─── Colors ─── */
+    :root{
+      --blue:#1a5fb4;   --blue-light:#d0e2ff; --blue-dark:#0d3b74;
+      --accent:#1a5fb4; --accent-hover:#15509a;
+      --green:#27ae60;  --gold:#c9a84c;
+      --text:#1a2332;   --text2:#5a6a7a;       --text3:#8a9aaa;
+      --bg:#f8faff;     --surface:#ffffff;      --border:#dce4ed;
+      --shadow:0 2px 12px rgba(26,95,180,.08);
+    }
+
+    /* ─── Header ─── */
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(255,255,255,.95);backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border)
+    }
+    header .inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{
+      display:flex;align-items:center;gap:10px;text-decoration:none
+    }
+    .logo-icon{
+      width:36px;height:36px;border-radius:10px;
+      background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:16px;color:#fff
+    }
+    .logo-text{font-weight:700;font-size:17px;color:var(--text)}
+    .logo-text span{color:var(--blue)}
+    .logo-sub{font-size:11px;color:var(--text3);font-weight:400;display:block;margin-top:-2px}
+    nav{display:flex;gap:6px;align-items:center}
+    nav a{
+      text-decoration:none;color:var(--text2);font-size:14px;font-weight:500;
+      padding:8px 14px;border-radius:8px;transition:all .2s
+    }
+    nav a:hover{color:var(--blue);background:var(--blue-light)}
+    .nav-cta{
+      background:var(--blue);color:#fff!important;padding:10px 22px!important;
+      border-radius:999px!important;font-weight:600!important;font-size:13px!important
+    }
+    .nav-cta:hover{background:var(--accent-hover)!important;color:#fff!important}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:101}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:.3s}
+
+    /* ─── Hero ─── */
+    .hero{
+      padding:140px 0 60px;background:linear-gradient(170deg,var(--blue-light),var(--bg) 50%,#fff)
+    }
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(26,95,180,.08);color:var(--blue);padding:6px 14px;
+      border-radius:999px;font-size:12px;font-weight:600;margin-bottom:14px
+    }
+    .hero h1{
+      font-size:clamp(2rem,4.5vw,3rem);font-weight:800;line-height:1.08;
+      letter-spacing:-.025em;color:var(--text);margin-bottom:14px
+    }
+    .hero h1 span{color:var(--blue)}
+    .hero p{font-size:16px;color:var(--text2);line-height:1.7;margin-bottom:24px;max-width:480px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:14px 28px;border-radius:999px;
+      font-size:15px;font-weight:600;text-decoration:none;
+      transition:all .2s;cursor:pointer;border:none;font-family:inherit
+    }
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,95,180,.25)}
+    .btn-outline{border:1.5px solid var(--border);color:var(--text);background:var(--surface)}
+    .btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+    .hero-stats{
+      display:flex;gap:20px;margin-top:28px;flex-wrap:wrap
+    }
+    .hero-stats .stat{font-size:12px;color:var(--text3);font-weight:500}
+    .hero-stats .stat strong{display:block;font-size:18px;color:var(--blue);font-weight:800}
+    .hero-visual{
+      background:linear-gradient(135deg,var(--blue-light),#e8f0fe);
+      border-radius:20px;aspect-ratio:4/3;
+      display:flex;align-items:center;justify-content:center;
+      font-size:72px;border:1px solid rgba(26,95,180,.1)
+    }
+
+    /* ─── Trust Bar ─── */
+    .trust{
+      padding:24px 0;background:#fff;border-bottom:1px solid var(--border)
+    }
+    .trust .inner{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+    .trust-item{font-size:13px;color:var(--text3);font-weight:500;display:flex;align-items:center;gap:6px}
+    .trust-item strong{color:var(--text2)}
+
+    /* ─── Services ─── */
+    .services{padding:70px 0;background:var(--surface)}
+    .services .label{
+      font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;
+      letter-spacing:.08em;text-align:center;margin-bottom:6px
+    }
+    .services h2{
+      font-size:clamp(1.4rem,3vw,2rem);font-weight:800;text-align:center;
+      letter-spacing:-.02em;color:var(--text);margin-bottom:36px
+    }
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .svc-card{
+      background:var(--bg);border:1px solid var(--border);border-radius:16px;
+      padding:28px 24px;transition:all .25s
+    }
+    .svc-card:hover{box-shadow:var(--shadow);border-color:var(--blue-light)}
+    .svc-icon{
+      width:44px;height:44px;border-radius:12px;margin-bottom:14px;
+      background:var(--blue-light);color:var(--blue);
+      display:flex;align-items:center;justify-content:center;font-size:20px
+    }
+    .svc-card h3{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px}
+    .svc-card p{font-size:14px;color:var(--text2);line-height:1.6}
+    .svc-card .price{font-size:13px;font-weight:700;color:var(--green);margin-top:10px}
+
+    /* ─── About / Doctor ─── */
+    .about{padding:70px 0;background:var(--bg)}
+    .about .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+    .about-img{
+      aspect-ratio:3/4;border-radius:20px;
+      background:linear-gradient(135deg,var(--blue-light),#dce4ed);
+      display:flex;align-items:center;justify-content:center;
+      font-size:56px;border:1px solid var(--border)
+    }
+    .about .label{
+      font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;
+      letter-spacing:.08em;margin-bottom:6px
+    }
+    .about h2{
+      font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;
+      letter-spacing:-.02em;color:var(--text);margin-bottom:12px
+    }
+    .about p{font-size:15px;color:var(--text2);line-height:1.7;margin-bottom:16px}
+    .about-creds{display:flex;gap:20px}
+    .about-creds .cred{font-size:13px;font-weight:600;color:var(--text)}
+    .about-creds .cred span{display:block;font-weight:400;color:var(--text3);font-size:12px}
+
+    /* ─── Testimonials ─── */
+    .testimonials{padding:70px 0;background:var(--surface)}
+    .testimonials .label{
+      font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;
+      letter-spacing:.08em;text-align:center;margin-bottom:6px
+    }
+    .testimonials h2{
+      font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;text-align:center;
+      letter-spacing:-.02em;color:var(--text);margin-bottom:32px
+    }
+    .test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .test-card{
+      background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:24px
+    }
+    .test-card .stars{color:#f1c40f;font-size:16px;margin-bottom:8px}
+    .test-card blockquote{font-size:14px;color:var(--text2);line-height:1.6;font-style:italic;margin-bottom:10px}
+    .test-card cite{font-size:13px;font-weight:600;color:var(--text);font-style:normal}
+
+    /* ─── Map + CTA ─── */
+    .cta-section{
+      padding:60px 0;background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff
+    }
+    .cta-section .inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .cta-section h2{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;margin-bottom:8px}
+    .cta-section p{font-size:15px;opacity:.85;margin-bottom:20px}
+    .cta-section .btn-white{
+      display:inline-block;background:#fff;color:var(--blue);font-weight:700;
+      padding:14px 32px;border-radius:999px;font-size:15px;text-decoration:none
+    }
+    .cta-section .btn-white:hover{box-shadow:0 4px 16px rgba(0,0,0,.2)}
+    .cta-section .info-line{font-size:14px;opacity:.85;margin-bottom:4px}
+    .cta-section .info-line strong{opacity:1}
+
+    /* ─── Footer ─── */
+    footer{background:#0f1a2e;color:#8a9aaa;padding:36px 0;font-size:13px;line-height:1.8}
+    footer .inner{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
+    footer h4{color:#fff;font-weight:700;font-size:14px;margin-bottom:8px}
+    footer a{color:#8a9aaa;text-decoration:none}
+    footer a:hover{color:#fff}
+    footer .copy{border-top:1px solid rgba(255,255,255,.06);padding-top:16px;margin-top:24px;text-align:center;font-size:12px}
+
+    /* ─── Responsive ─── */
+    @media(max-width:768px){
+      .hero .grid,.about .grid,.cta-section .inner{grid-template-columns:1fr;gap:28px}
+      .svc-grid,.test-grid{grid-template-columns:1fr}
+      footer .inner{grid-template-columns:1fr;gap:24px}
+      .hero{padding:110px 0 40px}
+      .hero-visual{aspect-ratio:16/9;font-size:48px}
+      nav{gap:4px}
+      nav a{font-size:13px;padding:6px 10px}
+      .logo-sub{display:none}
+    }
+    @media(max-width:640px){
+      nav a:not(.nav-cta){display:none}
+      .hamburger{display:block}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">+</span>
+        <div>
+          <div class="logo-text"><span>[Tên]</span> Clinic</div>
+          <div class="logo-sub">Nha khoa &amp; Chăm sóc sức khỏe</div>
+        </div>
+      </a>
+      <nav>
+        <a href="#services">Dịch vụ</a>
+        <a href="#about">Bác sĩ</a>
+        <a href="#testimonials">Khách hàng</a>
+        <a href="#contact" class="nav-cta">📅 Đặt lịch hẹn</a>
+      </nav>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <div class="hero-badge">✅ Hơn 10 năm kinh nghiệm</div>
+        <h1>Nụ cười tỏa sáng<br>với <span>đội ngũ</span> tận tâm</h1>
+        <p>Khám chữa bệnh với trang thiết bị hiện đại, bác sĩ giàu chuyên môn, chi phí hợp lý. Đặt lịch ngay hôm nay!</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">📅 Đặt lịch hẹn</a>
+          <a href="#services" class="btn btn-outline">Xem dịch vụ</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>1.500+</strong>Khách hàng</div>
+          <div class="stat"><strong>98%</strong>Hài lòng</div>
+          <div class="stat"><strong>12+</strong>Năm kinh nghiệm</div>
+        </div>
+      </div>
+      <div class="hero-visual">🦷</div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust -->
+<section class="trust">
+  <div class="container">
+    <div class="inner">
+      <span class="trust-item">🏥 Bảo hiểm <strong>bảo lãnh</strong></span>
+      <span class="trust-item">📅 Làm việc <strong>Thứ 2&ndash;Thứ 7</strong></span>
+      <span class="trust-item">🚗 <strong>Free</strong> chỗ đậu xe</span>
+      <span class="trust-item">💳 Thanh toán <strong>thẻ &amp; chuyển khoản</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="container">
+    <p class="label">Dịch vụ</p>
+    <h2>Chúng tôi mang đến<br>những gì tốt nhất</h2>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🦷</div>
+        <h3>Khám tổng quát</h3>
+        <p>Kiểm tra toàn diện sức khỏe răng miệng với bác sĩ chuyên khoa.</p>
+        <div class="price">200.000đ &ndash; 500.000đ</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">✨</div>
+        <h3>Tẩy trắng răng</h3>
+        <p>Công nghệ Laser hiện đại, an toàn, hiệu quả ngay sau 1 buổi.</p>
+        <div class="price">1.500.000đ</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🛡️</div>
+        <h3>Bọc răng sứ</h3>
+        <p>Sứ cao cấp nhập khẩu, bảo hành chính hãng lên đến 10 năm.</p>
+        <div class="price">2.000.000đ &ndash; 8.000.000đ</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔧</div>
+        <h3>Nhổ răng khôn</h3>
+        <p>Nhổ răng khôn an toàn, ít đau, hồi phục nhanh.</p>
+        <div class="price">800.000đ &ndash; 2.500.000đ</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">😁</div>
+        <h3>Niềng răng</h3>
+        <p>Niềng răng mắc cài &amp; niềng răng trong suốt Invisalign.</p>
+        <div class="price">15.000.000đ &ndash; 80.000.000đ</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🩺</div>
+        <h3>Điều trị tủy</h3>
+        <p>Điều trị tủy viên, bảo tồn răng thật tối đa.</p>
+        <div class="price">500.000đ &ndash; 1.200.000đ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="grid">
+      <div class="about-img">👨‍⚕️</div>
+      <div>
+        <p class="label">Về chúng tôi</p>
+        <h2>BS. Nguyễn Văn A &amp; Đội ngũ</h2>
+        <p>Tốt nghiệp Đại học Y Dược TP.HCM, với hơn 12 năm kinh nghiệm trong lĩnh vực nha khoa và phẫu thuật hàm mặt. Chúng tôi cam kết mang đến dịch vụ chất lượng cao nhất với chi phí hợp lý.</p>
+        <div class="about-creds">
+          <div class="cred">12+<span>Năm kinh nghiệm</span></div>
+          <div class="cred">5.000+<span>Ca điều trị</span></div>
+          <div class="cred">98%<span>Hài lòng</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <p class="label">Khách hàng nói gì</p>
+    <h2>Họ đã tin tưởng chúng tôi</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Bác sĩ rất tận tâm, nhổ răng khôn không đau như mình nghĩ. Sẽ quay lại."</blockquote>
+        <cite>&mdash; Chị Minh Anh, Q.Bình Thạnh</cite>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Tẩy trắng răng xong tự tin hơn hẳn. Giá cả hợp lý, nhân viên nhiệt tình."</blockquote>
+        <cite>&mdash; Anh Hoàng Nam, Q.1</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + Map -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="inner">
+      <div>
+        <h2>Đặt lịch hẹn ngay</h2>
+        <p>Liên hệ với chúng tôi để được tư vấn và đặt lịch khám miễn phí.</p>
+        <a href="tel:0900000000" class="btn-white">📞 0900 000 000</a>
+      </div>
+      <div>
+        <div class="info-line">📍 <strong>123 Nguyễn Văn A, Quận 1, TP.HCM</strong></div>
+        <div class="info-line">🕐 <strong>Thứ 2&ndash;Thứ 7:</strong> 8:00 &ndash; 20:00</div>
+        <div class="info-line">🕐 <strong>Chủ nhật:</strong> 8:00 &ndash; 17:00</div>
+        <div class="info-line">📧 <strong>info@tenclinic.com</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="inner">
+      <div>
+        <h4>[Tên] Clinic</h4>
+        <p style="font-size:13px;color:#8a9aaa">Nha khoa &amp; Chăm sóc sức khỏe uy tín tại TP.HCM. Khám chữa bệnh tận tâm &mdash; chất lượng &mdash; hiện đại.</p>
+      </div>
+      <div>
+        <h4>Liên kết</h4>
+        <a href="#services">Dịch vụ</a><br>
+        <a href="#about">Bác sĩ</a><br>
+        <a href="#testimonials">Khách hàng</a><br>
+        <a href="#contact">Liên hệ</a>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        📞 <a href="tel:0900000000">0900 000 000</a><br>
+        📧 <a href="mailto:info@tenclinic.com">info@tenclinic.com</a><br>
+        📍 123 Nguyễn Văn A, Q.1
+      </div>
+    </div>
+    <div class="copy">&copy; 2026 [Tên] Clinic. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.querySelector('.hamburger'),n=document.querySelector('nav');
+  if(h){h.addEventListener('click',function(){n.classList.toggle('open');h.classList.toggle('active')})}
+  document.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');if(h)h.classList.remove('active')})})
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})})
+})()
+</script>
+
+<style>
+@media(max-width:640px){
+  header nav{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;
+    flex-direction:column;justify-content:center;gap:20px;
+    opacity:0;pointer-events:none;transition:opacity .3s;z-index:99}
+  header nav.open{opacity:1;pointer-events:auto}
+  header nav a{font-size:17px;padding:12px 24px;display:block!important}
+  header nav .nav-cta{margin-top:6px;font-size:15px;padding:12px 24px!important;display:inline-block!important;width:auto}
+  .hamburger{display:block;position:relative;z-index:100}
+  .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .hamburger.active span:nth-child(2){opacity:0}
+  .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+}
+</style>
+</body>
+</html>
