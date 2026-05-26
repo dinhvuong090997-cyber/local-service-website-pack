@@ -3,194 +3,157 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FixFast Repair | Same-Day Device Repair</title>
-  <meta name="description" content="Phone, laptop, and tablet repair. Free diagnostics, same-day service, quality guaranteed.">
+  <title>FixFast Repair — Downtown Device Repair</title>
+  <meta name="description" content="Phone, laptop, and tablet repair in downtown. Free diagnostics, same-day service, 30-day warranty. Drop by or message us.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #f8fafc;       --surface: #fff;     --surface2: #f1f5f9;
-      --border: #e2e8f0;   --text: #0f172a;     --text2: #64748b;
-      --blue: #2563eb;     --blue-dark: #1d4ed8;
-      --blue-light: #eff6ff; --blue-50: #dbeafe;
-      --green: #10b981;    --amber: #f59e0b;
-      --radius: 14px;      --sm: 10px;
-    }
     *,*::after,*::before{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       font-family:'Inter',system-ui,-apple-system,sans-serif;
-      color:var(--text);background:var(--bg);font-size:15px;line-height:1.6;
+      background:#f8fafc;color:#0f172a;font-size:15px;line-height:1.6;
       -webkit-font-smoothing:antialiased
     }
-    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
 
-    .header{
-      position:fixed;top:0;left:0;right:0;z-index:50;
-      background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--border)
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(255,255,255,.92);backdrop-filter:blur(16px);
+      border-bottom:1px solid #e2e8f0
     }
-    .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{
-      display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);
-      font-weight:700;font-size:17px
-    }
-    .brand-mark{
-      width:30px;height:30px;border-radius:8px;background:var(--blue);
-      color:#fff;display:flex;align-items:center;justify-content:center;
-      font-size:14px;font-weight:800
-    }
-    .nav{display:flex;gap:24px;align-items:center}
-    .nav a{text-decoration:none;color:var(--text2);font-size:14px;font-weight:500;transition:color .2s}
-    .nav a:hover{color:var(--blue)}
-    .nav .btn-nav{padding:8px 20px;border-radius:999px;background:var(--blue);color:#fff!important;font-weight:600;font-size:13px}
-    .nav .btn-nav:hover{background:var(--blue-dark);box-shadow:0 4px 14px rgba(37,99,235,.25)}
-    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:51}
-    .hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:.3s}
+    header .inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0f172a;font-weight:800;font-size:17px}
+    .logo span{color:#2563eb}
+    nav{display:flex;gap:24px;align-items:center}
+    nav a{text-decoration:none;color:#64748b;font-size:14px;font-weight:500;transition:color .2s}
+    nav a:hover{color:#2563eb}
+    .nav-cta{padding:8px 22px;border-radius:999px;background:#2563eb;color:#fff!important;font-weight:600;font-size:13px}
+    .nav-cta:hover{background:#1d4ed8!important;box-shadow:0 4px 14px rgba(37,99,235,.3)!important}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:101}
+    .hamburger span{display:block;width:22px;height:2px;background:#0f172a;margin:5px 0;border-radius:2px;transition:.3s}
 
-    .hero{padding:140px 0 70px;background:linear-gradient(170deg,var(--blue-light),var(--surface2) 60%,var(--bg))}
-    .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-    .hero-left{animation:fadeUp .6s ease both}
-    .hero-badge{
-      display:inline-flex;align-items:center;gap:6px;
-      padding:4px 14px;border-radius:999px;
-      background:rgba(37,99,235,.1);color:var(--blue);
-      font-size:13px;font-weight:600;border:1px solid rgba(37,99,235,.15);
-      margin-bottom:18px
+    .hero{
+      padding:140px 0 80px;
+      background:linear-gradient(170deg,#eff6ff,#f8fafc 50%,#fff)
     }
-    .hero h1{
-      font-size:clamp(2rem,4vw,3rem);font-weight:900;
-      line-height:1.05;letter-spacing:-.03em;margin-bottom:12px
-    }
-    .hero h1 span{background:linear-gradient(135deg,var(--blue),#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .hero p{font-size:16px;color:var(--text2);line-height:1.7;margin-bottom:24px}
+    .hero .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    .hero h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-.03em;margin-bottom:14px}
+    .hero h1 span{background:linear-gradient(135deg,#2563eb,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{font-size:16px;color:#64748b;line-height:1.7;margin-bottom:28px;max-width:480px}
     .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:12px 28px;border-radius:var(--sm);
-      font-size:15px;font-weight:600;text-decoration:none;
-      transition:all .2s;cursor:pointer;border:none;font-family:inherit
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+    .btn-primary{background:#2563eb;color:#fff}
+    .btn-primary:hover{background:#1d4ed8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.3)}
+    .btn-outline{border:1.5px solid #e2e8f0;color:#0f172a;background:#fff}
+    .btn-outline:hover{border-color:#2563eb;color:#2563eb;transform:translateY(-2px)}
+
+    .hero-card{
+      background:linear-gradient(145deg,#1e1b4b,#312e81);
+      border-radius:20px;padding:44px 36px;color:#fff;text-align:center;
+      position:relative;overflow:hidden
     }
-    .btn-primary{background:var(--blue);color:#fff}
-    .btn-primary:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 4px 16px rgba(37,99,235,.3)}
-    .btn-outline{border:1.5px solid var(--border);color:var(--text);background:var(--surface)}
-    .btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
-
-    .hero-right{
-      background:linear-gradient(135deg,#1e1b4b,#312e81);
-      border-radius:20px;padding:40px;color:#fff;text-align:center;
-      min-height:300px;display:flex;flex-direction:column;align-items:center;
-      justify-content:center;animation:fadeUp .6s ease .12s both
+    .hero-card::before{
+      content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;
+      background:radial-gradient(circle,rgba(129,140,248,.15),transparent 70%);
+      pointer-events:none
     }
-    .hero-right .big-icon{font-size:52px;margin-bottom:10px}
-    .hero-right h3{font-size:22px;font-weight:700}
-    .hero-right p{font-size:14px;color:rgba(255,255,255,.55);margin-top:4px}
-    .hero-right .stats{display:flex;gap:28px;margin-top:18px}
-    .hero-right .stats span{text-align:center}
-    .hero-right .stats .num{font-size:22px;font-weight:800;color:#818cf8;display:block}
+    .hero-card .icon{font-size:48px;margin-bottom:10px}
+    .hero-card h3{font-size:22px;font-weight:700}
+    .hero-card p{font-size:14px;color:rgba(255,255,255,.55);margin-top:4px}
+    .hero-card .stats{display:flex;justify-content:center;gap:32px;margin-top:20px}
+    .hero-card .stats span{text-align:center}
+    .hero-card .stats .num{font-size:24px;font-weight:800;color:#818cf8;display:block}
 
-    .trust-bar{
-      display:flex;justify-content:center;gap:24px;
-      padding:24px 0 0;flex-wrap:wrap;animation:fadeUp .6s ease .24s both
-    }
-    .trust-item{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--text2)}
-    .trust-item .ch{color:var(--green);font-weight:700}
+    .trust-bar{display:flex;justify-content:center;gap:32px;padding:24px 0 0;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:6px;font-size:14px;color:#64748b}
 
-    section{padding:72px 0}
-    .section-title{text-align:center;margin-bottom:36px}
-    .section-title h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
-    .section-title p{color:var(--text2);font-size:15px;max-width:480px;margin:0 auto}
+    section{padding:80px 0}
+    .sec-title{text-align:center;margin-bottom:44px}
+    .sec-title h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+    .sec-title p{color:#64748b;font-size:15px;max-width:460px;margin:0 auto}
 
-    .s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
     .s-card{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--radius);padding:26px;transition:all .25s
+      background:#fff;border:1px solid #e2e8f0;border-radius:14px;
+      padding:28px;transition:all .25s
     }
-    .s-card:hover{border-color:var(--blue);box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-2px)}
-    .s-card .icon{font-size:28px;margin-bottom:10px;display:block}
+    .s-card:hover{border-color:#93c5fd;box-shadow:0 8px 28px rgba(0,0,0,.06);transform:translateY(-3px)}
     .s-card h3{font-size:16px;font-weight:600;margin-bottom:4px}
-    .s-card p{font-size:14px;color:var(--text2);line-height:1.6}
-    .s-card .price{margin-top:10px;font-size:18px;font-weight:700;color:var(--blue)}
+    .s-card p{font-size:14px;color:#64748b;line-height:1.6}
+    .s-card .price{font-size:19px;font-weight:700;color:#2563eb;margin-top:12px}
 
-    .p-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;max-width:860px;margin:0 auto}
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:860px;margin:0 auto}
     .p-card{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--radius);padding:30px;text-align:center;
-      transition:all .25s;position:relative
+      background:#fff;border:1px solid #e2e8f0;border-radius:14px;
+      padding:32px;text-align:center;transition:all .25s;position:relative
     }
-    .p-card.featured{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue),0 4px 24px rgba(37,99,235,.08)}
+    .p-card.featured{border-color:#93c5fd;box-shadow:0 0 0 1px #93c5fd,0 4px 24px rgba(37,99,235,.08);background:#fafcff}
     .p-card.featured::after{
       content:'Popular';position:absolute;top:-12px;left:50%;transform:translateX(-50%);
-      background:var(--blue);color:#fff;font-size:11px;font-weight:700;
+      background:#2563eb;color:#fff;font-size:11px;font-weight:700;
       padding:3px 14px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em
     }
-    .p-card h3{font-size:17px;font-weight:600;margin-bottom:4px}
-    .p-card .desc{font-size:13px;color:var(--text2);margin-bottom:14px}
-    .p-card .amount{font-size:36px;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
-    .p-card .amount span{font-size:16px;font-weight:400;color:var(--text2)}
+    .p-card h3{font-size:17px;font-weight:600}
+    .p-card .desc{font-size:13px;color:#64748b;margin-bottom:16px}
+    .p-card .amount{font-size:38px;font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+    .p-card .amount span{font-size:16px;font-weight:400;color:#64748b}
     .p-card ul{list-style:none;text-align:left;margin-bottom:20px}
-    .p-card li{padding:4px 0;font-size:14px;display:flex;gap:8px;align-items:center}
-    .p-card li::before{content:'\u2713';color:var(--green);font-weight:700}
+    .p-card li{padding:5px 0;font-size:14px;display:flex;gap:8px;align-items:center}
+    .p-card li::before{content:'\2713';color:#10b981;font-weight:700}
     .p-card .btn{width:100%;justify-content:center}
 
-    .proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px;text-align:center}
-    .proc-step .num{
-      width:40px;height:40px;border-radius:50%;
-      background:var(--blue-light);color:var(--blue);
-      font-weight:700;font-size:15px;
-      display:flex;align-items:center;justify-content:center;margin:0 auto 10px
-    }
-    .proc-step h3{font-size:16px;font-weight:600;margin-bottom:4px}
-    .proc-step p{font-size:14px;color:var(--text2)}
+    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:860px;margin:0 auto}
+    .step{text-align:center}
+    .step .num{width:44px;height:44px;border-radius:50%;background:#eff6ff;color:#2563eb;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+    .step h3{font-size:16px;font-weight:600;margin-bottom:6px}
+    .step p{font-size:14px;color:#64748b;line-height:1.6}
 
     .testimonial{
-      max-width:540px;margin:0 auto;
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--radius);padding:28px;text-align:center
+      max-width:540px;margin:0 auto;background:#fff;border:1px solid #e2e8f0;
+      border-radius:14px;padding:32px;text-align:center
     }
-    .testimonial .stars{color:var(--amber);font-size:15px;margin-bottom:6px}
-    .testimonial .text{font-size:15px;line-height:1.7;color:var(--text2);font-style:italic;margin-bottom:10px}
+    .testimonial .stars{color:#f59e0b;font-size:16px;margin-bottom:8px}
+    .testimonial q{font-size:16px;line-height:1.7;color:#64748b;display:block;margin-bottom:12px}
     .testimonial .author{font-weight:600;font-size:14px}
-    .testimonial .author span{color:var(--text2);font-weight:400}
+    .testimonial .author span{color:#64748b;font-weight:400}
 
-    .contact-section{background:var(--text);color:#fff;text-align:center}
+    .contact-section{background:#0f172a;color:#fff;text-align:center}
     .contact-section h2{color:#fff}
-    .contact-section .section-title p{color:rgba(255,255,255,.55);margin-bottom:4px}
-    .c-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;max-width:640px;margin:0 auto}
+    .contact-section .sec-title p{color:rgba(255,255,255,.5)}
+    .c-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;max-width:640px;margin:0 auto}
     .c-card{
       background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);
-      border-radius:var(--sm);padding:20px;text-decoration:none;color:#fff;
-      transition:all .25s
+      border-radius:10px;padding:20px;text-decoration:none;color:#fff;transition:all .25s
     }
     .c-card:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
     .c-card .label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.5);font-weight:600}
     .c-card .value{font-size:16px;font-weight:600;margin-top:2px}
-    .hours{
-      display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
-      margin-top:18px;font-size:14px;color:rgba(255,255,255,.5)
-    }
+    .hours{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:18px;font-size:14px;color:rgba(255,255,255,.5)}
     .hours strong{color:#fff}
-    .map-placeholder{
-      margin-top:20px;border-radius:var(--sm);overflow:hidden;
-      max-width:500px;margin-left:auto;margin-right:auto
-    }
-    .map-placeholder iframe{width:100%;height:200px;border:0;display:block}
+    .map-wrap{margin-top:20px;border-radius:10px;overflow:hidden;max-width:500px;margin-left:auto;margin-right:auto;filter:grayscale(.3)}
+    .map-wrap iframe{width:100%;height:220px;border:0;display:block}
 
-    footer{padding:20px 0;text-align:center;font-size:13px;color:var(--text2);border-top:1px solid var(--border)}
+    footer{padding:24px 0;text-align:center;font-size:13px;color:#94a3b8;border-top:1px solid #e2e8f0}
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .hero .grid>*{animation:fadeUp .5s ease both}
+    .hero .grid .hero-card{animation-delay:.12s}
+    .trust-bar{animation:fadeUp .5s ease .24s both}
+
+    .scroll-fade{opacity:0;transform:translateY(30px);transition:all .6s ease}
+    .scroll-fade.in-view{opacity:1;transform:translateY(0)}
+
+    .split-bg{background:linear-gradient(180deg,transparent 50%,#fff 50%)}
 
     @media(max-width:768px){
-      .hero .container{grid-template-columns:1fr;gap:28px}
-      .hero{padding:100px 0 40px}
+      .hero .grid{grid-template-columns:1fr;gap:32px}
+      .hero{padding:100px 0 48px}
       section{padding:48px 0}
-      .nav{
-        display:none;position:fixed;top:0;left:0;right:0;bottom:0;
-        background:rgba(255,255,255,.98);
-        flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:100
-      }
-      .nav.open{display:flex}
+      .process-grid{grid-template-columns:1fr;gap:24px}
+      nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:100}
+      nav.open{display:flex}
       .hamburger{display:block}
       .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
       .hamburger.open span:nth-child(2){opacity:0}
@@ -200,135 +163,209 @@
 </head>
 <body>
 
-<header class="header">
-  <div class="container header-inner">
-    <a class="brand" href="#"><span class="brand-mark">F</span>FixFast <strong>Repair</strong></a>
-    <nav class="nav" id="nav">
+<header>
+  <div class="container inner">
+    <a class="logo" href="#">FixFast<span>Repair</span></a>
+    <nav id="nav">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
       <a href="#process">Process</a>
-      <a href="#contact" class="btn-nav">Contact</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </nav>
-    <button class="hamburger" id="burger"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <div class="hero-left">
-      <div class="hero-badge">Free diagnostics - Same-day repair</div>
-      <h1>Your device <span>fixed fast</span>.<br>No stress, no markup.</h1>
-      <p>We fix phones, laptops, and tablets. Free inspection, honest prices, most repairs done same-day. Drop it off, grab a coffee, pick it up working.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Get a quote</a>
-        <a href="#services" class="btn btn-outline">See services</a>
+    <div class="grid">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:999px;background:rgba(37,99,235,.1);color:#2563eb;font-size:13px;font-weight:600;border:1px solid rgba(37,99,235,.15);margin-bottom:18px">Free diagnostics &bull; Same-day repair</div>
+        <h1>Your device <span>fixed fast</span>.<br>No stress, no markup.</h1>
+        <p>We fix phones, laptops, tablets, and consoles. Free inspection, honest prices, most repairs done the same day. Drop it off, grab a coffee, pick it up working.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get a free quote</a>
+          <a href="#services" class="btn btn-outline">See services</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="icon">&#128295;</div>
+        <h3>We fix what others can't</h3>
+        <p>Phones &bull; Laptops &bull; Tablets &bull; Consoles</p>
+        <div class="stats">
+          <span><span class="num">500+</span>Devices fixed</span>
+          <span><span class="num">4.9</span>Average rating</span>
+          <span><span class="num">2h</span>Avg repair time</span>
+        </div>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="big-icon">&#128295;</div>
-      <h3>We fix what others can't</h3>
-      <p>Phones - Laptops - Tablets - Consoles</p>
-      <div class="stats">
-        <span><span class="num">500+</span> Fixed</span>
-        <span><span class="num">4.9&#9733;</span> Rating</span>
-        <span><span class="num">2h</span> Avg time</span>
-      </div>
-    </div>
-  </div>
-  <div class="container">
     <div class="trust-bar">
-      <div class="trust-item"><span class="ch">&#10003;</span> Free diagnostics</div>
-      <div class="trust-item"><span class="ch">&#10003;</span> Same-day service</div>
-      <div class="trust-item"><span class="ch">&#10003;</span> 30-day warranty</div>
-      <div class="trust-item"><span class="ch">&#10003;</span> No fix, no fee</div>
+      <span class="trust-item">&#10003; Free diagnostics</span>
+      <span class="trust-item">&#10003; Same-day service</span>
+      <span class="trust-item">&#10003; 30-day warranty</span>
+      <span class="trust-item">&#10003; No fix, no fee</span>
     </div>
   </div>
 </section>
 
-<section id="services">
+<section id="services" style="background:#fff">
   <div class="container">
-    <div class="section-title"><h2>What we fix</h2><p>Free checkup on every device, warranty on every repair.</p></div>
-    <div class="s-grid">
-      <div class="s-card"><span class="icon">&#128241;</span><h3>Phone repair</h3><p>Screen replacement, battery swap, charging port, water damage. We've seen it all.</p><div class="price">From $69</div></div>
-      <div class="s-card"><span class="icon">&#128187;</span><h3>Laptop repair</h3><p>Screen fix, keyboard swap, SSD upgrade, thermal paste, OS issues. Mac or PC.</p><div class="price">From $89</div></div>
-      <div class="s-card"><span class="icon">&#128424;</span><h3>Tablet repair</h3><p>Broken screens, battery not holding, charging port loose, software acting up.</p><div class="price">From $79</div></div>
-      <div class="s-card"><span class="icon">&#127918;</span><h3>Consoles & more</h3><p>Game consoles, smartwatches, headphones - bring it in and we'll take a look.</p><div class="price">From $49</div></div>
+    <div class="sec-title">
+      <h2>What we fix</h2>
+      <p>Free checkup on every device, warranty on every repair.</p>
+    </div>
+    <div class="services-grid">
+      <div class="s-card">
+        <h3>Phone repair</h3>
+        <p>Screen replacement, battery swap, charging port repair, water damage cleanup. We've seen every model.</p>
+        <div class="price">From $69</div>
+      </div>
+      <div class="s-card">
+        <h3>Laptop repair</h3>
+        <p>Display replacement, keyboard swap, SSD upgrade, thermal paste, OS troubleshooting. Mac and PC.</p>
+        <div class="price">From $89</div>
+      </div>
+      <div class="s-card">
+        <h3>Tablet repair</h3>
+        <p>Broken glass, battery not holding, charging port loose, software issues, ghost touch.</p>
+        <div class="price">From $79</div>
+      </div>
+      <div class="s-card">
+        <h3>Consoles &amp; more</h3>
+        <p>PlayStation, Xbox, Nintendo Switch, smartwatches, headphones. Can't hurt to ask.</p>
+        <div class="price">From $49</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="pricing" style="background:var(--surface)">
+<section id="pricing">
   <div class="container">
-    <div class="section-title"><h2>Simple pricing</h2><p>What you see is what you pay. No surprises.</p></div>
-    <div class="p-grid">
+    <div class="sec-title">
+      <h2>Simple pricing</h2>
+      <p>What you see is what you pay. No hidden fees, no surprises.</p>
+    </div>
+    <div class="pricing-grid">
       <div class="p-card">
-        <h3>Diagnostic</h3><div class="desc">Find out what's wrong</div>
+        <h3>Diagnostic</h3>
+        <div class="desc">Find out what's wrong</div>
         <div class="amount">$0 <span>Free</span></div>
-        <ul><li>Full device inspection</li><li>Detailed repair report</li><li>No-obligation quote</li></ul>
+        <ul>
+          <li>Full device inspection</li>
+          <li>Detailed repair report</li>
+          <li>No-obligation quote</li>
+        </ul>
         <a href="#contact" class="btn btn-outline">Book now</a>
       </div>
       <div class="p-card featured">
-        <h3>Standard Repair</h3><div class="desc">Most common fixes</div>
-        <div class="amount">$79 <span>avg</span></div>
-        <ul><li>Screen / battery / port repair</li><li>30-day warranty included</li><li>Same-day turnaround</li></ul>
+        <h3>Standard Repair</h3>
+        <div class="desc">Most common fixes</div>
+        <div class="amount">$79 <span>avg.</span></div>
+        <ul>
+          <li>Screen / battery / port repair</li>
+          <li>30-day warranty included</li>
+          <li>Same-day turnaround</li>
+        </ul>
         <a href="#contact" class="btn btn-primary">Get started</a>
       </div>
       <div class="p-card">
-        <h3>Express</h3><div class="desc">While you wait</div>
+        <h3>Express</h3>
+        <div class="desc">While you wait</div>
         <div class="amount">$99 <span>+ parts</span></div>
-        <ul><li>Priority express service</li><li>60-day warranty</li><li>Under 2 hours</li></ul>
+        <ul>
+          <li>Priority express service</li>
+          <li>60-day warranty</li>
+          <li>Under 2 hours</li>
+        </ul>
         <a href="#contact" class="btn btn-outline">Book now</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="process">
+<section id="process" style="background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
   <div class="container">
-    <div class="section-title"><h2>How it works</h2><p>Three steps and you're back in business.</p></div>
-    <div class="proc-grid">
-      <div class="proc-step"><div class="num">1</div><h3>Tell us what's up</h3><p>Call, text, or walk in. Describe the problem and we'll give you a rough idea of time and cost.</p></div>
-      <div class="proc-step"><div class="num">2</div><h3>Free diagnostic</h3><p>We open it up, find the issue, and give you the final price. No charge if you change your mind.</p></div>
-      <div class="proc-step"><div class="num">3</div><h3>Fixed same-day</h3><p>Most repairs done in a few hours. We'll call or text the moment it's ready.</p></div>
+    <div class="sec-title">
+      <h2>How it works</h2>
+      <p>Three steps and you're back in business.</p>
+    </div>
+    <div class="process-grid">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Tell us what's up</h3>
+        <p>Call, text, or walk in. Describe the problem and we'll give you a rough idea of time and cost.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Free diagnostic</h3>
+        <p>We open it up, find the root cause, and confirm the final price. No charge if you change your mind.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Fixed same-day</h3>
+        <p>Most repairs done in a few hours. We'll text you the moment it's ready to pick up.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="background:var(--surface)">
+<section id="reviews">
   <div class="container">
-    <div class="section-title"><h2>What our customers say</h2></div>
+    <div class="sec-title">
+      <h2>What our customers say</h2>
+    </div>
     <div class="testimonial">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="text">"Dropped my phone and shattered the screen. Called at 10am, picked it up at 2pm - good as new. Can't ask for more."</div>
-      <div class="author">- Sarah K. <span>. iPhone screen replacement</span></div>
+      <q>Dropped my phone and shattered the screen. Called at 10am, picked it up at 2pm &mdash; good as new. Can't ask for more.</q>
+      <div class="author">Sarah K. <span>&bull; iPhone screen replacement</span></div>
     </div>
   </div>
 </section>
 
 <section id="contact" class="contact-section">
   <div class="container">
-    <div class="section-title"><h2>Get in touch</h2><p>Call, message, or stop by. We're here to help.</p></div>
+    <div class="sec-title">
+      <h2>Get in touch</h2>
+      <p>Call, message, or stop by. We're here to help.</p>
+    </div>
     <div class="c-grid">
-      <a href="tel:0963281291" class="c-card"><div class="label">Call us</div><div class="value">0963 281 291</div></a>
-      <a href="https://wa.me/84963281291" class="c-card" target="_blank"><div class="label">WhatsApp</div><div class="value">Chat now</div></a>
-      <a href="mailto:dinhvuong090997@gmail.com" class="c-card"><div class="label">Email</div><div class="value">Send a message</div></a>
+      <a href="tel:0963281291" class="c-card">
+        <div class="label">Call us</div>
+        <div class="value">0963 281 291</div>
+      </a>
+      <a href="https://wa.me/84963281291" class="c-card" target="_blank">
+        <div class="label">WhatsApp</div>
+        <div class="value">Chat with us</div>
+      </a>
+      <a href="https://maps.google.com/maps?q=42+Repair+St+Downtown" class="c-card" target="_blank">
+        <div class="label">Visit us</div>
+        <div class="value">42 Repair St, Downtown</div>
+      </a>
     </div>
     <div class="hours">
-      <span>Mon-Fri: <strong>9 AM - 7 PM</strong></span>
-      <span>Sat: <strong>10 AM - 5 PM</strong></span>
-      <span>Sun: <strong>Closed</strong></span>
+      <span>Mon&ndash;Fri: <strong>9 AM &ndash; 7 PM</strong></span>
+      <span>Saturday: <strong>10 AM &ndash; 5 PM</strong></span>
+      <span>Sunday: <strong>Closed</strong></span>
     </div>
-    <div class="map-placeholder">
-      <iframe src="https://maps.google.com/maps?q=123+Main+St+City&output=embed" loading="lazy" title="Location map"></iframe>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=42+Repair+St+Downtown&output=embed" loading="lazy" title="FixFast Repair location"></iframe>
     </div>
   </div>
 </section>
 
-<footer><div class="container">FixFast Repair &copy; 2026 - Same-day device repair</div></footer>
+<footer>
+  <div class="container">FixFast Repair &bull; Same-day device repair since 2021</div>
+</footer>
 
 <script>
-document.getElementById('burger').addEventListener('click',function(){this.classList.toggle('open');document.getElementById('nav').classList.toggle('open')});
-document.querySelector('footer .container').textContent='FixFast Repair \u00a9 '+new Date().getFullYear()+' - Same-day device repair';
+const h=document.getElementById('hamburger'),n=document.getElementById('nav');
+h.addEventListener('click',()=>{h.classList.toggle('open');n.classList.toggle('open')});
+n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{h.classList.remove('open');n.classList.remove('open')}));
+document.querySelector('footer .container').textContent='FixFast Repair \u2022 Same-day device repair since 2021';
+
+const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view')}})},{threshold:.15});
+document.querySelectorAll('.scroll-fade').forEach(e=>observer.observe(e));
 </script>
 </body>
 </html>

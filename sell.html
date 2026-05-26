@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LocalSite — One-Page Websites cho Business Địa Phương</title>
-  <meta name="description" content="Làm website one-page cho tiệm sửa, quán cafe, salon, nhà hàng. Giá từ $10, có mẫu xem trước, giao trong 24h.">
+  <title>LocalSite — One-Page Websites for Local Businesses</title>
+  <meta name="description" content="Get a professional one-page website for your local business. Starting at $10. Mobile-friendly, same-day delivery, pay after approval.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
       --border: #3b4261;   --text: #c0caf5;     --text2: #737aa2;
       --muted: #565f89;    --blue: #7aa2f7;     --cyan: #7dcfff;
       --green: #9ece6a;    --red: #f7768e;      --yellow: #e0af68;
-      --purple: #bb9af7;   --orange: #ff9e64;
+      --purple: #bb9af7;
       --radius: 14px;      --sm: 10px;
     }
     *,*::after,*::before{margin:0;padding:0;box-sizing:border-box}
@@ -31,7 +31,7 @@
 
     .header{
       position:fixed;top:0;left:0;right:0;z-index:100;
-      background:rgba(26,27,38,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+      background:rgba(26,27,38,.82);backdrop-filter:blur(18px);
       border-bottom:1px solid var(--border)
     }
     .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
@@ -52,128 +52,70 @@
     .nav .btn-nav{
       padding:8px 22px;border-radius:999px;
       background:linear-gradient(135deg,var(--blue),var(--purple));
-      color:#fff!important;font-weight:600;font-size:13px;
-      transition:all .2s
+      color:#fff!important;font-weight:600;font-size:13px;transition:all .2s
     }
     .nav .btn-nav:hover{box-shadow:0 4px 20px rgba(122,162,247,.3);transform:translateY(-1px)}
     .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:101}
     .hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:.3s}
 
-    .hero{
-      padding:160px 0 80px;text-align:center;position:relative;overflow:hidden
-    }
-    .hero::after{
-      content:'';position:absolute;bottom:0;left:0;right:0;
-      height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)
-    }
+    .hero{padding:160px 0 80px;text-align:center;position:relative;overflow:hidden}
+    .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
     .hero-badge{
-      display:inline-flex;align-items:center;gap:6px;
-      padding:5px 16px;border-radius:999px;
-      background:rgba(122,162,247,.1);color:var(--blue);
-      font-size:13px;font-weight:600;border:1px solid rgba(122,162,247,.15);
-      margin-bottom:20px
+      display:inline-flex;align-items:center;gap:6px;padding:5px 16px;border-radius:999px;
+      background:rgba(122,162,247,.1);color:var(--blue);font-size:13px;font-weight:600;
+      border:1px solid rgba(122,162,247,.15);margin-bottom:20px
     }
     .hero h1{
-      font-size:clamp(2.2rem,5vw,3.6rem);
-      font-weight:900;line-height:1.05;letter-spacing:-.03em;
-      max-width:680px;margin:0 auto 14px
+      font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.05;
+      letter-spacing:-.03em;max-width:680px;margin:0 auto 14px
     }
-    .hero h1 .grad{
-      background:linear-gradient(135deg,var(--blue),var(--purple));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      background-clip:text
-    }
-    .hero p{
-      font-size:16px;color:var(--text2);
-      max-width:520px;margin:0 auto 28px;line-height:1.7
-    }
+    .hero h1 .g{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero p{font-size:16px;color:var(--text2);max-width:520px;margin:0 auto 28px;line-height:1.7}
     .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
     .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:13px 30px;border-radius:var(--sm);
-      font-size:15px;font-weight:600;text-decoration:none;
-      transition:all .25s;cursor:pointer;border:none;font-family:inherit
+      display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:var(--sm);
+      font-size:15px;font-weight:600;text-decoration:none;transition:all .25s;cursor:pointer;border:none;font-family:inherit
     }
     .btn-primary{
-      background:linear-gradient(135deg,var(--blue),var(--purple));
-      color:#fff;box-shadow:0 4px 20px rgba(122,162,247,.25)
+      background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;
+      box-shadow:0 4px 20px rgba(122,162,247,.25)
     }
-    .btn-primary:hover{
-      transform:translateY(-2px);
-      box-shadow:0 8px 28px rgba(122,162,247,.35)
-    }
-    .btn-outline{
-      border:1.5px solid var(--border);color:var(--text);background:transparent
-    }
-    .btn-outline:hover{
-      border-color:var(--blue);color:var(--blue);transform:translateY(-2px);
-      background:rgba(122,162,247,.05)
-    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(122,162,247,.35)}
+    .btn-outline{border:1.5px solid var(--border);color:var(--text);background:transparent}
+    .btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);background:rgba(122,162,247,.05)}
 
-    .trust-bar{
-      display:flex;justify-content:center;gap:28px;
-      padding:28px 0 0;flex-wrap:wrap
-    }
-    .trust-item{
-      display:flex;align-items:center;gap:8px;
-      font-size:14px;color:var(--text2)
-    }
+    .trust-bar{display:flex;justify-content:center;gap:28px;padding:28px 0 0;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text2)}
     .trust-item .ic{color:var(--cyan);font-weight:700}
 
     section{padding:80px 0;position:relative}
     .section-title{text-align:center;margin-bottom:44px}
-    .section-title h2{
-      font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px
-    }
-    .section-title h2 .g{
-      background:linear-gradient(135deg,var(--blue),var(--purple));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      background-clip:text
-    }
+    .section-title h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+    .section-title h2 .g{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .section-title p{color:var(--text2);font-size:15px;max-width:460px;margin:0 auto}
 
-    .features-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px
-    }
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
     .feature-card{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--radius);padding:26px;
-      transition:all .25s
+      background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+      padding:26px;transition:all .25s
     }
-    .feature-card:hover{
-      border-color:var(--blue);background:var(--surface2);
-      transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)
-    }
-    .feature-icon{font-size:24px;margin-bottom:10px;display:block}
+    .feature-card:hover{border-color:var(--blue);background:var(--surface2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
     .feature-card h3{font-size:15px;font-weight:600;margin-bottom:4px}
     .feature-card p{font-size:14px;color:var(--text2);line-height:1.6}
 
-    .demos-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-      gap:20px;max-width:900px;margin:0 auto
-    }
+    .demos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;max-width:900px;margin:0 auto}
     .demo-card{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--radius);overflow:hidden;
-      transition:all .3s
+      background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+      overflow:hidden;transition:all .3s
     }
-    .demo-card:hover{
-      border-color:var(--blue);transform:translateY(-3px);
-      box-shadow:0 12px 36px rgba(0,0,0,.3)
-    }
+    .demo-card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.3)}
     .demo-preview{
-      padding:32px 24px;text-align:center;position:relative;
-      border-bottom:1px solid var(--border);min-height:180px;
-      display:flex;flex-direction:column;align-items:center;justify-content:center
+      padding:36px 24px;text-align:center;border-bottom:1px solid var(--border);
+      min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center
     }
-    .demo-preview.fixfast{
-      background:linear-gradient(135deg,#1e1b4b,#312e81);color:#fff
-    }
-    .demo-preview.brewbit{
-      background:linear-gradient(135deg,#2d1f0e,#5c3a1e);color:#fff
-    }
-    .demo-preview .demo-emoji{font-size:44px;margin-bottom:8px}
+    .demo-preview.fixfast{background:linear-gradient(135deg,#1e1b4b,#312e81);color:#fff}
+    .demo-preview.brewbit{background:linear-gradient(135deg,#2d1f0e,#5c3a1e);color:#fff}
     .demo-preview .demo-name{font-size:22px;font-weight:800;letter-spacing:-.01em}
     .demo-preview .demo-name span.fixfast-span{color:#818cf8}
     .demo-preview .demo-name span.brewbit-span{color:#fbbf24}
@@ -181,74 +123,54 @@
     .demo-card .demo-info{padding:18px 22px}
     .demo-card .demo-info h3{font-size:16px;font-weight:600;margin-bottom:3px}
     .demo-card .demo-info p{font-size:14px;color:var(--text2);line-height:1.5}
-    .demo-card .demo-tags{
-      display:flex;gap:6px;margin-top:10px;flex-wrap:wrap
-    }
+    .demo-card .demo-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
     .demo-card .demo-tags span{
-      padding:3px 10px;border-radius:999px;
-      background:rgba(122,162,247,.1);color:var(--blue);
-      font-size:11px;font-weight:600;border:1px solid rgba(122,162,247,.15)
+      padding:3px 10px;border-radius:999px;background:rgba(122,162,247,.1);
+      color:var(--blue);font-size:11px;font-weight:600;border:1px solid rgba(122,162,247,.15)
     }
     .demo-btn{
-      display:inline-flex;align-items:center;gap:6px;
-      margin-top:12px;padding:9px 22px;border-radius:8px;
-      background:rgba(255,255,255,.15);color:#fff;font-weight:600;
+      display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:9px 24px;
+      border-radius:8px;background:rgba(255,255,255,.15);color:#fff;font-weight:600;
       font-size:13px;text-decoration:none;transition:all .2s
     }
     .demo-btn:hover{background:rgba(255,255,255,.25);transform:translateY(-1px)}
 
-    .pricing-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:14px;max-width:800px;margin:0 auto
-    }
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;max-width:800px;margin:0 auto}
     .pricing-card{
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--radius);padding:30px;
-      transition:all .25s;position:relative
+      background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+      padding:30px;transition:all .25s;position:relative
     }
-    .pricing-card:hover{
-      border-color:var(--blue);transform:translateY(-2px);
-      box-shadow:0 8px 24px rgba(0,0,0,.2)
-    }
+    .pricing-card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
     .pricing-card.featured{
       border-color:var(--blue);background:var(--surface2);
       box-shadow:0 0 0 1px var(--blue),0 8px 32px rgba(122,162,247,.1)
     }
     .pricing-card.featured::after{
-      content:'Bán chạy';position:absolute;top:-12px;left:50%;
-      transform:translateX(-50%);
+      content:'Best seller';position:absolute;top:-12px;left:50%;transform:translateX(-50%);
       background:linear-gradient(135deg,var(--blue),var(--purple));
-      color:#fff;font-size:11px;font-weight:700;
-      padding:3px 14px;border-radius:999px;
+      color:#fff;font-size:11px;font-weight:700;padding:3px 14px;border-radius:999px;
       text-transform:uppercase;letter-spacing:.04em
     }
     .pricing-card h3{font-size:17px;font-weight:600}
     .pricing-card .desc{font-size:13px;color:var(--text2);margin:2px 0 14px}
     .pricing-card .amount{font-size:36px;font-weight:800;letter-spacing:-.02em}
     .pricing-card ul{list-style:none;margin:18px 0}
-    .pricing-card li{
-      padding:4px 0;font-size:14px;display:flex;gap:8px;align-items:center;color:var(--text2)
-    }
-    .pricing-card li::before{content:'\u2713';color:var(--green);font-weight:700}
+    .pricing-card li{padding:4px 0;font-size:14px;display:flex;gap:8px;align-items:center;color:var(--text2)}
+    .pricing-card li::before{content:'\2713';color:var(--green);font-weight:700}
     .pricing-card .btn{width:100%;justify-content:center}
 
-    .steps-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:24px;text-align:center;max-width:800px;margin:0 auto
-    }
+    .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;text-align:center;max-width:800px;margin:0 auto}
     .step-card .step-num{
       width:42px;height:42px;border-radius:50%;
       background:linear-gradient(135deg,var(--blue),var(--purple));
       color:#fff;font-weight:700;font-size:16px;
-      display:flex;align-items:center;justify-content:center;
-      margin:0 auto 12px
+      display:flex;align-items:center;justify-content:center;margin:0 auto 12px
     }
     .step-card h3{font-size:16px;font-weight:600;margin-bottom:4px}
     .step-card p{font-size:14px;color:var(--text2);line-height:1.5}
 
     .testimonial-wrap{
-      max-width:500px;margin:0 auto;
-      background:var(--surface);border:1px solid var(--border);
+      max-width:500px;margin:0 auto;background:var(--surface);border:1px solid var(--border);
       border-radius:var(--radius);padding:28px;text-align:center
     }
     .testimonial-wrap .stars{color:var(--yellow);font-size:16px;margin-bottom:8px}
@@ -256,95 +178,49 @@
     .testimonial-wrap .author{font-weight:600;font-size:14px}
     .testimonial-wrap .author span{color:var(--text2);font-weight:400}
 
-    .cta-section{
-      background:var(--surface);border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);text-align:center
-    }
-    .cta-btns{
-      display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
-      margin-top:8px
-    }
-    .cta-extras{
-      display:flex;justify-content:center;gap:24px;
-      margin-top:20px;flex-wrap:wrap;font-size:14px;color:var(--text2)
-    }
+    .cta-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+    .cta-extras{display:flex;justify-content:center;gap:24px;margin-top:20px;flex-wrap:wrap;font-size:14px;color:var(--text2)}
 
-    footer{
-      padding:24px 0;text-align:center;
-      font-size:13px;color:var(--muted);
-      border-top:1px solid var(--border)
-    }
+    footer{padding:24px 0;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--border)}
 
+    /* Chat */
     .chat-btn{
-      position:fixed;bottom:24px;right:24px;z-index:200;
-      width:54px;height:54px;border-radius:50%;
+      position:fixed;bottom:24px;right:24px;z-index:200;width:54px;height:54px;border-radius:50%;
       background:linear-gradient(135deg,var(--blue),var(--purple));
       color:#fff;border:none;font-size:22px;cursor:pointer;
       box-shadow:0 4px 20px rgba(122,162,247,.3);transition:all .2s
     }
     .chat-btn:hover{transform:scale(1.05)}
     .chat-box{
-      position:fixed;bottom:90px;right:24px;
-      width:360px;max-width:calc(100vw - 48px);
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.4);
-      z-index:200;display:none;overflow:hidden;flex-direction:column
+      position:fixed;bottom:90px;right:24px;width:360px;max-width:calc(100vw - 48px);
+      background:var(--surface);border:1px solid var(--border);border-radius:16px;
+      box-shadow:0 16px 48px rgba(0,0,0,.4);z-index:200;display:none;overflow:hidden;flex-direction:column
     }
     .chat-box.open{display:flex}
     .chat-hd{
-      padding:14px 18px;
-      background:linear-gradient(135deg,var(--blue),var(--purple));
-      color:#fff;font-weight:600;font-size:14px;
-      display:flex;justify-content:space-between;align-items:center
+      padding:14px 18px;background:linear-gradient(135deg,var(--blue),var(--purple));
+      color:#fff;font-weight:600;font-size:14px;display:flex;justify-content:space-between;align-items:center
     }
     .chat-hd button{background:none;border:none;color:#fff;font-size:18px;cursor:pointer;opacity:.7}
-    .chat-msgs{
-      padding:14px;max-height:300px;overflow-y:auto;
-      display:flex;flex-direction:column;gap:8px;flex:1;background:var(--bg)
-    }
-    .chat-msg{
-      padding:10px 14px;border-radius:12px;
-      font-size:14px;line-height:1.5;max-width:88%
-    }
-    .chat-msg.bot{
-      background:var(--surface2);color:var(--text);
-      align-self:flex-start;border-bottom-left-radius:4px;
-      border:1px solid var(--border)
-    }
+    .chat-msgs{padding:14px;max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;flex:1;background:var(--bg)}
+    .chat-msg{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.5;max-width:88%}
+    .chat-msg.bot{background:var(--surface2);color:var(--text);align-self:flex-start;border-bottom-left-radius:4px;border:1px solid var(--border)}
     .chat-msg.user{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
-    .chat-inp{
-      display:flex;border-top:1px solid var(--border);
-      padding:10px 12px;gap:8px;background:var(--surface)
-    }
-    .chat-inp input{
-      flex:1;background:var(--bg);border:1px solid var(--border);
-      border-radius:8px;padding:10px 14px;font-size:14px;
-      font-family:inherit;outline:none;color:var(--text)
-    }
+    .chat-inp{display:flex;border-top:1px solid var(--border);padding:10px 12px;gap:8px;background:var(--surface)}
+    .chat-inp input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:14px;font-family:inherit;outline:none;color:var(--text)}
     .chat-inp input:focus{border-color:var(--blue)}
     .chat-inp input::placeholder{color:var(--muted)}
-    .chat-inp button{
-      padding:10px 18px;border-radius:8px;
-      background:var(--blue);color:#fff;
-      border:none;font-weight:600;font-size:13px;cursor:pointer
-    }
+    .chat-inp button{padding:10px 18px;border-radius:8px;background:var(--blue);color:#fff;border:none;font-weight:600;font-size:13px;cursor:pointer}
 
     @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
     .anim-fade>*{animation:fadeUp .5s ease both}
-    .anim-fade h1{animation-delay:0s}
-    .anim-fade p{animation-delay:.08s}
-    .anim-fade .hero-actions{animation-delay:.16s}
-    .anim-fade .trust-bar{animation-delay:.24s}
 
     @media(max-width:720px){
       section{padding:48px 0}
       .hero{padding:120px 0 48px}
       .demos-grid{grid-template-columns:1fr}
-      .nav{
-        display:none;position:fixed;top:0;left:0;right:0;bottom:0;
-        background:rgba(26,27,38,.98);
-        flex-direction:column;align-items:center;justify-content:center;gap:24px;z-index:100
-      }
+      .nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(26,27,38,.98);flex-direction:column;align-items:center;justify-content:center;gap:24px;z-index:100}
       .nav.open{display:flex}
       .hamburger{display:block}
       .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -362,10 +238,10 @@
   <div class="container header-inner">
     <a class="brand" href="#"><span class="brand-mark">L</span>Local<span>Site</span></a>
     <nav class="nav" id="nav">
-      <a href="#services">Dịch vụ</a>
-      <a href="#demos">Mẫu tham khảo</a>
-      <a href="#pricing">Bảng giá</a>
-      <a href="#order" class="btn-nav">Đặt ngay</a>
+      <a href="#services">Services</a>
+      <a href="#demos">Samples</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#order" class="btn-nav">Order now</a>
     </nav>
     <button class="hamburger" id="burger"><span></span><span></span><span></span></button>
   </div>
@@ -373,18 +249,18 @@
 
 <section class="hero anim-fade">
   <div class="container">
-    <div class="hero-badge">Bạn kiếm khách — tôi code</div>
-    <h1>Bán website one-page<br>cho <span class="grad">business địa phương</span></h1>
-    <p>Bạn kiếm khách, gửi tôi — tôi code xong đưa link preview. Khách ưng thì tính tiền, không ưng bỏ qua. Đơn giản vậy thôi.</p>
+    <div class="hero-badge">You find the client &bull; I do the code</div>
+    <h1>One-page websites<br>for <span class="g">local businesses</span></h1>
+    <p>You bring the client, send me the details &mdash; I code the site and send a live preview. Client approves, you get paid. Simple.</p>
     <div class="hero-actions">
-      <a href="#order" class="btn btn-primary">Gửi yêu cầu</a>
-      <a href="#demos" class="btn btn-outline">Xem mẫu</a>
+      <a href="#order" class="btn btn-primary">Submit a project</a>
+      <a href="#demos" class="btn btn-outline">See samples</a>
     </div>
     <div class="trust-bar">
-      <div class="trust-item"><span class="ic">✓</span> Bạn kiếm khách — tôi code</div>
-      <div class="trust-item"><span class="ic">✓</span> Làm trước, duyệt rồi trả tiền</div>
-      <div class="trust-item"><span class="ic">✓</span> Giao trong 24h</div>
-      <div class="trust-item"><span class="ic">✓</span> Báo giá cố định</div>
+      <div class="trust-item"><span class="ic">&#10003;</span> You find clients &mdash; I code</div>
+      <div class="trust-item"><span class="ic">&#10003;</span> Preview first, pay after</div>
+      <div class="trust-item"><span class="ic">&#10003;</span> Delivery in 24h</div>
+      <div class="trust-item"><span class="ic">&#10003;</span> Fixed price, quoted upfront</div>
     </div>
   </div>
 </section>
@@ -392,16 +268,16 @@
 <section id="services">
   <div class="container">
     <div class="section-title">
-      <h2>Tôi làm được <span class="g">mấy thứ này</span></h2>
-      <p>Landing page, dashboard, web tool, bán hàng — miễn chạy trên web là tôi làm được.</p>
+      <h2>What <span class="g">I build</span></h2>
+      <p>Landing pages, dashboards, web tools, online stores &mdash; anything that runs in a browser.</p>
     </div>
     <div class="features-grid">
-      <div class="feature-card"><span class="feature-icon">🌐</span><h3>Landing Page</h3><p>Tiệm sửa, quán cafe, salon tóc, nhà hàng — 1 trang đẹp, đủ hình với giá, có nút gọi với map.</p></div>
-      <div class="feature-card"><span class="feature-icon">📊</span><h3>Dashboard</h3><p>Admin, monitor dữ liệu, tool nội bộ — coi số liệu real-time, không cần mở Excel.</p></div>
-      <div class="feature-card"><span class="feature-icon">🛒</span><h3>Bán hàng online</h3><p>Shop nhỏ, catalog, booking lịch hẹn, order món — đơn giản, khách vào là đặt được.</p></div>
-      <div class="feature-card"><span class="feature-icon">🔧</span><h3>Tool linh tinh</h3><p>Web tính tiền, quét giá, chuyển đổi file, API wrapper — cần gì làm nấy.</p></div>
-      <div class="feature-card"><span class="feature-icon">📱</span><h3>Chạy trên mobile ok</h3><p>Khách coi trên điện thoại không bị vỡ, không phải zoom. Chuẩn luôn.</p></div>
-      <div class="feature-card"><span class="feature-icon">⚡</span><h3>Nhẹ + lên Google được</h3><p>HTML/CSS thuần, tải nhanh. Có meta tags, Google crawl được ngon.</p></div>
+      <div class="feature-card"><h3>Landing Pages</h3><p>Repair shops, cafes, salons, restaurants &mdash; one page with services, pricing, maps, and call buttons.</p></div>
+      <div class="feature-card"><h3>Dashboards</h3><p>Admin panels, data monitors, internal tools &mdash; real-time data without opening Excel.</p></div>
+      <div class="feature-card"><h3>Online Stores</h3><p>Small shops, product catalogs, booking systems, order forms &mdash; simple and functional.</p></div>
+      <div class="feature-card"><h3>Custom Tools</h3><p>Price calculators, converters, API wrappers, generators &mdash; whatever you need.</p></div>
+      <div class="feature-card"><h3>Mobile-Ready</h3><p>Looks great on phones, tablets, and desktops. No zooming, no broken layouts.</p></div>
+      <div class="feature-card"><h3>Fast + SEO</h3><p>Pure HTML/CSS/JS. Loads instantly. Clean meta tags so Google can find it.</p></div>
     </div>
   </div>
 </section>
@@ -409,49 +285,44 @@
 <section id="demos" style="background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container">
     <div class="section-title">
-      <h2><span class="g">Mẫu</span> tham khảo</h2>
-      <p>2 mẫu có sẵn — bấm vào xem thử. Ngành nào cũng có thể chỉnh theo ý được.</p>
+      <h2><span class="g">Sample</span> work</h2>
+      <p>Two ready-made templates &mdash; click to view live. Any industry can be customized.</p>
     </div>
     <div class="demos-grid">
-
       <div class="demo-card">
         <div class="demo-preview fixfast">
-          <div class="demo-emoji">🔧</div>
           <div class="demo-name">FixFast <span class="fixfast-span">Repair</span></div>
-          <div class="demo-tag">Sửa chữa điện thoại & laptop</div>
-          <a href="fixfast.html" target="_blank" class="demo-btn">Xem demo</a>
+          <div class="demo-tag">Device repair shop</div>
+          <a href="fixfast.html" target="_blank" class="demo-btn">View demo</a>
         </div>
         <div class="demo-info">
-          <h3>FixFast Repair — Tiệm sửa chữa</h3>
-          <p>Đẹp từ đầu tới chân: hero 2 cột, dịch vụ + giá, bảng giá 3 bậc, quy trình, giờ làm việc, bản đồ, nút gọi.</p>
+          <h3>FixFast Repair &mdash; Device repair</h3>
+          <p>Full one-page: two-column hero, services with pricing, 3-tier pricing table, process, testimonials, hours, map, contact buttons.</p>
           <div class="demo-tags">
-            <span>Chuẩn điện thoại</span>
-            <span>Bảng giá</span>
+            <span>Mobile-first</span>
+            <span>Pricing table</span>
             <span>Google Maps</span>
-            <span>Nút gọi/Chat</span>
+            <span>Call/WhatsApp</span>
           </div>
         </div>
       </div>
-
       <div class="demo-card">
         <div class="demo-preview brewbit">
-          <div class="demo-emoji">☕</div>
           <div class="demo-name">Brew <span class="brewbit-span">&amp; Bite</span></div>
-          <div class="demo-tag">Cafe & bánh</div>
-          <a href="brewbit.html" target="_blank" class="demo-btn">Xem demo</a>
+          <div class="demo-tag">Coffee shop &amp; pastry</div>
+          <a href="brewbit.html" target="_blank" class="demo-btn">View demo</a>
         </div>
         <div class="demo-info">
-          <h3>Brew &amp; Bite — Quán cafe</h3>
-          <p>Menu món đẹp mắt, không gian quán, giờ mở cửa, bản đồ — khách vào là muốn đặt bàn.</p>
+          <h3>Brew &amp; Bite &mdash; Coffee shop</h3>
+          <p>Warm-toned one-page: menu grid with pricing, atmosphere gallery, hours, map, testimonial, contact buttons.</p>
           <div class="demo-tags">
-            <span>Chuẩn điện thoại</span>
-            <span>Menu đẹp</span>
-            <span>Không gian</span>
-            <span>Đặt bàn</span>
+            <span>Mobile-first</span>
+            <span>Menu grid</span>
+            <span>Atmosphere</span>
+            <span>WhatsApp booking</span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -459,66 +330,66 @@
 <section id="pricing">
   <div class="container">
     <div class="section-title">
-      <h2><span class="g">Bảng giá</span></h2>
-      <p>Báo giá theo từng việc, không phát sinh. Làm preview trước, ưng rồi tính tiền.</p>
+      <h2><span class="g">Pricing</span></h2>
+      <p>Quoted per project, no hidden costs. Preview first &mdash; pay only when the client approves.</p>
     </div>
     <div class="pricing-grid">
       <div class="pricing-card">
         <h3>Starter</h3>
-        <div class="desc">1 trang cơ bản</div>
+        <div class="desc">Simple one-page site</div>
         <div class="amount">$10</div>
         <ul>
-          <li>1 trang đầy đủ thông tin</li>
-          <li>Chuẩn mobile/desktop</li>
-          <li>Nút gọi + chat WhatsApp</li>
-          <li>Google Maps</li>
-          <li>Bảng giá / dịch vụ</li>
-          <li>Giao trong 24h</li>
+          <li>Full one-page website</li>
+          <li>Mobile + desktop responsive</li>
+          <li>Call &amp; WhatsApp buttons</li>
+          <li>Google Maps embed</li>
+          <li>Services &amp; pricing section</li>
+          <li>Delivery within 24h</li>
         </ul>
-        <a href="#order" class="btn btn-outline">Đặt ngay</a>
+        <a href="#order" class="btn btn-outline">Order now</a>
       </div>
       <div class="pricing-card featured">
         <h3>Standard</h3>
-        <div class="desc">Tùy chỉnh màu sắc + nhiều section</div>
+        <div class="desc">Custom design + extra sections</div>
         <div class="amount">$25</div>
         <ul>
-          <li>Hết mấy thứ ở Starter</li>
-          <li>Chỉnh màu theo ý</li>
-          <li>Gallery ảnh</li>
-          <li>Form đặt lịch / liên hệ</li>
-          <li>Hiệu ứng nhẹ</li>
-          <li>1 lần sửa</li>
+          <li>Everything in Starter</li>
+          <li>Custom colors &amp; branding</li>
+          <li>Photo gallery</li>
+          <li>Booking / contact form</li>
+          <li>Subtle animations</li>
+          <li>1 revision round</li>
         </ul>
-        <a href="#order" class="btn btn-primary">Đặt ngay</a>
+        <a href="#order" class="btn btn-primary">Order now</a>
       </div>
       <div class="pricing-card">
         <h3>Premium</h3>
-        <div class="desc">Dashboard / web app / tool</div>
+        <div class="desc">Dashboard / web app / custom tool</div>
         <div class="amount">$50</div>
         <ul>
-          <li>Hết mấy thứ ở Standard</li>
-          <li>Chức năng động (JS)</li>
-          <li>Kết nối API</li>
-          <li>Dữ liệu thời gian thực</li>
-          <li>2 lần sửa</li>
-          <li>Hướng dẫn host</li>
+          <li>Everything in Standard</li>
+          <li>Interactive features (JS)</li>
+          <li>API integration</li>
+          <li>Real-time data</li>
+          <li>2 revision rounds</li>
+          <li>Hosting guidance included</li>
         </ul>
-        <a href="#order" class="btn btn-outline">Đặt ngay</a>
+        <a href="#order" class="btn btn-outline">Order now</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="how-it-works" style="background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<section id="how" style="background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container">
     <div class="section-title">
-      <h2>Cách <span class="g">làm việc</span></h2>
-      <p>3 bước — bạn lo bán hàng, tôi lo code.</p>
+      <h2>How it <span class="g">works</span></h2>
+      <p>Three steps &mdash; you focus on sales, I handle the code.</p>
     </div>
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>Bạn gửi yêu cầu</h3><p>Mô tả project: tiệm gì, màu sắc thế nào, cần gì, bao giờ cần. Tôi báo giá.</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>Tôi code preview</h3><p>Xong trong 24h, đưa link cho bạn xem. Lỗi gì thì sửa.</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>Duyệt + thanh toán</h3><p>Khách ưng — bạn trả tiền — tôi bàn giao source + hướng dẫn host.</p></div>
+      <div class="step-card"><div class="step-num">1</div><h3>You send the brief</h3><p>Describe the business: industry, preferred colors, what pages are needed, deadline. I quote you right away.</p></div>
+      <div class="step-card"><div class="step-num">2</div><h3>I build the preview</h3><p>Done within 24h, deployed to a live link for you to review. Need changes? I fix them.</p></div>
+      <div class="step-card"><div class="step-num">3</div><h3>Approve &amp; pay</h3><p>Client gives the green light &mdash; you pay &mdash; I hand over the source files plus hosting instructions.</p></div>
     </div>
   </div>
 </section>
@@ -526,12 +397,12 @@
 <section>
   <div class="container">
     <div class="section-title">
-      <h2>Khách hàng <span class="g">nói gì</span></h2>
+      <h2>What <span class="g">clients say</span></h2>
     </div>
     <div class="testimonial-wrap">
-      <div class="stars">★★★★★</div>
-      <div class="qt">"Có website trong chưa đầy 24 tiếng. Design đẹp, khách mình khen. $25 đầu tư xứng đáng."</div>
-      <div class="author">— David L. <span>· Chủ tiệm sửa chữa</span></div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="qt">"Got my website in less than 24 hours. Clean design, my customers love it. Best $25 I've spent on my business."</div>
+      <div class="author">David L. <span>&bull; Small business owner</span></div>
     </div>
   </div>
 </section>
@@ -539,34 +410,34 @@
 <section id="order" class="cta-section">
   <div class="container">
     <div class="section-title">
-      <h2>Gửi yêu cầu <span class="g">ngay</span></h2>
-      <p>Mô tả nhanh project — tôi báo giá trong vài tiếng.</p>
+      <h2>Submit your <span class="g">project</span></h2>
+      <p>Tell me what you need &mdash; I'll quote you within a few hours.</p>
     </div>
     <div class="cta-btns">
-      <a href="https://wa.me/84963281291" class="btn btn-primary" target="_blank" style="font-size:16px;padding:14px 36px">💬 Chat WhatsApp</a>
-      <a href="mailto:dinhvuong090997@gmail.com" class="btn btn-outline" style="font-size:16px;padding:14px 36px">📧 Gửi email</a>
+      <a href="https://wa.me/84963281291" class="btn btn-primary" target="_blank" style="font-size:16px;padding:14px 36px">Chat on WhatsApp</a>
+      <a href="mailto:dinhvuong090997@gmail.com" class="btn btn-outline" style="font-size:16px;padding:14px 36px">Send an email</a>
     </div>
     <div class="cta-extras">
-      <span>✅ Thanh toán sau khi duyệt</span>
-      <span>✅ Giao trong 24h</span>
-      <span>✅ Hỗ trợ 7 ngày</span>
+      <span>&#10004; Pay after approval</span>
+      <span>&#10004; Delivered in 24h</span>
+      <span>&#10004; 7-day support</span>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">LocalSite &copy; 2026 · One-page websites cho business địa phương</div>
+  <div class="container">LocalSite &copy; 2026 &bull; One-page websites for local businesses</div>
 </footer>
 
-<button class="chat-btn" id="chatBtn" onclick="toggleChat()">💬</button>
+<button class="chat-btn" id="chatBtn" onclick="toggleChat()">&#128172;</button>
 <div class="chat-box" id="chatBox">
-  <div class="chat-hd"><span>💬 Chat với tôi</span><button onclick="toggleChat()">✕</button></div>
+  <div class="chat-hd"><span>&#128172; Chat with us</span><button onclick="toggleChat()">&times;</button></div>
   <div class="chat-msgs" id="chatMsgs">
-    <div class="chat-msg bot">Chào bạn! Cần làm web cho business gì? Hỏi tôi bất cứ gì — báo giá nhanh!</div>
+    <div class="chat-msg bot">Hi there! Need a website for a local business? Ask me anything &mdash; I'll quote you fast.</div>
   </div>
   <div class="chat-inp">
-    <input type="text" id="chatInput" placeholder="Nhập tin nhắn..." onkeydown="if(event.key==='Enter')sendChat()">
-    <button onclick="sendChat()">Gửi</button>
+    <input type="text" id="chatInput" placeholder="Type your message..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button onclick="sendChat()">Send</button>
   </div>
 </div>
 
@@ -574,30 +445,17 @@
 const burger=document.getElementById('burger'),nav=document.getElementById('nav');
 burger.addEventListener('click',()=>{burger.classList.toggle('open');nav.classList.toggle('open')});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');nav.classList.remove('open')}));
-document.querySelector('footer .container').textContent='LocalSite \u00a9 '+new Date().getFullYear()+' \u00b7 One-page websites cho business \u0111\u1ecba ph\u01b0\u01a1ng';
+document.querySelector('footer .container').textContent='LocalSite \u00a9 '+new Date().getFullYear()+' \u2022 One-page websites for local businesses';
 
 const c=document.getElementById('particles-canvas'),ctx=c.getContext('2d');
 let W,H,pts=[];
 function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
 resize();window.addEventListener('resize',resize);
-const COL='122,162,247';
 for(let i=0;i<50;i++){pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*2+1})}
 function draw(){
   ctx.clearRect(0,0,W,H);
-  for(let p of pts){
-    p.x+=p.vx;p.y+=p.vy;
-    if(p.x<0||p.x>W)p.vx*=-1;
-    if(p.y<0||p.y>H)p.vy*=-1;
-    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(${COL},.3)`;ctx.fill();
-  }
-  for(let i=0;i<pts.length;i++){
-    for(let j=i+1;j<pts.length;j++){
-      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
-      if(d<120){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
-        ctx.strokeStyle=`rgba(${COL},${1-d/120})`;ctx.lineWidth=.5;ctx.stroke()}
-    }
-  }
+  for(let p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(122,162,247,.3)`;ctx.fill()}
+  for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(122,162,247,${1-d/120})`;ctx.lineWidth=.5;ctx.stroke()}}}
   requestAnimationFrame(draw)
 }
 draw();
@@ -607,21 +465,21 @@ function sendChat(){
   const inp=document.getElementById('chatInput'),msg=inp.value.trim();if(!msg)return;
   inp.value='';const m=document.getElementById('chatMsgs');
   m.innerHTML+='<div class="chat-msg user">'+esc(msg)+'</div>';m.scrollTop=m.scrollHeight;
-  setTimeout(()=>{m.innerHTML+='<div class="chat-msg bot">'+reply(msg)+'</div>';m.scrollTop=m.scrollHeight},400+Math.random()*600)
+  setTimeout(()=>{m.innerHTML+='<div class="chat-msg bot">'+reply(msg)+'</div>';m.scrollTop=m.scrollHeight},300+Math.random()*500)
 }
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
 function reply(msg){
   const m=msg.toLowerCase();
-  if(m.includes('gi')||m.includes('bao nhi')||m.includes('cost')||m.includes('price')||m.includes('$')) return 'Gi\u00e1 t\u1eeb $10 (Starter), $25 (Standard), $50 (Premium). Tu\u1ef3 \u0111\u1ed9 ph\u1ee9c t\u1ea1p \u2014 b\u00e1o gi\u00e1 tr\u01b0\u1edbc.';
-  if(m.includes('l\u00e2u')||m.includes('bao gi')||m.includes('khi')||m.includes('delivery')||m.includes('time')) return 'Th\u01b0\u1eddng trong 24h cho one-page. Project ph\u1ee9c t\u1ea1p h\u01a1n 2-3 ng\u00e0y.';
-  if(m.includes('host')||m.includes('domain')||m.includes('l\u00ean m\u1ea1ng')) return 'T\u00f4i h\u01b0\u1edbng d\u1eabn host free (Netlify, GitHub Pages) ho\u1eb7c domain ri\u00eang. $0/th\u00e1ng.';
-  if(m.includes('m\u1eabu')||m.includes('demo')||m.includes('sample')||m.includes('xem')||m.includes('portfolio')) return 'K\u00e9o l\u00ean ph\u1ea7n M\u1eabu tham kh\u1ea3o! C\u00f3 FixFast Repair (ti\u1ec7m s\u1eeda) v\u00e0 Brew & Bite (cafe) s\u1eb5n s\u00e0ng.';
-  if(m.includes('s\u1eeda')||m.includes('repair')||m.includes('cafe')||m.includes('restaurant')||m.includes('salon')||m.includes('barber')||m.includes('spa')) return '\u0110\u00e3 l\u00e0m cho ti\u1ec7m s\u1eeda, cafe, barber, salon, nh\u00e0 h\u00e0ng \u2014 one-page r\u1ea5t h\u1ee3p!';
-  if(m.includes('dashboard')||m.includes('tool')||m.includes('api')||m.includes('app')||m.includes('ecommerce')||m.includes('store')) return 'OK! Dashboard, web app, custom tool, API, e-commerce \u2014 team dev l\u00e0m \u0111\u01b0\u1ee3c h\u1ebft.';
-  if(m.includes('tr\u1ea3')||m.includes('pay')||m.includes('thanh to\u00e1n')||m.includes('c\u1ecdc')) return 'Bank transfer ho\u1eb7c crypto. L\u00e0m preview tr\u01b0\u1edbc \u2014 b\u1ea1n duy\u1ec7t r\u1ed3i thanh to\u00e1n. Kh\u00f4ng c\u1ea7n c\u1ecdc.';
-  if(m.includes('hello')||m.includes('hi')||m.includes('ch\u00e0o')||m.includes('hey')) return 'Ch\u00e0o b\u1ea1n! C\u1ea7n l\u00e0m web cho business g\u00ec? K\u1ec3 t\u00f4i nghe \u2014 b\u00e1o gi\u00e1 nhanh!';
-  if(m.includes('c\u1ea3m \u01a1n')||m.includes('thank')) return 'C\u1ea3m \u01a1n b\u1ea1n! S\u1eb5n s\u00e0ng l\u00e0m th\u00ec g\u1eedi m\u00f4 t\u1ea3 project, t\u00f4i b\u00e1o gi\u00e1 trong v\u00e0i ti\u1ebfng.';
-  return 'OK! B\u1ea1n c\u1ea7n l\u00e0m web cho business g\u00ec? Ti\u1ec7m s\u1eeda, cafe, salon, nh\u00e0 h\u00e0ng? Ho\u1eb7c dashboard, tool? T\u00f4i b\u00e1o gi\u00e1 li\u1ec1n.';
+  if(m.includes('price')||m.includes('cost')||m.includes('how much')||m.includes('$')) return 'Prices from $10 (Starter), $25 (Standard), $50 (Premium). Depends on complexity &mdash; quoted upfront.';
+  if(m.includes('time')||m.includes('how long')||m.includes('delivery')||m.includes('when')) return 'Usually within 24h for a one-page site. More complex projects take 2-3 days.';
+  if(m.includes('host')||m.includes('domain')||m.includes('live')) return 'I guide you on free hosting (Netlify, GitHub Pages) or custom domain setup. $0/month.';
+  if(m.includes('demo')||m.includes('sample')||m.includes('see')||m.includes('portfolio')) return 'Check the Samples section above! FixFast Repair and Brew &amp; Bite are ready to view.';
+  if(m.includes('shop')||m.includes('cafe')||m.includes('restaurant')||m.includes('salon')||m.includes('repair')||m.includes('barber')) return 'Yes! I\'ve built for repair shops, cafes, barbers, salons, restaurants &mdash; one-page works great.';
+  if(m.includes('dashboard')||m.includes('tool')||m.includes('api')||m.includes('app')||m.includes('store')||m.includes('ecommerce')) return 'Yes! Dashboards, web apps, custom tools, API integrations, e-commerce &mdash; I can build it.';
+  if(m.includes('pay')||m.includes('deposit')||m.includes('payment')) return 'Bank transfer or crypto. I send a preview first &mdash; you pay after the client approves. No deposit needed.';
+  if(m.includes('hello')||m.includes('hi')||m.includes('hey')) return 'Hey! Need something built? Tell me what you need &mdash; website, dashboard, tool? I\'ll quote you fast.';
+  if(m.includes('thank')) return 'You\'re welcome! Ready to start? Send me a description of your project and I\'ll get back to you within hours.';
+  return 'Thanks! Let me know what you need built &mdash; landing page, dashboard, e-commerce, custom tool? I\'ll give you a quick quote.';
 }
 </script>
 </body>
