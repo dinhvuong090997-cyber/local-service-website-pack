@@ -5,8 +5,9 @@
 Đây là dự án bán one-page website cho local business.
 
 ## Key files
-- `sell.html` — Landing page bán hàng (chính)
-- `fixfast.html` — Demo sản phẩm (FixFast Repair)
+- `sell.html` — Landing page bán hàng (chính), Tokyo Night Storm theme, particles
+- `fixfast.html` — Demo: FixFast Repair (tiệm sửa chữa device)
+- `brewbit.html` — Demo: Brew & Bite (quán cafe & bánh)
 - `index.html` — Redirect → sell.html
 
 ## Contact
