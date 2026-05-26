@@ -212,16 +212,61 @@
     #cta .btn-primary{font-size:16px;padding:16px 40px}
 
     /* ─── Footer ─── */
-    footer{background:#0f3d25;color:rgba(255,255,255,.5);padding:48px 0 24px;font-size:13px}
-    footer .grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
-    footer h4{color:#fff;font-weight:700;font-size:14px;margin-bottom:12px}
-    footer a{color:rgba(255,255,255,.5);text-decoration:none;display:block;margin-bottom:4px}
-    footer a:hover{color:var(--gold)}
-    footer .logo-text{color:#fff;margin-bottom:6px}
-    footer .logo-text span{color:var(--gold)}
-    footer .bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;margin-top:40px;text-align:center;font-size:12px}
-    .footer-desc{line-height:1.7;margin-bottom:12px}
-    @media(max-width:768px){footer .grid{grid-template-columns:1fr;gap:24px}}
+    footer{
+      background:linear-gradient(180deg,#0f3d25 0%,#0a2b1a 100%);
+      color:rgba(255,255,255,.45);padding:60px 0 0;font-size:13px;
+      position:relative
+    }
+    footer::before{
+      content:'';position:absolute;top:0;left:10%;right:10%;
+      height:2px;
+      background:linear-gradient(90deg,transparent,var(--gold),transparent)
+    }
+    footer .grid{display:grid;grid-template-columns:2fr 1fr 1.2fr;gap:40px}
+    footer .brand{display:flex;flex-direction:column;gap:12px}
+    footer .brand-name{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:17px;font-weight:800;color:#fff;letter-spacing:-.02em
+    }
+    footer .brand-sub{
+      font-size:10px;color:rgba(255,255,255,.25);
+      text-transform:uppercase;letter-spacing:.1em;font-weight:600;
+      margin-top:-6px
+    }
+    footer .contact-card{
+      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);
+      border-radius:12px;padding:16px;margin-top:4px
+    }
+    footer .contact-item{
+      display:flex;align-items:center;gap:10px;padding:6px 0;
+      color:rgba(255,255,255,.5);text-decoration:none;transition:all .25s;
+      font-size:13px
+    }
+    footer .contact-item:hover{color:var(--gold);transform:translateX(3px)}
+    footer .contact-item .ico{
+      width:28px;height:28px;border-radius:8px;
+      background:rgba(255,255,255,.06);display:flex;
+      align-items:center;justify-content:center;font-size:13px;flex-shrink:0
+    }
+    footer h4{
+      color:#fff;font-weight:700;font-size:13px;margin-bottom:14px;
+      text-transform:uppercase;letter-spacing:.06em
+    }
+    footer .links{display:flex;flex-direction:column;gap:6px}
+    footer .links a{
+      color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;
+      transition:all .25s;border-bottom:1px solid transparent;
+      width:fit-content
+    }
+    footer .links a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+    footer .bottom{
+      border-top:1px solid rgba(255,255,255,.06);
+      padding:20px 0;margin-top:48px;
+      text-align:center;font-size:12px;color:rgba(255,255,255,.2)
+    }
+    footer .bottom a{color:rgba(255,255,255,.3);text-decoration:none}
+    footer .bottom a:hover{color:var(--gold)}
+    @media(max-width:768px){footer .grid{grid-template-columns:1fr;gap:28px}}
   </style>
 </head>
 <body>
@@ -461,31 +506,49 @@
 <footer>
   <div class="container">
     <div class="grid">
-      <div>
-        <div class="logo-text" style="font-size:16px">GV: DINH VUONG NGUYEN</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:10px">TRUNG TÂM GDNN HOAN CAU</div>
-        <p style="margin-bottom:4px">📞 <a href="tel:+849****1291">0963 281 291</a></p>
-        <p>💬 <a href="https://zalo.me/84963281291">Zalo</a> &nbsp;·&nbsp; ✉️ <a href="mailto:dinhvuong090997@gmail.com">dinhvuong090997@gmail.com</a></p>
+      <div class="brand">
+        <div class="brand-name">GV: DINH VUONG NGUYEN</div>
+        <div class="brand-sub">Trung tâm GDNN Hoan Cau</div>
+        <div class="contact-card">
+          <a href="tel:+849****1291" class="contact-item">
+            <span class="ico">📞</span>
+            0963 281 291
+          </a>
+          <a href="https://zalo.me/84963281291" class="contact-item">
+            <span class="ico">💬</span>
+            Zalo
+          </a>
+          <a href="mailto:dinhvuong090997@gmail.com" class="contact-item">
+            <span class="ico">✉️</span>
+            dinhvuong090997@gmail.com
+          </a>
+        </div>
       </div>
       <div>
         <h4>Hạng bằng</h4>
-        <a href="#classes">A1 — Xe máy ≤125cc</a>
-        <a href="#classes">A — Xe máy trên 125cc</a>
-        <a href="#classes">B — Ô tô đến 8 chỗ</a>
-        <a href="#classes">C1, C — Xe tải</a>
-        <a href="#classes">D1, D2, D — Xe khách</a>
-        <a href="#classes">CE — Đầu kéo</a>
+        <div class="links">
+          <a href="#classes">A1 — Xe máy ≤125cc</a>
+          <a href="#classes">A — Xe máy trên 125cc</a>
+          <a href="#classes">B — Ô tô đến 8 chỗ</a>
+          <a href="#classes">C1, C — Xe tải</a>
+          <a href="#classes">D1, D2, D — Xe khách</a>
+          <a href="#classes">CE — Đầu kéo</a>
+        </div>
       </div>
       <div>
         <h4>Liên kết</h4>
-        <a href="#classes">Bảng học phí</a>
-        <a href="#process">Quy trình</a>
-        <a href="#why">Vì sao chọn</a>
-        <a href="https://zalo.me/84963281291">Zalo</a>
-        <a href="https://dinhvuong090997-cyber.github.io/local-service-website-pack/">Trang chủ</a>
+        <div class="links">
+          <a href="#classes">Bảng học phí</a>
+          <a href="#process">Quy trình</a>
+          <a href="#why">Vì sao chọn</a>
+          <a href="https://zalo.me/84963281291">Zalo</a>
+          <a href="https://dinhvuong090997-cyber.github.io/local-service-website-pack/">Trang chủ</a>
+        </div>
       </div>
     </div>
-    <div class="bottom">&copy; 2026 GV: DINH VUONG NGUYEN. All rights reserved.</div>
+    <div class="bottom">
+      &copy; 2026 <a href="#">GV: DINH VUONG NGUYEN</a> &mdash; Trung tâm GDNN Hoan Cau
+    </div>
   </div>
 </footer>
 
