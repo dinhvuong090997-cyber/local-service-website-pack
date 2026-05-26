@@ -156,6 +156,26 @@
     header nav .nav-cta:hover{background:#5558e6;color:#fff}
     @media(max-width:600px){header nav a:not(.nav-cta){display:none}}
 
+    /* ─── Process ─── */
+    #process{background:#0a0b10;padding:0 0 80px;text-align:center}
+    #process .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:800px;margin:0 auto}
+    .proc-step{
+      background:var(--card-bg);border:1px solid var(--border);
+      border-radius:14px;padding:28px 20px;text-align:center;
+      transition:all .35s
+    }
+    .proc-step:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.1)}
+    .proc-num{
+      width:36px;height:36px;border-radius:50%;margin:0 auto 14px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:14px;font-weight:700;color:#fff;
+      background:linear-gradient(135deg,#6366f1,#a78bfa)
+    }
+    .proc-step h3{font-size:15px;font-weight:700;color:#f0f4ff;margin-bottom:6px}
+    .proc-step p{font-size:13px;color:var(--text2);line-height:1.6;margin:0}
+    .proc-arrow{font-size:20px;color:var(--text2);display:flex;align-items:center;padding-top:50px;opacity:.3}
+    @media(max-width:768px){#process .proc-grid{grid-template-columns:1fr}.proc-arrow{display:none}}
+
     /* ─── Templates ─── */
     section{padding:80px 0}
     .sec-label{
@@ -289,6 +309,32 @@
     <div class="hero-btns">
       <a href="#templates" class="btn btn-primary">📋 Browse Templates</a>
       <a href="#contact" class="btn btn-outline">📞 Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ How It Works ═══ -->
+<section id="process">
+  <div class="container">
+    <span class="sec-label">How It Works</span>
+    <h2 class="sec-title">3 Simple Steps</h2>
+    <p class="sec-desc" style="margin:0 auto 40px">No tech skills needed. Just pick, tell me what you want, and I'll handle everything.</p>
+    <div class="proc-grid">
+      <div class="proc-step">
+        <div class="proc-num">1</div>
+        <h3>Pick a Template</h3>
+        <p>Choose from Luxe, Basic, or ProSite — whichever fits your business best.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">2</div>
+        <h3>Tell Me Your Info</h3>
+        <p>Send your business name, address, phone, photos, and any content you want.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">3</div>
+        <h3>Get Your Site in 24h</h3>
+        <p>I customize everything and send you the live link. Simple, fast, no fuss.</p>
+      </div>
     </div>
   </div>
 </section>
