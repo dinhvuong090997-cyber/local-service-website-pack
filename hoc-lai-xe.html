@@ -198,7 +198,43 @@
     .why-card p{font-size:13px;color:var(--text2);line-height:1.6}
     @media(max-width:768px){.why-grid{grid-template-columns:1fr}}
 
-    /* ─── CTA ─── */
+    /* ─── Testimonials ─── */
+    #test{
+      background:var(--surface);padding:80px 0 100px;
+      position:relative;overflow:hidden
+    }
+    #test::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse at 50% 0%,rgba(26,75,122,.04) 0%,transparent 70%);
+      pointer-events:none
+    }
+    #test .thead{text-align:center;margin-bottom:48px}
+    #test .thead .sec-desc{margin:0 auto}
+    .test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .test-card{
+      background:var(--bg);border:1px solid var(--border);
+      border-radius:var(--radius);padding:24px;
+      transition:all .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column
+    }
+    .test-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+    .test-card .stars{color:#d4a853;font-size:15px;letter-spacing:2px;margin-bottom:8px}
+    .test-card blockquote{
+      font-size:14px;color:var(--text2);line-height:1.7;
+      font-style:italic;flex:1;margin-bottom:16px
+    }
+    .test-card .author{display:flex;align-items:center;gap:12px}
+    .test-card .author img{
+      width:36px;height:36px;border-radius:50%;object-fit:cover;
+      background:var(--blue-light);flex-shrink:0
+    }
+    .test-card .author .info .name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px}
+    .test-card .author .info .meta{font-size:11px;color:var(--text3)}
+    .test-card .author .info .tag{
+      display:inline-block;font-size:9px;padding:2px 8px;border-radius:999px;
+      background:var(--blue-light);color:var(--blue);font-weight:600;margin-top:2px
+    }
+    @media(max-width:768px){.test-grid{grid-template-columns:1fr}}
+
     #cta{
       background:linear-gradient(135deg,var(--blue-dark),var(--blue));
       text-align:center;padding:80px 24px
@@ -487,6 +523,63 @@
         <div class="ico">🤝</div>
         <h3>Hỗ trợ trọn đời</h3>
         <p>Giải đáp thắc mắc, gia hạn bằng, nâng hạng — hỗ trợ học viên cũ tận tình.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Testimonials ═══ -->
+<section id="test">
+  <div class="container">
+    <div class="thead">
+      <span class="sec-label">Học viên</span>
+      <h2 class="sec-title">Học viên nói gì về chúng tôi</h2>
+      <p class="sec-desc">Sự hài lòng của học viên là niềm tự hào lớn nhất của chúng tôi.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Học ở đây giáo viên dạy dễ hiểu, kiên nhẫn lắm. Mình nữ học lái xe số sàn mà cũng tự tin thi đậu ngay lần đầu. Cảm ơn thầy nhiều!"</blockquote>
+        <div class="author">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSI3MCIgcj0iNDAiIGZpbGw9IiMxYTFiMjAiLz48cGF0aCBkPSJNMzAgMjAwIFEzMCAxMzAgMTAwIDEzMCBRMTcwIDEzMCAxNzAgMjAwIFoiIGZpbGw9IiMxYTFiMjAiLz48L3N2Zz4=" alt="">
+          <div class="info">
+            <div class="name">Chị Minh Trang</div>
+            <div class="meta">Đã thi đậu B (số sàn)</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Đăng ký B số tự động cho vợ mình. Học 3 tháng là thi đậu ngay. Xe tập mới, máy lạnh mát, giáo viên chỉ tận tình."</blockquote>
+        <div class="author">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSI3MCIgcj0iNDAiIGZpbGw9IiMxYTFiMjAiLz48cGF0aCBkPSJNMzAgMjAwIFEzMCAxMzAgMTAwIDEzMCBRMTcwIDEzMCAxNzAgMjAwIFoiIGZmlsbD0iIzFhMWIyMCIvPjwvc3ZnPg==" alt="">
+          <div class="info">
+            <div class="name">Anh Hoàng Duy</div>
+            <div class="meta">Đăng ký cho vợ học B (số tự động)</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Học nâng hạng C lên D1. Giáo viên nhiệt tình, sân tập rộng, xe tập chất lượng. Thi xong có việc làm ngay."</blockquote>
+        <div class="author">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSI3MCIgcj0iNDAiIGZpbGw9IiMxYTFiMjAiLz48cGF0aCBkPSJNMzAgMjAwIFEzMCAxMzAgMTAwIDEzMCBRMTcwIDEzMCAxNzAgMjAwIFoiIGZpbGw9IiMxYTFiMjAiLz48L3N2Zz4=" alt="">
+          <div class="info">
+            <div class="name">Anh Tuấn Anh</div>
+            <div class="meta">Học nâng hạng C → D1</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Nhóm tụi mình 3 đứa đăng ký B số sàn cùng nhau được giảm 10%. Học vui, thi đậu cả 3. Giáo viên trẻ dễ gần, dạy dễ hiểu."</blockquote>
+        <div class="author">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSI3MCIgcj0iNDAiIGZpbGw9IiMxYTFiMjAiLz48cGF0aCBkPSJNMzAgMjAwIFEzMCAxMzAgMTAwIDEzMCBRMTcwIDEzMCAxNzAgMjAwIFoiIGZpbGw9IiMxYTFiMjAiLz48L3N2Zz4=" alt="">
+          <div class="info">
+            <div class="name">Bạn Thanh Hà</div>
+            <div class="meta">Đăng ký nhóm B (số sàn)</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
