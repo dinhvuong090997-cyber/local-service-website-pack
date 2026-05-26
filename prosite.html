@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[Tên] Clinic &mdash; Nha Khoa | Phòng Khám Đa Khoa</title>
-  <meta name="description" content="Đội ngũ bác sĩ giàu kinh nghiệm, trang thiết bị hiện đại, tận tâm với từng bệnh nhân. Đặt lịch hẹn ngay.">
+  <title>Thái Dương Clinic &mdash; Nha Khoa Thẩm Mỹ</title>
+  <meta name="description" content="Nha khoa thẩm mỹ uy tín tại TP.HCM. Bác sĩ 15 năm kinh nghiệm. Bọc sứ, tẩy trắng, niềng răng, nhổ răng khôn. Đặt lịch ngay.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
@@ -13,253 +13,257 @@
     html{scroll-behavior:smooth}
     body{
       font-family:'Inter',system-ui,-apple-system,sans-serif;
-      background:#f5f7fa;color:#1a2332;font-size:16px;line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      overflow-x:hidden
+      background:#f4f6f9;color:#1a2332;font-size:16px;line-height:1.6;
+      -webkit-font-smoothing:antialiased;overflow-x:hidden
     }
-    .container{max-width:1120px;margin:0 auto;padding:0 28px}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:1140px;margin:0 auto;padding:0 28px}
 
-    /* ─── Design Tokens ─── */
     :root{
-      --primary:#0f3b6a;  --primary-light:#d4e4f7; --primary-dark:#091f38;
-      --accent:#1a73e8;   --accent-hover:#1558b0;
-      --green:#0d9488;    --gold:#b8860b;
-      --text:#1a2332;     --text2:#4a5a6a;        --text3:#7a8a9a;
-      --bg:#f5f7fa;       --surface:#ffffff;       --border:#dce4ed;
-      --shadow-sm:0 1px 3px rgba(15,59,106,.06);
-      --shadow:0 4px 16px rgba(15,59,106,.08);
-      --shadow-lg:0 12px 40px rgba(15,59,106,.12);
-      --radius-sm:8px;    --radius:16px;           --radius-lg:24px;
-      --transition:all .3s cubic-bezier(.4,0,.2,1)
+      --primary:#0c4a6e;   --primary-dark:#082f44;
+      --accent:#0284c7;    --accent-hover:#0369a1;
+      --accent-light:#e0f2fe;
+      --green:#059669;     --gold:#d97706;
+      --text:#0f172a;      --text2:#475569;      --text3:#94a3b8;
+      --bg:#f4f6f9;        --surface:#ffffff;    --border:#e2e8f0;
+      --shadow-sm:0 1px 3px rgba(12,74,110,.06);
+      --shadow:0 4px 20px rgba(12,74,110,.08);
+      --shadow-lg:0 12px 48px rgba(12,74,110,.14);
+      --radius:16px;        --radius-sm:8px;
+      --transition:all .35s cubic-bezier(.4,0,.2,1)
     }
 
     /* ─── Header ─── */
     header{
       position:fixed;top:0;left:0;right:0;z-index:100;
-      background:rgba(255,255,255,.92);backdrop-filter:blur(24px) saturate(1.6);
-      border-bottom:1px solid var(--border);height:68px;
-      transition:var(--transition)
+      background:rgba(255,255,255,.94);backdrop-filter:blur(24px) saturate(1.6);
+      border-bottom:1px solid var(--border);height:68px;transition:var(--transition)
     }
-    header.scrolled{box-shadow:var(--shadow-sm)}
+    header.scrolled{box-shadow:var(--shadow)}
     header .inner{display:flex;align-items:center;justify-content:space-between;height:68px}
     .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
     .logo-icon{
       width:40px;height:40px;border-radius:12px;
-      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      background:linear-gradient(135deg,var(--primary),var(--accent));
       display:flex;align-items:center;justify-content:center;
-      font-weight:800;font-size:18px;color:#fff
+      font-weight:800;font-size:16px;color:#fff
     }
     .logo-text{font-weight:800;font-size:18px;color:var(--text);letter-spacing:-.02em}
     .logo-text span{color:var(--accent)}
-    .logo-sub{font-size:11px;color:var(--text3);font-weight:400;letter-spacing:.03em;display:block;margin-top:-3px}
+    .logo-sub{font-size:11px;color:var(--text3);letter-spacing:.04em;display:block;margin-top:-3px}
     nav{display:flex;gap:4px;align-items:center}
     nav a{
       text-decoration:none;color:var(--text2);font-size:14px;font-weight:500;
-      padding:8px 16px;border-radius:var(--radius-sm);transition:var(--transition);
-      position:relative
+      padding:8px 16px;border-radius:var(--radius-sm);transition:var(--transition)
     }
-    nav a::after{
-      content:'';position:absolute;bottom:4px;left:16px;right:16px;height:2px;
-      background:var(--accent);border-radius:1px;
-      transform:scaleX(0);transition:transform .25s
-    }
-    nav a:hover::after{transform:scaleX(1)}
-    nav a:hover{color:var(--accent);background:var(--primary-light)}
+    nav a:hover{color:var(--accent);background:var(--accent-light)}
     .nav-cta{
-      background:var(--accent);color:#fff!important;padding:10px 24px!important;
-      border-radius:999px!important;font-weight:600!important;font-size:13px!important;
-      letter-spacing:.01em;box-shadow:0 4px 12px rgba(26,115,232,.25)
+      background:linear-gradient(135deg,var(--accent),var(--primary));
+      color:#fff!important;padding:10px 24px!important;border-radius:999px!important;
+      font-weight:600!important;font-size:13px!important;
+      box-shadow:0 4px 14px rgba(2,132,199,.3)
     }
-    .nav-cta::after{display:none!important}
-    .nav-cta:hover{background:var(--accent-hover)!important;transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,115,232,.3)!important}
+    .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(2,132,199,.4)!important;background:linear-gradient(135deg,var(--accent-hover),var(--primary-dark))!important}
     .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:101}
     .hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:.3s}
 
     /* ─── Hero ─── */
     .hero{
-      padding:160px 0 80px;
-      background:linear-gradient(165deg,var(--bg),var(--surface) 50%,#fff);
-      position:relative;overflow:hidden
+      min-height:90vh;display:flex;align-items:center;position:relative;
+      background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+      overflow:hidden
     }
-    .hero::before{
-      content:'';position:absolute;top:-30%;right:-10%;
-      width:600px;height:600px;border-radius:50%;
-      background:radial-gradient(circle,rgba(15,59,106,.04),transparent 70%);
-      pointer-events:none
+    .hero-bg{
+      position:absolute;top:0;left:0;width:100%;height:100%;
+      object-fit:cover;opacity:.2;mix-blend-mode:overlay
     }
-    .hero::after{
-      content:'';position:absolute;bottom:-20%;left:-5%;
-      width:400px;height:400px;border-radius:50%;
-      background:radial-gradient(circle,rgba(26,115,232,.04),transparent 70%);
-      pointer-events:none
+    .hero-overlay{
+      position:absolute;top:0;left:0;width:100%;height:100%;
+      background:linear-gradient(160deg,rgba(12,74,110,.92) 30%,rgba(2,132,199,.7))
     }
-    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+    .hero .container{position:relative;z-index:1;width:100%}
     .hero-badge{
       display:inline-flex;align-items:center;gap:8px;
-      background:rgba(26,115,232,.08);color:var(--accent);padding:8px 18px;
-      border-radius:999px;font-size:13px;font-weight:600;margin-bottom:20px
+      background:rgba(255,255,255,.1);backdrop-filter:blur(12px);
+      color:#fff;padding:8px 20px;border-radius:999px;
+      font-size:13px;font-weight:500;margin-bottom:24px;
+      border:1px solid rgba(255,255,255,.1)
     }
     .hero h1{
-      font-size:clamp(2rem,4.8vw,3.2rem);font-weight:800;line-height:1.08;
-      letter-spacing:-.03em;color:var(--text);margin-bottom:16px
+      font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;line-height:1.08;
+      letter-spacing:-.03em;color:#fff;margin-bottom:16px;max-width:640px
     }
-    .hero h1 .em{
-      background:linear-gradient(135deg,var(--primary),var(--accent));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent
-    }
+    .hero h1 .em{color:rgba(255,255,255,.5)}
     .hero p{
-      font-size:17px;color:var(--text2);line-height:1.7;margin-bottom:28px;max-width:480px
+      font-size:17px;color:rgba(255,255,255,.7);line-height:1.7;
+      margin-bottom:32px;max-width:480px
     }
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:15px 30px;border-radius:999px;
-      font-size:15px;font-weight:600;text-decoration:none;
-      transition:var(--transition);cursor:pointer;border:none;font-family:inherit
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-actions .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:16px 32px;border-radius:999px;font-size:15px;font-weight:600;
+      text-decoration:none;transition:var(--transition);font-family:inherit;border:none;cursor:pointer
     }
-    .btn-primary{
-      background:var(--accent);color:#fff;
-      box-shadow:0 4px 14px rgba(26,115,232,.3)
+    .hero-actions .btn-primary{
+      background:#fff;color:var(--primary);
+      box-shadow:0 4px 20px rgba(0,0,0,.15)
     }
-    .btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 25px rgba(26,115,232,.35)}
-    .btn-outline{
-      border:1.5px solid var(--border);color:var(--text);background:var(--surface)
+    .hero-actions .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+    .hero-actions .btn-ghost{
+      background:rgba(255,255,255,.08);color:#fff;
+      border:1px solid rgba(255,255,255,.15)
     }
-    .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
-    .hero-stats{display:flex;gap:28px;margin-top:32px}
+    .hero-actions .btn-ghost:hover{background:rgba(255,255,255,.12)}
+    .hero-stats{display:flex;gap:32px;margin-top:40px}
     .hero-stats .stat{text-align:center}
-    .hero-stats .stat .num{display:block;font-size:28px;font-weight:800;color:var(--primary);line-height:1}
-    .hero-stats .stat .lbl{font-size:12px;color:var(--text3);font-weight:500;margin-top:4px}
-    .hero-visual{
-      background:linear-gradient(135deg,var(--primary-light),#f0f4ff);
-      border-radius:var(--radius-lg);aspect-ratio:4/3;
-      display:flex;align-items:center;justify-content:center;
-      font-size:80px;border:1px solid var(--border);
-      box-shadow:var(--shadow-lg);position:relative;overflow:hidden
-    }
-    .hero-visual::after{
-      content:'';position:absolute;top:0;left:0;right:0;bottom:0;
-      background:linear-gradient(135deg,transparent 50%,rgba(255,255,255,.4))
-    }
+    .hero-stats .stat .num{display:block;font-size:30px;font-weight:800;color:#fff;line-height:1}
+    .hero-stats .stat .lbl{font-size:13px;color:rgba(255,255,255,.5);font-weight:500;margin-top:4px}
 
-    /* ─── Trust ─── */
+    /* ─── Trust Bar ─── */
     .trust{
-      padding:20px 0;background:var(--surface);border-bottom:1px solid var(--border)
+      padding:20px 0;background:var(--surface);
+      border-bottom:1px solid var(--border);
+      position:sticky;top:68px;z-index:50
     }
-    .trust .inner{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
+    .trust .inner{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
     .trust-item{font-size:13px;color:var(--text3);display:flex;align-items:center;gap:8px;font-weight:500}
-    .trust-item strong{color:var(--text2);font-weight:600}
+    .trust-item strong{color:var(--text2)}
 
     /* ─── Section Common ─── */
     section{padding:80px 0}
-    .section-label{
-      font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;
-      letter-spacing:.1em;margin-bottom:8px
+    .sec-label{
+      font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;
+      letter-spacing:.12em;margin-bottom:8px
     }
-    .section-title{
+    .sec-title{
       font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;
-      letter-spacing:-.025em;color:var(--text);margin-bottom:12px
+      letter-spacing:-.03em;color:var(--text);margin-bottom:12px
     }
-    .section-desc{font-size:16px;color:var(--text2);max-width:520px;line-height:1.7}
+    .sec-desc{font-size:15px;color:var(--text2);max-width:540px;line-height:1.7}
 
     /* ─── About ─── */
     #about{background:var(--surface)}
-    #about .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-    .about-img{
-      aspect-ratio:3/4;border-radius:var(--radius-lg);
-      background:linear-gradient(135deg,var(--primary-light),var(--border));
-      display:flex;align-items:center;justify-content:center;
-      font-size:64px;border:1px solid var(--border);box-shadow:var(--shadow);
-      position:relative;overflow:hidden
+    #about .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+    .about-img-wrap{
+      position:relative;border-radius:var(--radius-lg);overflow:hidden;
+      box-shadow:var(--shadow-lg)
     }
-    .about-img::after{
-      content:'';position:absolute;bottom:0;left:0;right:0;height:40%;
-      background:linear-gradient(transparent,rgba(255,255,255,.3))
+    .about-img-wrap img{width:100%;aspect-ratio:3/4;object-fit:cover}
+    .about-img-badge{
+      position:absolute;bottom:20px;left:20px;right:20px;
+      background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
+      border-radius:var(--radius-sm);padding:16px 20px;
+      display:flex;align-items:center;gap:12px
     }
-    .about-creds{display:flex;gap:24px;margin-top:20px}
-    .about-creds .cred{text-align:center;padding:16px 24px;background:var(--bg);border-radius:var(--radius);flex:1}
-    .about-creds .cred .num{display:block;font-size:24px;font-weight:800;color:var(--primary)}
+    .about-img-badge .yr{font-size:24px;font-weight:800;color:var(--accent);line-height:1}
+    .about-img-badge .yr span{font-size:12px;font-weight:500;color:var(--text3);display:block}
+    .about-creds{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+    .about-creds .cred{
+      background:var(--bg);border-radius:var(--radius-sm);padding:16px;text-align:center
+    }
+    .about-creds .cred .num{display:block;font-size:22px;font-weight:800;color:var(--primary)}
     .about-creds .cred .lbl{font-size:12px;color:var(--text3);font-weight:500;margin-top:2px}
 
     /* ─── Services ─── */
     #services{background:var(--bg)}
     #services .shead{text-align:center;margin-bottom:48px}
-    #services .shead .section-desc{margin:0 auto}
+    #services .shead .sec-desc{margin:0 auto}
     .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .svc-card{
-      background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-      padding:32px 28px;transition:var(--transition);position:relative;overflow:hidden
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:var(--radius);padding:32px 28px;
+      transition:var(--transition);position:relative;overflow:hidden
     }
     .svc-card::before{
       content:'';position:absolute;top:0;left:0;right:0;height:3px;
       background:linear-gradient(90deg,var(--accent),var(--primary));
       opacity:0;transition:var(--transition)
     }
-    .svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
     .svc-card:hover::before{opacity:1}
     .svc-icon{
-      width:48px;height:48px;border-radius:var(--radius-sm);margin-bottom:16px;
-      background:var(--primary-light);color:var(--accent);
-      display:flex;align-items:center;justify-content:center;font-size:22px
+      width:52px;height:52px;border-radius:var(--radius-sm);margin-bottom:16px;
+      background:var(--accent-light);color:var(--accent);
+      display:flex;align-items:center;justify-content:center;font-size:24px
     }
     .svc-card h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px}
-    .svc-card p{font-size:14px;color:var(--text2);line-height:1.65}
+    .svc-card p{font-size:14px;color:var(--text2);line-height:1.7}
     .svc-card .price{
-      display:inline-block;margin-top:12px;font-size:14px;font-weight:700;
-      color:var(--green);background:rgba(13,148,136,.08);
-      padding:4px 12px;border-radius:999px
+      display:inline-block;margin-top:12px;font-size:13px;font-weight:700;
+      color:var(--green);background:rgba(5,150,105,.08);
+      padding:5px 14px;border-radius:999px
     }
 
-    /* ─── Process ─── */
-    #process{background:var(--surface)}
-    #process .phead{text-align:center;margin-bottom:56px}
-    #process .phead .section-desc{margin:0 auto}
-    .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative}
-    .proc-grid::before{
-      content:'';position:absolute;top:32px;left:18%;right:18%;
-      height:2px;background:linear-gradient(90deg,transparent,var(--primary-light),transparent)
+    /* ─── Doctor ─── */
+    #doctor{background:var(--surface)}
+    #doctor .dhead{text-align:center;margin-bottom:48px}
+    #doctor .dhead .sec-desc{margin:0 auto}
+    .doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .doc-card{
+      background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
+      overflow:hidden;transition:var(--transition);text-align:center
     }
-    .proc-step{text-align:center;position:relative}
+    .doc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .doc-card img{width:100%;aspect-ratio:1;object-fit:cover}
+    .doc-card .info{padding:20px}
+    .doc-card h3{font-size:17px;font-weight:700;color:var(--text);margin-bottom:4px}
+    .doc-card .role{font-size:13px;color:var(--accent);font-weight:500;margin-bottom:6px}
+    .doc-card .desc{font-size:13px;color:var(--text3);line-height:1.5}
+
+    /* ─── Process ─── */
+    #process{background:var(--bg)}
+    #process .phead{text-align:center;margin-bottom:56px}
+    #process .phead .sec-desc{margin:0 auto}
+    .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative}
+    .proc-grid::before{
+      content:'';position:absolute;top:30px;left:18%;right:18%;
+      height:2px;
+      background:linear-gradient(90deg,transparent,var(--accent-light),transparent)
+    }
+    .proc-step{text-align:center}
     .proc-num{
-      width:44px;height:44px;border-radius:50%;margin:0 auto 16px;
+      width:48px;height:48px;border-radius:50%;margin:0 auto 16px;
       display:flex;align-items:center;justify-content:center;
-      font-size:16px;font-weight:700;color:#fff;
+      font-size:17px;font-weight:700;color:#fff;
       background:linear-gradient(135deg,var(--accent),var(--primary));
-      box-shadow:0 4px 12px rgba(26,115,232,.25);position:relative;z-index:1
+      box-shadow:0 4px 14px rgba(2,132,199,.3);position:relative;z-index:1
     }
     .proc-step h3{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px}
     .proc-step p{font-size:14px;color:var(--text2);max-width:260px;margin:0 auto}
 
     /* ─── Testimonials ─── */
-    #testimonials{background:var(--bg)}
+    #testimonials{background:var(--surface)}
     #testimonials .thead{text-align:center;margin-bottom:48px}
-    #testimonials .thead .section-desc{margin:0 auto}
+    #testimonials .thead .sec-desc{margin:0 auto}
     .test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
     .test-card{
-      background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-      padding:28px;transition:var(--transition)
+      background:var(--bg);border:1px solid var(--border);
+      border-radius:var(--radius);padding:28px;transition:var(--transition)
     }
     .test-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
-    .test-card .stars{color:#f1c40f;font-size:18px;margin-bottom:10px;letter-spacing:2px}
+    .test-card .stars{color:var(--gold);font-size:17px;margin-bottom:10px;letter-spacing:2px}
     .test-card blockquote{
-      font-family:'Playfair Display',serif;font-size:16px;color:var(--text2);
+      font-family:'Playfair Display',serif;font-size:15px;color:var(--text2);
       line-height:1.65;font-style:italic;margin-bottom:14px
     }
-    .test-card cite{font-size:14px;font-weight:600;color:var(--text);font-style:normal}
-    .test-card cite span{color:var(--text3);font-weight:400;font-size:13px}
+    .test-card .author{display:flex;align-items:center;gap:12px}
+    .test-card .author img{
+      width:40px;height:40px;border-radius:50%;object-fit:cover;
+      background:var(--accent-light)
+    }
+    .test-card .author .name{font-size:14px;font-weight:600;color:var(--text)}
+    .test-card .author .loc{font-size:12px;color:var(--text3)}
 
     /* ─── Gallery ─── */
-    #gallery{background:var(--surface)}
+    #gallery{background:var(--bg)}
     #gallery .ghead{text-align:center;margin-bottom:40px}
     .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
     .gallery-item{
-      aspect-ratio:1;border-radius:var(--radius);
-      background:linear-gradient(135deg,var(--primary-light),#e8f0fe);
-      display:flex;align-items:center;justify-content:center;
-      font-size:36px;border:1px solid var(--border);transition:var(--transition);
-      cursor:pointer
+      border-radius:var(--radius-sm);overflow:hidden;
+      aspect-ratio:1;cursor:pointer;transition:var(--transition)
     }
-    .gallery-item:hover{transform:scale(1.03);box-shadow:var(--shadow)}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:var(--transition)}
+    .gallery-item:hover img{transform:scale(1.05)}
 
     /* ─── CTA ─── */
     #contact{
@@ -267,68 +271,67 @@
       position:relative;overflow:hidden
     }
     #contact::before{
-      content:'';position:absolute;top:-50%;right:-20%;
-      width:500px;height:500px;border-radius:50%;
-      background:radial-gradient(circle,rgba(255,255,255,.06),transparent 70%);
-      pointer-events:none
+      content:'';position:absolute;top:-40%;right:-10%;
+      width:600px;height:600px;border-radius:50%;
+      background:radial-gradient(circle,rgba(255,255,255,.05),transparent 70%)
     }
-    .cta-inner{
+    .cta-wrap{
       padding:80px 0;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center
     }
-    .cta-inner h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:10px}
-    .cta-inner p{font-size:16px;color:rgba(255,255,255,.7);margin-bottom:28px;max-width:420px}
+    .cta-wrap h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:8px}
+    .cta-wrap p{font-size:16px;color:rgba(255,255,255,.65);margin-bottom:24px;max-width:460px}
     .cta-btn{
       display:inline-flex;align-items:center;gap:10px;
       background:#fff;color:var(--primary);font-weight:700;
-      padding:16px 36px;border-radius:999px;font-size:16px;text-decoration:none;
-      transition:var(--transition);box-shadow:0 4px 16px rgba(0,0,0,.15)
+      padding:16px 36px;border-radius:999px;font-size:16px;
+      text-decoration:none;transition:var(--transition)
     }
     .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.2)}
-    .cta-info{color:rgba(255,255,255,.8);font-size:15px}
-    .cta-info .line{margin-bottom:8px;display:flex;align-items:center;gap:10px}
+    .cta-info{color:rgba(255,255,255,.75);font-size:14px}
+    .cta-info .line{margin-bottom:10px;display:flex;align-items:center;gap:10px}
     .cta-info .line strong{color:#fff;font-weight:600}
+    .cta-map{
+      margin-top:24px;border-radius:var(--radius-sm);overflow:hidden;
+      height:160px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);
+      display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);font-size:13px
+    }
 
     /* ─── Footer ─── */
-    footer{background:#0a1628;color:#7a8a9a;padding:48px 0 32px;font-size:14px;line-height:1.9}
-    footer .grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
-    footer h4{color:#fff;font-weight:700;font-size:14px;margin-bottom:12px}
-    footer a{color:#7a8a9a;text-decoration:none;transition:color .2s}
-    footer a:hover{color:#fff}
-    footer p{max-width:280px}
-    footer .social{display:flex;gap:12px;margin-top:12px}
-    footer .social a{
-      width:36px;height:36px;border-radius:50%;
-      background:rgba(255,255,255,.06);display:flex;align-items:center;
-      justify-content:center;font-size:14px;transition:var(--transition)
+    footer{
+      background:#082f44;color:rgba(255,255,255,.5);padding:48px 0 28px;font-size:14px;line-height:2
     }
-    footer .social a:hover{background:rgba(26,115,232,.2)}
+    footer .grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+    footer h4{color:#fff;font-weight:700;font-size:14px;margin-bottom:10px}
+    footer a{color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+    footer a:hover{color:#fff}
+    footer p{max-width:280px;line-height:1.7}
     footer .bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;margin-top:32px;text-align:center;font-size:13px}
 
-    /* ─── Mobile Nav ─── */
+    /* ─── Responsive ─── */
+    @media(max-width:768px){
+      .hero{min-height:auto;padding:120px 0 60px}
+      .hero-stats{gap:20px}
+      .hero-stats .stat .num{font-size:24px}
+      #about .grid{grid-template-columns:1fr;gap:32px}
+      .svc-grid,.test-grid,.doc-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .proc-grid::before{display:none}
+      .proc-grid{grid-template-columns:1fr;gap:28px}
+      .cta-wrap{grid-template-columns:1fr;gap:32px}
+      footer .grid{grid-template-columns:1fr 1fr;gap:24px}
+      .trust{position:static}
+    }
     @media(max-width:640px){
       header nav{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--surface);
         flex-direction:column;justify-content:center;gap:20px;
         opacity:0;pointer-events:none;transition:opacity .35s;z-index:99}
       header nav.open{opacity:1;pointer-events:auto}
-      header nav a{font-size:18px;padding:14px 28px;display:block!important;color:var(--text)!important}
-      header nav a::after{display:none}
-      header nav .nav-cta{margin-top:8px;font-size:16px;padding:14px 28px!important;display:inline-block!important;width:auto!important}
+      header nav a{font-size:17px;padding:14px 24px;display:block!important}
+      header nav .nav-cta{margin-top:8px;font-size:15px;padding:14px 24px!important;display:inline-block!important;width:auto!important;text-align:center}
       .hamburger{display:block;position:relative;z-index:100}
       .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
       .hamburger.active span:nth-child(2){opacity:0}
       .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-    }
-    @media(max-width:768px){
-      .hero{padding:120px 0 56px}
-      .hero .grid,.cta-inner,#about .grid{grid-template-columns:1fr;gap:32px}
-      .svc-grid,.test-grid{grid-template-columns:1fr}
-      .gallery-grid{grid-template-columns:repeat(2,1fr)}
-      .proc-grid::before{display:none}
-      .proc-grid{grid-template-columns:1fr;gap:28px}
-      .hero-stats{gap:16px}
-      .hero-stats .stat .num{font-size:22px}
-      .about-creds{flex-direction:column;gap:12px}
-      footer .grid{grid-template-columns:1fr 1fr;gap:24px}
     }
   </style>
 </head>
@@ -338,18 +341,18 @@
   <div class="container">
     <div class="inner">
       <a href="#" class="logo">
-        <span class="logo-icon">+</span>
+        <span class="logo-icon">☀</span>
         <div>
-          <div class="logo-text"><span>[Tên]</span> Clinic</div>
-          <div class="logo-sub">Nha Khoa &bull; Phòng Khám Đa Khoa</div>
+          <div class="logo-text"><span>Thái Dương</span> Clinic</div>
+          <div class="logo-sub">Nha Khoa Thẩm Mỹ &bull; 15 năm tin cậy</div>
         </div>
       </a>
       <nav>
         <a href="#about">Giới thiệu</a>
         <a href="#services">Dịch vụ</a>
-        <a href="#process">Quy trình</a>
+        <a href="#doctor">Bác sĩ</a>
         <a href="#testimonials">Khách hàng</a>
-        <a href="#contact" class="nav-cta">📅 Đặt lịch hẹn</a>
+        <a href="#contact" class="nav-cta">📅 Đặt lịch ngay</a>
       </nav>
       <button class="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -362,36 +365,34 @@
 
 <!-- ═══ Hero ═══ -->
 <section class="hero">
+  <img class="hero-bg" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=80" alt="" loading="lazy">
+  <div class="hero-overlay"></div>
   <div class="container">
-    <div class="grid">
-      <div>
-        <div class="hero-badge">🏥 Hơn 12 năm đồng hành cùng sức khỏe người Việt</div>
-        <h1>Nụ cười tỏa sáng<br>cùng <span class="em">đội ngũ tận tâm</span></h1>
-        <p>Khám chữa bệnh với trang thiết bị hiện đại, bác sĩ giàu chuyên môn, chi phí minh bạch &mdash; đặt lịch ngay hôm nay.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">📅 Đặt lịch hẹn miễn phí</a>
-          <a href="#services" class="btn btn-outline">Xem dịch vụ</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><span class="num">5.000+</span><span class="lbl">Bệnh nhân</span></div>
-          <div class="stat"><span class="num">98%</span><span class="lbl">Hài lòng</span></div>
-          <div class="stat"><span class="num">12+</span><span class="lbl">Năm KN</span></div>
-        </div>
-      </div>
-      <div class="hero-visual">🦷</div>
+    <div class="hero-badge">🏆 15 năm &bull; 8.000+ bệnh nhân &bull; 99% hài lòng</div>
+    <h1>Nụ cười tỏa sáng<br>với <span class="em">nha khoa thẩm mỹ</span></h1>
+    <p>Bọc răng sứ, tẩy trắng, niềng răng, nhổ răng khôn &mdash; công nghệ Đức, bác sĩ tận tâm, giá niêm yết minh bạch.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">📅 Đặt lịch khám miễn phí</a>
+      <a href="#services" class="btn btn-ghost">Dịch vụ &amp; bảng giá</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="num">8.000+</span><span class="lbl">Bệnh nhân</span></div>
+      <div class="stat"><span class="num">99%</span><span class="lbl">Hài lòng</span></div>
+      <div class="stat"><span class="num">15</span><span class="lbl">Năm KN</span></div>
+      <div class="stat"><span class="num">4.9⭐</span><span class="lbl">Google</span></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ Trust Bar ═══ -->
+<!-- ═══ Trust ═══ -->
 <section class="trust">
   <div class="container">
     <div class="inner">
       <span class="trust-item">🏥 Bảo hiểm <strong>bảo lãnh trực tiếp</strong></span>
-      <span class="trust-item">📅 Làm việc <strong>Thứ 2 &ndash; Thứ 7</strong></span>
-      <span class="trust-item">🚗 <strong>Free</strong> chỗ đậu xe ô tô</span>
-      <span class="trust-item">💳 Thanh toán <strong>thẻ &amp; chuyển khoản</strong></span>
-      <span class="trust-item">⭐ <strong>4.9</strong> / 5 sao từ Google</span>
+      <span class="trust-item">📅 Làm việc <strong>8:00&ndash;20:00 (T2&ndash;CN)</strong></span>
+      <span class="trust-item">🚗 <strong>Free</strong> chỗ đậu xe</span>
+      <span class="trust-item">💳 Trả góp <strong>0% lãi suất</strong></span>
+      <span class="trust-item">🔬 Trang thiết bị <strong>CHLB Đức</strong></span>
     </div>
   </div>
 </section>
@@ -400,16 +401,23 @@
 <section id="about">
   <div class="container">
     <div class="grid">
-      <div class="about-img">👨‍⚕️</div>
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Bác sĩ Thái Dương Clinic" loading="lazy">
+        <div class="about-img-badge">
+          <div class="yr">15<span>năm kinh nghiệm</span></div>
+          <div style="width:1px;height:30px;background:var(--border);margin:0 8px"></div>
+          <div class="yr">8.000<span>bệnh nhân</span></div>
+        </div>
+      </div>
       <div>
-        <p class="section-label">Về chúng tôi</p>
-        <h2 class="section-title">Tận tâm với từng<br>bệnh nhân</h2>
-        <p style="color:var(--text2);font-size:15px;line-height:1.75;margin-bottom:16px">Thành lập năm 2014, [Tên] Clinic là địa chỉ khám chữa bệnh uy tín tại TP.HCM. Đội ngũ bác sĩ tốt nghiệp từ các trường y khoa hàng đầu, không ngừng cập nhật công nghệ và phương pháp điều trị mới nhất.</p>
-        <p style="color:var(--text2);font-size:15px;line-height:1.75">Chúng tôi cam kết mang đến dịch vụ chất lượng cao với chi phí hợp lý, minh bạch &mdash; vì sức khỏe của bạn là ưu tiên số một.</p>
+        <p class="sec-label">Về chúng tôi</p>
+        <h2 class="sec-title">Nha khoa thẩm mỹ<br>uy tín tại TP.HCM</h2>
+        <p style="color:var(--text2);font-size:15px;line-height:1.8;margin-bottom:14px">Thành lập năm 2010, Thái Dương Clinic tự hào là địa chỉ khám chữa răng miệng uy tín hàng đầu tại TP.HCM. Với đội ngũ bác sĩ giàu kinh nghiệm, trang thiết bị nhập khẩu từ Đức, chúng tôi cam kết mang lại nụ cười rạng rỡ cho từng bệnh nhân.</p>
+        <p style="color:var(--text2);font-size:15px;line-height:1.8;margin-bottom:16px">Chi phí niêm yết minh bạch &mdash; không phát sinh. Bảo hành dài hạn. Hỗ trợ trả góp 0%.</p>
         <div class="about-creds">
-          <div class="cred"><span class="num">12+</span><span class="lbl">Năm kinh nghiệm</span></div>
-          <div class="cred"><span class="num">5.000+</span><span class="lbl">Ca điều trị</span></div>
-          <div class="cred"><span class="num">98%</span><span class="lbl">Bệnh nhân hài lòng</span></div>
+          <div class="cred"><span class="num">15+</span><span class="lbl">Năm thành lập</span></div>
+          <div class="cred"><span class="num">8.000+</span><span class="lbl">Bệnh nhân</span></div>
+          <div class="cred"><span class="num">99%</span><span class="lbl">Hài lòng</span></div>
         </div>
       </div>
     </div>
@@ -420,46 +428,83 @@
 <section id="services">
   <div class="container">
     <div class="shead">
-      <p class="section-label">Dịch vụ</p>
-      <h2 class="section-title">Giải pháp toàn diện<br>cho sức khỏe răng miệng</h2>
-      <p class="section-desc">Từ khám tổng quát đến phẫu thuật chuyên sâu &mdash; chúng tôi có tất cả.</p>
+      <p class="sec-label">Dịch vụ</p>
+      <h2 class="sec-title">Giải pháp toàn diện<br>cho sức khỏe răng miệng</h2>
+      <p class="sec-desc">Từ thăm khám tổng quát đến phẫu thuật chuyên sâu — tất cả đều được thực hiện bởi bác sĩ chuyên khoa giàu kinh nghiệm.</p>
     </div>
     <div class="svc-grid">
       <div class="svc-card">
         <div class="svc-icon">🦷</div>
         <h3>Khám tổng quát</h3>
-        <p>Kiểm tra toàn diện sức khỏe răng miệng với bác sĩ chuyên khoa. Chụp X-quang, tư vấn điều trị.</p>
+        <p>Kiểm tra toàn diện, chụp X-quang 3D, tầm soát sâu răng, viêm nướu, cao răng. Lập phác đồ điều trị cá nhân hóa.</p>
         <span class="price">200.000đ &ndash; 500.000đ</span>
       </div>
       <div class="svc-card">
         <div class="svc-icon">✨</div>
         <h3>Tẩy trắng răng</h3>
-        <p>Công nghệ Laser Zoom hiện đại, an toàn, hiệu quả rõ rệt ngay sau 1 buổi điều trị.</p>
+        <p>Công nghệ Laser Zoom 4.0 — hiệu quả trắng sáng 4-7 tone ngay sau 1 buổi. An toàn, không ê buốt.</p>
         <span class="price">1.500.000đ</span>
       </div>
       <div class="svc-card">
         <div class="svc-icon">🛡️</div>
         <h3>Bọc răng sứ</h3>
-        <p>Sứ cao cấp nhập khẩu Đức, Ý. Bảo hành chính hãng lên đến 10 năm. Màu sắc tự nhiên.</p>
-        <span class="price">2.000.000đ &ndash; 8.000.000đ</span>
+        <p>Sứ Emax Zirconia nhập khẩu Đức. Màu sắc tự nhiên như răng thật. Bảo hành chính hãng 10 năm.</p>
+        <span class="price">2.000.000đ &ndash; 8.000.000đ / răng</span>
       </div>
       <div class="svc-card">
         <div class="svc-icon">🔧</div>
         <h3>Nhổ răng khôn</h3>
-        <p>Nhổ răng khôn bằng máy siêu âm Piezotome, ít đau, sưng nhẹ, hồi phục nhanh.</p>
-        <span class="price">800.000đ &ndash; 2.500.000đ</span>
+        <p>Nhổ răng khôn bằng máy siêu âm Piezotome. Ít đau, ít sưng, hồi phục nhanh. Bác sĩ giàu kinh nghiệm.</p>
+        <span class="price">800.000đ &ndash; 3.000.000đ</span>
       </div>
       <div class="svc-card">
         <div class="svc-icon">😁</div>
         <h3>Niềng răng</h3>
-        <p>Niềng răng mắc cài sứ thẩm mỹ &amp; niềng răng trong suốt Invisalign. Lộ trình rõ ràng.</p>
+        <p>Niềng răng mắc cài sứ thẩm mỹ &amp; niềng răng trong suốt Invisalign. Lộ trình điều trị rõ ràng, bảo hành kết quả.</p>
         <span class="price">15.000.000đ &ndash; 80.000.000đ</span>
       </div>
       <div class="svc-card">
         <div class="svc-icon">🩺</div>
         <h3>Điều trị tủy</h3>
-        <p>Điều trị tủy bằng máy Endo hiện đại, bảo tồn răng thật tối đa, không đau.</p>
-        <span class="price">500.000đ &ndash; 1.200.000đ</span>
+        <p>Điều trị tủy bằng máy Endo WaveOne. Bảo tồn răng thật tối đa. Không đau, không biến chứng.</p>
+        <span class="price">500.000đ &ndash; 1.500.000đ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Doctor ═══ -->
+<section id="doctor">
+  <div class="container">
+    <div class="dhead">
+      <p class="sec-label">Đội ngũ</p>
+      <h2 class="sec-title">Bác sĩ tận tâm<br>&mdash; chuyên môn cao</h2>
+      <p class="sec-desc">Tốt nghiệp từ các trường y khoa hàng đầu, không ngừng cập nhật công nghệ mới.</p>
+    </div>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="BS. Nguyễn Thái Dương" loading="lazy">
+        <div class="info">
+          <h3>BS. Nguyễn Thái Dương</h3>
+          <div class="role">Phẫu thuật hàm mặt</div>
+          <div class="desc">15 năm KN &bull; ĐH Y Dược TP.HCM &bull; Chứng chỉ Implant Đức</div>
+        </div>
+      </div>
+      <div class="doc-card">
+        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80" alt="BS. Lê Minh Anh" loading="lazy">
+        <div class="info">
+          <h3>BS. Lê Minh Anh</h3>
+          <div class="role">Chỉnh nha &amp; Niềng răng</div>
+          <div class="desc">10 năm KN &bull; ĐH Y Hà Nội &bull; Chứng chỉ Invisalign</div>
+        </div>
+      </div>
+      <div class="doc-card">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80" alt="BS. Trần Hoàng Nam" loading="lazy">
+        <div class="info">
+          <h3>BS. Trần Hoàng Nam</h3>
+          <div class="role">Phục hình &amp; Bọc sứ</div>
+          <div class="desc">8 năm KN &bull; ĐH Y Dược TP.HCM &bull; Chuyên gia sứ Emax</div>
+        </div>
       </div>
     </div>
   </div>
@@ -469,25 +514,25 @@
 <section id="process">
   <div class="container">
     <div class="phead">
-      <p class="section-label">Quy trình</p>
-      <h2 class="section-title">3 bước đơn giản</h2>
-      <p class="section-desc">Chúng tôi thiết kế quy trình tối ưu để bạn tiết kiệm thời gian.</p>
+      <p class="sec-label">Quy trình</p>
+      <h2 class="sec-title">3 bước đến nụ cười mới</h2>
+      <p class="sec-desc">Quy trình tối ưu, nhanh gọn — tiết kiệm thời gian cho bạn.</p>
     </div>
     <div class="proc-grid">
       <div class="proc-step">
         <div class="proc-num">1</div>
         <h3>Đặt lịch</h3>
-        <p>Đặt hẹn online hoặc gọi điện. Chọn ngày giờ phù hợp với bạn. Miễn phí tư vấn ban đầu.</p>
+        <p>Đặt hẹn online hoặc gọi hotline. Chọn khung giờ phù hợp. Miễn phí tư vấn và thăm khám ban đầu.</p>
       </div>
       <div class="proc-step">
         <div class="proc-num">2</div>
         <h3>Thăm khám</h3>
-        <p>Đến phòng khám, bác sĩ thăm khám và tư vấn phương án điều trị phù hợp nhất.</p>
+        <p>Bác sĩ thăm khám, chụp X-quang, tư vấn phương án điều trị &mdash; báo giá chi tiết trước khi thực hiện.</p>
       </div>
       <div class="proc-step">
         <div class="proc-num">3</div>
-        <h3>Điều trị</h3>
-        <p>Thực hiện điều trị bởi bác sĩ chuyên khoa. Tái khám và theo dõi sau điều trị.</p>
+        <h3>Điều trị &amp; Theo dõi</h3>
+        <p>Thực hiện điều trị bởi bác sĩ chuyên khoa. Tái khám miễn phí, bảo hành dài hạn.</p>
       </div>
     </div>
   </div>
@@ -497,30 +542,54 @@
 <section id="testimonials">
   <div class="container">
     <div class="thead">
-      <p class="section-label">Khách hàng</p>
-      <h2 class="section-title">Họ đã tin tưởng<br>chúng tôi</h2>
-      <p class="section-desc">Những chia sẻ thật từ bệnh nhân đã điều trị tại [Tên] Clinic.</p>
+      <p class="sec-label">Khách hàng</p>
+      <h2 class="sec-title">Họ nói gì về chúng tôi</h2>
+      <p class="sec-desc">Sự hài lòng của bệnh nhân là động lực lớn nhất của Thái Dương Clinic.</p>
     </div>
     <div class="test-grid">
       <div class="test-card">
         <div class="stars">★★★★★</div>
-        <blockquote>"Bác sĩ rất tận tâm, giải thích rõ ràng từng bước. Nhổ răng khôn xong không đau như mình lo sợ. Chắc chắn quay lại."</blockquote>
-        <cite>Chị Minh Anh <span>&bull; Q.Bình Thạnh</span></cite>
+        <blockquote>"Bác sĩ giải thích rất rõ ràng, tư vấn tận tình. Nhổ răng khôn xong không đau như mình nghĩ. Phòng khám sạch đẹp, nhân viên thân thiện. Chắc chắn quay lại tẩy trắng răng."</blockquote>
+        <div class="author">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" alt="" loading="lazy">
+          <div>
+            <div class="name">Chị Minh Anh</div>
+            <div class="loc">Q. Bình Thạnh</div>
+          </div>
+        </div>
       </div>
       <div class="test-card">
         <div class="stars">★★★★★</div>
-        <blockquote>"Tẩy trắng răng xong tự tin hơn hẳn! Giá cả hợp lý, phòng khám sạch đẹp, nhân viên nhiệt tình."</blockquote>
-        <cite>Anh Hoàng Nam <span>&bull; Q.1</span></cite>
+        <blockquote>"Niềng răng được 18 tháng, kết quả như mơ. Bác sĩ follow-up sát sao, lịch hẹn linh hoạt. Chi phí niêm yết rõ ràng, không phát sinh. Cảm ơn cả team!"</blockquote>
+        <div class="author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="" loading="lazy">
+          <div>
+            <div class="name">Bạn Thanh Thảo</div>
+            <div class="loc">Q. Phú Nhuận</div>
+          </div>
+        </div>
       </div>
       <div class="test-card">
         <div class="stars">★★★★★</div>
-        <blockquote>"Niềng răng được hơn 1 năm, kết quả như mong đợi. Bác sĩ follow-up thường xuyên, rất chuyên nghiệp."</blockquote>
-        <cite>Bạn Thanh Thảo <span>&bull; Q.Phú Nhuận</span></cite>
+        <blockquote>"Cả nhà 3 đời đều khám ở đây. Bác sĩ Dương là người có tâm, tay nghề cao. Bọc răng sứ được 5 năm vẫn còn bảo hành. Uy tín!"</blockquote>
+        <div class="author">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" alt="" loading="lazy">
+          <div>
+            <div class="name">Anh Đức Tuấn</div>
+            <div class="loc">Q. 3</div>
+          </div>
+        </div>
       </div>
       <div class="test-card">
         <div class="stars">★★★★★</div>
-        <blockquote>"Cả nhà mình đều khám ở đây. Bác sĩ giỏi, giá niêm yết rõ ràng, không lo bị chặt chém."</blockquote>
-        <cite>Anh Đức Tuấn <span>&bull; Q.3</span></cite>
+        <blockquote>"Tẩy trắng răng cưới xong tự tin hẳn! Bác sĩ tư vấn nhiệt tình, giá cả hợp lý. Phòng khám sạch sẽ, máy móc hiện đại. Recommend cho tất cả mọi người!"</blockquote>
+        <div class="author">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&q=80" alt="" loading="lazy">
+          <div>
+            <div class="name">Chị Hồng Nhung</div>
+            <div class="loc">Q. 7</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -530,18 +599,18 @@
 <section id="gallery">
   <div class="container">
     <div class="ghead">
-      <p class="section-label">Hình ảnh</p>
-      <h2 class="section-title">Không gian phòng khám</h2>
+      <p class="sec-label">Hình ảnh</p>
+      <h2 class="sec-title">Không gian &amp; thiết bị</h2>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item">🦷</div>
-      <div class="gallery-item">🏥</div>
-      <div class="gallery-item">💺</div>
-      <div class="gallery-item">🔬</div>
-      <div class="gallery-item">📋</div>
-      <div class="gallery-item">🧴</div>
-      <div class="gallery-item">👨‍⚕️</div>
-      <div class="gallery-item">⭐</div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&q=80" alt="Phòng khám" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&q=80" alt="Ghế nha khoa" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80" alt="Thiết bị" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=400&q=80" alt="Phòng chờ" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1631715272792-7d413a57e38a?w=400&q=80" alt="Quy trình" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580656440488-f170c2685f69?w=400&q=80" alt="Thiết bị" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1560253023-3ec5dbe959d4?w=400&q=80" alt="Bác sĩ làm việc" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80" alt="Phòng khám" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -549,18 +618,22 @@
 <!-- ═══ CTA ═══ -->
 <section id="contact">
   <div class="container">
-    <div class="cta-inner">
+    <div class="cta-wrap">
       <div>
         <h2>Đặt lịch hẹn ngay<br>hoàn toàn miễn phí</h2>
-        <p>Liên hệ với chúng tôi để được tư vấn và đặt lịch khám. Bác sĩ sẽ gọi lại cho bạn trong vòng 30 phút.</p>
+        <p>Điền thông tin hoặc gọi trực tiếp. Bác sĩ sẽ tư vấn và báo giá trong vòng 30 phút. Miễn phí thăm khám cho lần đầu.</p>
         <a href="tel:0900000000" class="cta-btn">📞 0900 000 000</a>
       </div>
-      <div class="cta-info">
-        <div class="line">📍 <strong>123 Nguyễn Văn A, Quận 1, TP.HCM</strong></div>
-        <div class="line">🕐 <strong>Thứ 2 &ndash; Thứ 7:</strong> 8:00 &ndash; 20:00</div>
-        <div class="line">🕐 <strong>Chủ nhật:</strong> 8:00 &ndash; 17:00</div>
-        <div class="line">📧 <strong>info@tenclinic.com</strong></div>
-        <div class="line">🚗 <strong>Có chỗ đậu xe ô tô</strong></div>
+      <div>
+        <div class="cta-info">
+          <div class="line">📍 <strong>123 Nguyễn Văn A, Quận 1, TP.HCM</strong></div>
+          <div class="line">🕐 <strong>Thứ 2 &ndash; Chủ nhật:</strong> 8:00 &ndash; 20:00</div>
+          <div class="line">📧 <strong>info@thaiduongclinic.com</strong></div>
+          <div class="line">🚗 <strong>Có chỗ đậu xe ô tô</strong></div>
+        </div>
+        <div class="cta-map">
+          🗺️ Xem bản đồ → 123 Nguyễn Văn A, Quận 1
+        </div>
       </div>
     </div>
   </div>
@@ -572,14 +645,8 @@
   <div class="container">
     <div class="grid">
       <div>
-        <h4>[Tên] Clinic</h4>
-        <p style="color:#7a8a9a;font-size:14px">Nha khoa &amp; Phòng khám đa khoa uy tín tại TP.HCM. Khám chữa bệnh tận tâm &mdash; chất lượng &mdash; hiện đại. Hơn 12 năm đồng hành cùng sức khỏe người Việt.</p>
-        <div class="social">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Instagram">ig</a>
-          <a href="#" aria-label="YouTube">yt</a>
-          <a href="#" aria-label="Zalo">zl</a>
-        </div>
+        <h4>☀ Thái Dương Clinic</h4>
+        <p style="font-size:14px">Nha khoa thẩm mỹ uy tín tại TP.HCM. Với 15 năm kinh nghiệm, chúng tôi cam kết mang đến nụ cười rạng rỡ cho hơn 8.000 bệnh nhân.</p>
       </div>
       <div>
         <h4>Dịch vụ</h4>
@@ -594,7 +661,7 @@
         <h4>Liên kết</h4>
         <a href="#about">Giới thiệu</a><br>
         <a href="#services">Dịch vụ</a><br>
-        <a href="#process">Quy trình</a><br>
+        <a href="#doctor">Bác sĩ</a><br>
         <a href="#testimonials">Khách hàng</a><br>
         <a href="#gallery">Hình ảnh</a><br>
         <a href="#contact">Liên hệ</a>
@@ -602,12 +669,12 @@
       <div>
         <h4>Liên hệ</h4>
         📞 <a href="tel:0900000000">0900 000 000</a><br>
-        📧 <a href="mailto:info@tenclinic.com">info@tenclinic.com</a><br>
+        📧 <a href="mailto:info@thaiduongclinic.com">info@thaiduongclinic.com</a><br>
         📍 123 Nguyễn Văn A, Q.1<br>
-        🕐 8:00 &ndash; 20:00 (T2-T7)
+        🕐 8:00 &ndash; 20:00 (T2-CN)
       </div>
     </div>
-    <div class="bottom">&copy; 2026 [Tên] Clinic. Designed with care. All rights reserved.</div>
+    <div class="bottom">&copy; 2026 Thái Dương Clinic. All rights reserved.</div>
   </div>
 </footer>
 
@@ -617,7 +684,6 @@
   if(h){h.addEventListener('click',function(){n.classList.toggle('open');h.classList.toggle('active')})}
   document.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');if(h)h.classList.remove('active')})})
   document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})})
-  // Header shadow on scroll
   var hdr=document.getElementById('header');
   window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>20)},{passive:true})
 })()
